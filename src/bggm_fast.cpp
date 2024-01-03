@@ -2285,6 +2285,7 @@ Rcpp::List var(arma::mat Y,
 
     beta_mcmc.slice(s) = beta;
     pcors_mcmc.slice(s) =  -(pcors - I_k);
+    Sigma_mcmc.slice(s) = Sigma.slice(0);
   }
 
   arma::cube fisher_z = atanh(pcors_mcmc);
@@ -2296,6 +2297,7 @@ Rcpp::List var(arma::mat Y,
   ret["pcor_mat"] =  pcor_mat;
   ret["beta"] = beta_mcmc;
   ret["fisher_z"] = fisher_z;
+  ret["Sigma"] = Sigma_mcmc;
   return ret;
 }
 

@@ -4,7 +4,7 @@
 #' provides two graphical structures: (1) a network of undirected relations (the GGM, controlling for the
 #' lagged predictors) and (2) a network of directed relations (the lagged coefficients). Note that
 #' in the graphical modeling literature, this model is also known as a time series chain graphical model
-#' \insertCite{abegaz2013sparse}{BGGM}.
+#' \insertCite{abegaz2013sparse}{BGGMmod}.
 #'
 #' @name var_estimate
 #'
@@ -16,7 +16,7 @@
 #'
 #' @param beta_sd Numeric. Standard deviation of the prior distribution for the regression coefficients
 #'        (defaults to 1). The prior is by default centered at zero and follows a normal distribution
-#'        \insertCite{@Equation 9, @sinay2014bayesian}{BGGM}
+#'        \insertCite{@Equation 9, @sinay2014bayesian}{BGGMmod}
 #'
 #' @param iter Number of iterations (posterior samples; defaults to 5000).
 #'
@@ -40,7 +40,7 @@
 #' \insertAllCited{}
 #'
 #' @return An object of class \code{var_estimate} containing a lot of information that is
-#' used for printing and plotting the results. For users of \strong{BGGM}, the following are the
+#' used for printing and plotting the results. For users of \strong{BGGMmod}, the following are the
 #' useful objects:
 #'
 #' \itemize{
@@ -106,7 +106,7 @@ var_estimate <- function(Y, rho_sd = 0.50,
   beta_var <- beta_sd^2
 
   if(isTRUE(progress)){
-    message(paste0("BGGM: Posterior Sampling "))
+    message(paste0("BGGMmod: Posterior Sampling "))
     }
 
   fit <-.Call(
@@ -122,7 +122,7 @@ var_estimate <- function(Y, rho_sd = 0.50,
     )
 
   if(isTRUE(progress)){
-    message("BGGM: Finished")
+    message("BGGMmod: Finished")
     }
 
   pcor_mu <- round(
@@ -132,6 +132,10 @@ var_estimate <- function(Y, rho_sd = 0.50,
   beta_mu <- round(
     apply(fit$beta[,,51:(iter + 50)], 1:2, mean),
     digits = 3)
+
+  # covariance of residuals
+  # Sigma <- fit$Sigma
+
 
   colnames(pcor_mu) <- colnames(Y)
   rownames(pcor_mu) <- colnames(Y)
@@ -151,14 +155,14 @@ var_estimate <- function(Y, rho_sd = 0.50,
   # removed per CRAN (8/12/21)
   #.Random.seed <<- old
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "var_estimate",
                               "default")
   return(returned_object)
 }
 
 print_var_estimate <- function(x, ...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Vector Autoregressive Model (VAR) \n")
   cat("--- \n")
@@ -334,7 +338,7 @@ summary.var_estimate <- function(object,
   returned_object <- list(pcor_results = pcor_results,
                           beta_results = beta_results)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "var_estimate",
                               "summary.var_estimate")
   return(returned_object)
@@ -345,7 +349,7 @@ summary.var_estimate <- function(object,
 print_summary_var_estimate <- function(x, param = "all", ...){
   p <- nrow(x$beta_results[[1]])
   cn <- gsub("\\..*","" , x$beta_results[[1]]$Relation)
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Vector Autoregressive Model (VAR) \n")
   cat("--- \n")
