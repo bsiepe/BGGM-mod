@@ -47,11 +47,11 @@ ggm_search <- function(x, n = NULL,
                         prior_prob = prior_prob)
 
     if(isTRUE(progress)){
-      message(paste0("BGGM: Sampling Graphs"))
+      message(paste0("BGGMmod: Sampling Graphs"))
     }
 
     fit <- .Call('_BGGM_search',
-                 PACKAGE = 'BGGM',
+                 PACKAGE = 'BGGMmod',
                   S = S,
                   iter = iter,
                   old_bic = bic_old,
@@ -62,7 +62,7 @@ ggm_search <- function(x, n = NULL,
                   progress = progress)
 
     if(isTRUE(progress)){
-      message("BGGM: Finished")
+      message("BGGMmod: Finished")
     }
 
     # accepted
@@ -153,7 +153,7 @@ ggm_search <- function(x, n = NULL,
 
   #rm(.Random.seed, envir=.GlobalEnv)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "ggm_search")
 
   return( returned_object )
@@ -162,7 +162,7 @@ ggm_search <- function(x, n = NULL,
 
 print_ggm_search <- function(x, ...){
 
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
 
   if(x$acc == 0){

@@ -3,8 +3,8 @@
 #' @name explore
 #'
 #' @description Learn the conditional (in)dependence structure with the Bayes factor using the matrix-F
-#' prior distribution \insertCite{Mulder2018}{BGGM}. These methods were introduced in
-#' \insertCite{Williams2019_bf;textual}{BGGM}. The graph is selected with \code{\link{select.explore}} and
+#' prior distribution \insertCite{Mulder2018}{BGGMmod}. These methods were introduced in
+#' \insertCite{Williams2019_bf;textual}{BGGMmod}. The graph is selected with \code{\link{select.explore}} and
 #' then plotted with \code{\link{plot.select}}.
 #'
 #' @param Y  Matrix (or data frame) of dimensions \emph{n} (observations) by  \emph{p} (variables).
@@ -40,7 +40,7 @@
 #' \insertAllCited{}
 #'
 #' @return The returned object of class \code{explore} contains a lot of information that
-#'         is used for printing and plotting the results. For users of \strong{BGGM}, the following
+#'         is used for printing and plotting the results. For users of \strong{BGGMmod}, the following
 #'         are the useful objects:
 #'
 #' \itemize{
@@ -96,7 +96,7 @@
 #'
 #' \strong{Imputing Missing Values}:
 #'
-#' Missing values are imputed with the approach described in \insertCite{hoff2009first;textual}{BGGM}.
+#' Missing values are imputed with the approach described in \insertCite{hoff2009first;textual}{BGGMmod}.
 #' The basic idea is to impute the missing values with the respective posterior pedictive distribution,
 #' given the observed data, as the model is being estimated. Note that the default is \code{TRUE},
 #' but this ignored when there are no missing values. If set to \code{FALSE}, and there are missing
@@ -106,7 +106,7 @@
 #'
 #' \strong{Posterior Uncertainty}:
 #'
-#' A key feature of \bold{BGGM} is that there is a posterior distribution for each partial correlation.
+#' A key feature of \bold{BGGMmod} is that there is a posterior distribution for each partial correlation.
 #' This readily allows for visiualizing uncertainty in the estimates. This feature works
 #' with all data types and is accomplished by plotting the summary of the \code{explore} object
 #' (i.e., \code{plot(summary(fit))}). Note that in contrast to \code{estimate} (credible intervals),
@@ -116,8 +116,8 @@
 #' \strong{"Default" Prior}:
 #'
 #'  In Bayesian statistics, a default Bayes factor needs to have several properties. I refer
-#'  interested users to \insertCite{@section 2.2 in @dablander2020default;textual}{BGGM}. In
-#'  \insertCite{Williams2019_bf;textual}{BGGM}, some of these propteries were investigated including
+#'  interested users to \insertCite{@section 2.2 in @dablander2020default;textual}{BGGMmod}. In
+#'  \insertCite{Williams2019_bf;textual}{BGGMmod}, some of these propteries were investigated including
 #'  model selection consistency. That said, we would not consider this a "default" (or "automatic")
 #'  Bayes factor and thus we encourage users to perform sensitivity analyses by varying
 #'  the scale of the prior distribution.
@@ -125,11 +125,11 @@
 #'  Furthermore, it is important to note there is no "correct" prior and, also, there is no need
 #'  to entertain the possibility of a "true" model. Rather, the Bayes factor can be interpreted as
 #'  which hypothesis best (\strong{relative} to each other) predicts the observed data
-#'  \insertCite{@Section 3.2 in @Kass1995}{BGGM}.
+#'  \insertCite{@Section 3.2 in @Kass1995}{BGGMmod}.
 #'
 #' \strong{Interpretation of Conditional (In)dependence Models for Latent Data}:
 #'
-#' See \code{\link{BGGM-package}} for details about interpreting GGMs based on latent data
+#' See \code{\link{BGGMmod-package}} for details about interpreting GGMs based on latent data
 #' (i.e, all data types besides \code{"continuous"})
 #'
 #'
@@ -200,7 +200,7 @@ explore <- function(Y,
 
     if(isTRUE(progress)){
 
-      message(paste0("BGGM: Posterior Sampling ", ...))
+      message(paste0("BGGMmod: Posterior Sampling ", ...))
 
     }
 
@@ -250,7 +250,7 @@ explore <- function(Y,
         # posterior sample
         post_samp <- .Call(
           '_BGGM_Theta_continuous',
-          PACKAGE = 'BGGM',
+          PACKAGE = 'BGGMmod',
           Y = Y,
           iter = iter + 50,
           delta = delta,
@@ -508,13 +508,13 @@ explore <- function(Y,
 
     if(isTRUE(progress)){
 
-      message(paste0("BGGM: Prior Sampling ", ...))
+      message(paste0("BGGMmod: Prior Sampling ", ...))
 
     }
 
     # sample prior
     prior_samp <- .Call('_BGGM_sample_prior',
-                      PACKAGE = 'BGGM',
+                      PACKAGE = 'BGGMmod',
                       Y = Y_dummy,
                       iter = iter + 50,
                       delta = delta,
@@ -525,7 +525,7 @@ explore <- function(Y,
 
     if(isTRUE(progress)){
 
-      message("BGGM: Finished")
+      message("BGGMmod: Finished")
 
     }
 
@@ -560,7 +560,7 @@ explore <- function(Y,
 
   returned_object
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "explore",
                               "default")
   return(returned_object)
@@ -660,7 +660,7 @@ summary.explore <- function(object,
                           object = object)
 
 
-  class(returned_object) <- c("BGGM", "explore",
+  class(returned_object) <- c("BGGMmod", "explore",
                               "summary_explore",
                               "summary.explore")
   returned_object
@@ -669,7 +669,7 @@ summary.explore <- function(object,
 
 
 print_explore <- function(x,...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:",  x$type, "\n")
   cat("Analytic:", x$analytic, "\n")

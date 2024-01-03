@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graphical VAR • BGGM</title>
+<title>Graphical VAR • BGGMmod</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Graphical VAR">
-<meta property="og:description" content="BGGM">
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg">
+<meta property="og:description" content="BGGMmod">
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@wdonald_1985">
 <meta name="twitter:site" content="@wdonald_1985">
@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -62,7 +62,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -85,7 +85,7 @@
             
             <h4 class="date">6/04/2020</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGM/blob/master/vignettes/var_model.Rmd"><code>vignettes/var_model.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGMmod/blob/master/vignettes/var_model.Rmd"><code>vignettes/var_model.Rmd</code></a></small>
       <div class="hidden name"><code>var_model.Rmd</code></div>
 
     </div>
@@ -95,7 +95,7 @@
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
-<p>This vignette describes the implemention for a “graphical VAR” in <code>BGGM</code>. In <code>BGGM</code>, this is fitted as a multivariate regression. The key innovation is a novel prior distribution for the residual covariance matrix. There are a variety of much cooler names than a <em>mere</em> “multivariate regression”, including “VAR” (vector autoregressive models) and “TSCGM” (time series chain graphical model).</p>
+<p>This vignette describes the implemention for a “graphical VAR” in <code>BGGMmod</code>. In <code>BGGMmod</code>, this is fitted as a multivariate regression. The key innovation is a novel prior distribution for the residual covariance matrix. There are a variety of much cooler names than a <em>mere</em> “multivariate regression”, including “VAR” (vector autoregressive models) and “TSCGM” (time series chain graphical model).</p>
 <div id="r-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#r-package" class="anchor"></a>R package</h2>
@@ -105,8 +105,8 @@ if (!requireNamespace("remotes")) {
 }   
 
 # install from github
-remotes::install_github("donaldRwilliams/BGGM")
-library(BGGM)
+remotes::install_github("donaldRwilliams/BGGMmod")
+library(BGGMmod)
 
 # for comparsion
 library(vars)
@@ -120,7 +120,7 @@ library(cowplot)</code></pre>
 <div id="data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data" class="anchor"></a>Data</h2>
-<p>I use data from the ifit (fit bit) study. The data were gathered over 100 consecutive days on a variety of variables, including the PANAS scale (positive and negative affect) and the number of steps each day. <code>BGGM</code> includes a subset of variables for two individuals.</p>
+<p>I use data from the ifit (fit bit) study. The data were gathered over 100 consecutive days on a variety of variables, including the PANAS scale (positive and negative affect) and the number of steps each day. <code>BGGMmod</code> includes a subset of variables for two individuals.</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"># data
 Y &lt;- subset(ifit, id == 1)[,-1]
 
@@ -136,7 +136,7 @@ head(Y, n = 3)
 <div id="estimation" class="section level1">
 <h1 class="hasAnchor">
 <a href="#estimation" class="anchor"></a>Estimation</h1>
-<p>The methods in <strong>BGGM</strong> are organized around Bayesian “estimation” and “hypothesis testing”. This is to reach a broader audience, as former is more similar to classical methods (those more familiar to researchers).</p>
+<p>The methods in <strong>BGGMmod</strong> are organized around Bayesian “estimation” and “hypothesis testing”. This is to reach a broader audience, as former is more similar to classical methods (those more familiar to researchers).</p>
 <div id="fit-model" class="section level2">
 <h2 class="hasAnchor">
 <a href="#fit-model" class="anchor"></a>Fit Model</h2>
@@ -148,7 +148,7 @@ fit &lt;- var_estimate(Y, beta_sd = 1)</code></pre>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="co"># print </span>
 <span class="no">fit</span>
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Vector Autoregressive Model (VAR) </span>
 <span class="co">#&gt; --- </span>
@@ -182,7 +182,7 @@ fit &lt;- var_estimate(Y, beta_sd = 1)</code></pre>
 <span class="co">#&gt; steps.l1             -0.157         0.180  -0.211  0.155 -0.092    0.209  0.042</span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Date: Thu Jun 04 08:54:04 2020 </span></pre></body></html></div>
-<p>Note that the coefficients are comparable, given each variable has been standardized (e.g., the predictors and the outcome are standardized). <code>BGGM</code> does not compute the partial directed correlation (PDC) by default (as in <strong>graphicalVAR</strong>). This is because the standardized effects can readily be tested with the Bayes factor, both across and within each model, whereas this does not seem straightforward for the PDC (which requires a transformation).</p>
+<p>Note that the coefficients are comparable, given each variable has been standardized (e.g., the predictors and the outcome are standardized). <code>BGGMmod</code> does not compute the partial directed correlation (PDC) by default (as in <strong>graphicalVAR</strong>). This is because the standardized effects can readily be tested with the Bayes factor, both across and within each model, whereas this does not seem straightforward for the PDC (which requires a transformation).</p>
 <div id="compare-to-classical" class="section level3">
 <h3 class="hasAnchor">
 <a href="#compare-to-classical" class="anchor"></a>Compare to Classical</h3>
@@ -201,7 +201,7 @@ fit &lt;- var_estimate(Y, beta_sd = 1)</code></pre>
 <span class="co">#&gt; strong.l1             0.027         0.182   0.025  0.047  0.188   -0.073 -0.192</span>
 <span class="co">#&gt; stressed.l1          -0.021        -0.012  -0.033 -0.046 -0.077    0.152  0.133</span>
 <span class="co">#&gt; steps.l1             -0.157         0.183  -0.210  0.153 -0.093    0.207  0.041</span></pre></body></html></div>
-<p>Recall that the “estimation” methods are similar to, in this case, ordinary least squares. The graphical structure in <code>BGGM</code> is determined with credible intervals, which will be quite similar to using confidence intervals. Hence for those researchers unfamiliar with Bayesian methods the “estimation” methods are perhaps a nice place to start.</p>
+<p>Recall that the “estimation” methods are similar to, in this case, ordinary least squares. The graphical structure in <code>BGGMmod</code> is determined with credible intervals, which will be quite similar to using confidence intervals. Hence for those researchers unfamiliar with Bayesian methods the “estimation” methods are perhaps a nice place to start.</p>
 </div>
 </div>
 <div id="summarize-model" class="section level2">
@@ -214,7 +214,7 @@ fit &lt;- var_estimate(Y, beta_sd = 1)</code></pre>
   )
 
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Vector Autoregressive Model (VAR) </span>
 <span class="co">#&gt; --- </span>
@@ -268,7 +268,7 @@ fit &lt;- var_estimate(Y, beta_sd = 1)</code></pre>
 <p>The graphs are selected with</p>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="../reference/select.html">select</a></span>(<span class="no">fit</span>, <span class="kw">cred</span> <span class="kw">=</span> <span class="fl">0.95</span>)
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Vector Autoregressive Model (VAR) </span>
 <span class="co">#&gt; --- </span>
@@ -320,7 +320,7 @@ fit &lt;- var_estimate(Y, beta_sd = 1)</code></pre>
 <span class="co"># print</span>
 <span class="no">r2</span>
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Metric: Bayes R2</span>
 <span class="co">#&gt; Type: continuous </span>

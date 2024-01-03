@@ -4,13 +4,13 @@
 <!-- badges: start -->
 
 [![CRAN
-Version](http://www.r-pkg.org/badges/version/BGGM)](https://cran.r-project.org/package=BGGM)
-[![Downloads](https://cranlogs.r-pkg.org/badges/BGGM)](https://cran.r-project.org/package=BGGM)
+Version](http://www.r-pkg.org/badges/version/BGGMmod)](https://cran.r-project.org/package=BGGMmod)
+[![Downloads](https://cranlogs.r-pkg.org/badges/BGGMmod)](https://cran.r-project.org/package=BGGMmod)
 [![Build
-Status](https://travis-ci.org/donaldRwilliams/BGGM.svg?branch=master)](https://travis-ci.org/donaldRwilliams/BGGM)
+Status](https://travis-ci.org/donaldRwilliams/BGGMmod.svg?branch=master)](https://travis-ci.org/donaldRwilliams/BGGMmod)
 <!-- badges: end -->
 
-The `R` package **BGGM** provides tools for making Bayesian inference in
+The `R` package **BGGMmod** provides tools for making Bayesian inference in
 Gaussian graphical models (GGM, Williams and Mulder 2020). The methods
 are organized around two general approaches for Bayesian inference: (1)
 estimation and (2) hypothesis testing. The key distinction is that the
@@ -24,7 +24,7 @@ factor (Jeffreys 1961; Kass and Raftery 1995).
 To install the latest release version (`2.0.0`) from CRAN use
 
 ``` r
-install.packages("BGGM")    
+install.packages("BGGMmod")    
 ```
 
 The current developmental version can be installed with
@@ -33,22 +33,22 @@ The current developmental version can be installed with
 if (!requireNamespace("remotes")) { 
   install.packages("remotes")   
 }   
-remotes::install_github("donaldRwilliams/BGGM")
+remotes::install_github("donaldRwilliams/BGGMmod")
 ```
 
 ### <i class="fas fa-skull-crossbones"></i> Dealing with Errors
 
 There are automatic checks for
-[**BGGM**](https://travis-ci.org/github/donaldRwilliams/BGGM/branches).
-However, that only checks for Linux and **BGGM** is built on Windows.
+[**BGGMmod**](https://travis-ci.org/github/donaldRwilliams/BGGMmod/branches).
+However, that only checks for Linux and **BGGMmod** is built on Windows.
 The most common installation errors occur on OSX. An evolving guide to
 address these issues is provided in the [Troubleshoot
-Section](https://donaldrwilliams.github.io/BGGM/articles/installation.html).
+Section](https://donaldrwilliams.github.io/BGGMmod/articles/installation.html).
 
 ## <i class="fas fa-clipboard-list"></i> Overview
 
-The methods in **BGGM** build upon existing algorithms that are
-well-known in the literature. The central contribution of **BGGM** is to
+The methods in **BGGMmod** build upon existing algorithms that are
+well-known in the literature. The central contribution of **BGGMmod** is to
 extend those approaches:
 
 1.  Bayesian estimation with the novel matrix-F prior distribution
@@ -60,37 +60,37 @@ extend those approaches:
     (Williams and Mulder 2019)
     
       - [Exploratory hypothesis
-        testing](https://github.com/donaldRwilliams/BGGM#Exploratory)
+        testing](https://github.com/donaldRwilliams/BGGMmod#Exploratory)
     
       - [Confirmatory hypothesis
-        testing](https://github.com/donaldRwilliams/BGGM#confirmatory)
+        testing](https://github.com/donaldRwilliams/BGGMmod#confirmatory)
 
 3.  Comparing Gaussian graphical models (Williams 2018; Williams et al.
     2020)
     
       - [Partial correlation
-        differences](https://github.com/donaldRwilliams/BGGM#partial-correlation-differences)
+        differences](https://github.com/donaldRwilliams/BGGMmod#partial-correlation-differences)
     
       - [Posterior predictive
-        check](https://github.com/donaldRwilliams/BGGM#posterior-predictive-check)
+        check](https://github.com/donaldRwilliams/BGGMmod#posterior-predictive-check)
     
       - [Exploratory hypothesis
-        testing](https://github.com/donaldRwilliams/BGGM#exploratory-groups)
+        testing](https://github.com/donaldRwilliams/BGGMmod#exploratory-groups)
     
       - [Confirmatory hypothesis
-        testing](https://github.com/donaldRwilliams/BGGM#confirmatory-groups)
+        testing](https://github.com/donaldRwilliams/BGGMmod#confirmatory-groups)
 
 4.  Extending inference beyond the conditional (in)dependence structure
     (Williams 2018)
     
-      - [Predictability](https://github.com/donaldRwilliams/BGGM#predictability)
+      - [Predictability](https://github.com/donaldRwilliams/BGGMmod#predictability)
     
       - [Posterior uncertainty
-        intervals](https://github.com/donaldRwilliams/BGGM#posterior-uncertainty)
+        intervals](https://github.com/donaldRwilliams/BGGMmod#posterior-uncertainty)
         for the partial correlations
     
       - [Custom Network
-        Statistics](https://github.com/donaldRwilliams/BGGM#custom-network-statistics)
+        Statistics](https://github.com/donaldRwilliams/BGGMmod#custom-network-statistics)
 
 The computationally intensive tasks are written in `c++` via the `R`
 package **Rcpp** (Eddelbuettel et al. 2011) and the `c++` library
@@ -111,7 +111,7 @@ support for missing values (see `bggm_missing`).
     Lawrence et al. (2008) and Webb and Forster (2008) (to name a few).
 
   - **Ordinal**: The ordinal methods require sampling thresholds. There
-    are two approach included in **BGGM**. The customary approach
+    are two approach included in **BGGMmod**. The customary approach
     described in Albert and Chib (1993) (the default) and the ‘Cowles’
     algorithm described in Cowles (1996).
 
@@ -124,14 +124,14 @@ support for missing values (see `bggm_missing`).
 ## <i class="fas fa-folder-open"></i> Illustrative Examples
 
 There are several examples in the
-[Vignettes](https://donaldrwilliams.github.io/BGGM/articles/) section.
+[Vignettes](https://donaldrwilliams.github.io/BGGMmod/articles/) section.
 
 ## <i class="fas fa-play-circle"></i> Basic Usage
 
 It is common to have some combination of continuous and discrete (e.g.,
-ordinal, binary, etc.) variables. **BGGM** (as of version `2.0.0`) can
+ordinal, binary, etc.) variables. **BGGMmod** (as of version `2.0.0`) can
 readily be used for these kinds of data. In this example, a model is
-fitted for the `gss` data in **BGGM**.
+fitted for the `gss` data in **BGGMmod**.
 
 ### Visualize
 
@@ -140,7 +140,7 @@ shows the data are “mixed”.
 
 ``` r
 # dev version
-library(BGGM)
+library(BGGMmod)
 library(psych)
 
 # data
@@ -171,7 +171,7 @@ The estimated relations are summarized with
 ``` r
 summary(fit)
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Type: mixed 
 #> Analytic: FALSE 
@@ -367,7 +367,7 @@ Constraints.” *PsyArXiv*. <https://doi.org/10.31234/osf.io/ypxd8>.
 
 <div id="ref-williams2020bggm">
 
-———. 2020. “BGGM: Bayesian Gaussian Graphical Models in R.” *PsyArXiv*.
+———. 2020. “BGGMmod: Bayesian Gaussian Graphical Models in R.” *PsyArXiv*.
 
 </div>
 

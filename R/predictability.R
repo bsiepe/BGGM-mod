@@ -2,8 +2,8 @@
 #'
 #' @name predictability
 #'
-#' @description  Compute nodewise predictability or  Bayesian variance explained \insertCite{@R2 @gelman_r2_2019}{BGGM}.
-#'               In the context of GGMs, this method was described in \insertCite{Williams2019;textual}{BGGM}.
+#' @description  Compute nodewise predictability or  Bayesian variance explained \insertCite{@R2 @gelman_r2_2019}{BGGMmod}.
+#'               In the context of GGMs, this method was described in \insertCite{Williams2019;textual}{BGGMmod}.
 #'
 #'
 #' @param object object of class \code{estimate} or \code{explore}
@@ -40,7 +40,7 @@
 #'
 #' \strong{Mixed Data}:
 #'
-#' The mixed data approach is somewhat ad-hoc \insertCite{@see for example p. 277 in  @hoff2007extending;textual}{BGGM}. This
+#' The mixed data approach is somewhat ad-hoc \insertCite{@see for example p. 277 in  @hoff2007extending;textual}{BGGMmod}. This
 #' is becaue uncertainty in the ranks is not incorporated, which means that variance explained is computed from
 #' the 'empirical' \emph{CDF}.
 #'
@@ -293,7 +293,7 @@ predictability <- function(object,
                           data_type = object$type,
                           Y = Y)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "predictability",
                               "metric",
                               "R2",
@@ -368,7 +368,7 @@ summary.predictability <- function(object, cred = 0.95, ...){
                           data_type = object$data_type,
                           cred = cred)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "predictability",
                               "metric",
                               "estimate",
@@ -382,7 +382,7 @@ summary.predictability <- function(object, cred = 0.95, ...){
 
 
 print_summary_metric <- function(x, digits = 2,...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   if(x$metric == "bayes_R2"){
     cat("Metric:", "Bayes R2\n")

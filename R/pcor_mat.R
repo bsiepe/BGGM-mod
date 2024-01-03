@@ -6,7 +6,7 @@
 #' partial correlation differences for \code{\link{ggm_compare_estimate}} and
 #' \code{\link{ggm_compare_explore}} objects.
 #'
-#' @param object A model estimated with \strong{BGGM}. All classes are supported, assuming
+#' @param object A model estimated with \strong{BGGMmod}. All classes are supported, assuming
 #' there is matrix to be extracted.
 #'
 #' @param difference Logical. Should the difference be returned (defaults to \code{FALSE}) ? Note

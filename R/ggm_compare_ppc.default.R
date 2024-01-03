@@ -1,8 +1,8 @@
 #' @title GGM Compare: Posterior Predictive Check
 #'
 #' @description
-#' Compare GGMs with a posterior predicitve check \insertCite{gelman1996posterior}{BGGM}.
-#' This method was introduced in \insertCite{williams2020comparing;textual}{BGGM}. Currently,
+#' Compare GGMs with a posterior predicitve check \insertCite{gelman1996posterior}{BGGMmod}.
+#' This method was introduced in \insertCite{williams2020comparing;textual}{BGGMmod}. Currently,
 #' there is a \code{global} (the entire GGM) and a \code{nodewise} test. The default
 #' is to compare GGMs with respect to the posterior predictive distribution of Kullback
 #' Leibler divergence and the sum of squared errors. It is also possible to compare the
@@ -59,9 +59,9 @@
 #'
 #' For the \code{global} check, the sum of squared error is also provided.
 #' This is computed from the partial correlation matrices and it is analagous
-#' to the strength test in \insertCite{van2017comparing;textual}{BGGM}. The \code{nodewise}
+#' to the strength test in \insertCite{van2017comparing;textual}{BGGMmod}. The \code{nodewise}
 #' test compares the posterior predictive distribution for each node. This is based on the correspondence
-#' between the inverse covariance matrix and multiple regresssion \insertCite{kwan2014regression,Stephens1998}{BGGM}.
+#' between the inverse covariance matrix and multiple regresssion \insertCite{kwan2014regression,Stephens1998}{BGGMmod}.
 #'
 #' If the null model is \code{not} rejected, note that this does \code{not} provide evidence for equality!
 #' Further, if the null model is rejected, this means that the assumption of group equality is not tenable--the
@@ -69,14 +69,14 @@
 #'
 #' \strong{Alternative Methods}:
 #'
-#' There are several methods in \strong{BGGM} for comparing groups. See
+#' There are several methods in \strong{BGGMmod} for comparing groups. See
 #' \code{\link{ggm_compare_estimate}} (posterior differences for the
 #' partial correlations), \code{\link{ggm_compare_explore}} (exploratory hypothesis testing),
 #' and \code{\link{ggm_compare_confirm}} (confirmatory hypothesis testing).
 #'
 #'
 #' @return The returned object of class \code{ggm_compare_ppc} contains a lot of information that
-#'         is used for printing and plotting the results. For users of \strong{BGGM}, the following
+#'         is used for printing and plotting the results. For users of \strong{BGGMmod}, the following
 #'         are the useful objects:
 #'
 #' \code{test = "global"}
@@ -296,7 +296,7 @@ ggm_compare_ppc <- function(...,
 
       for (i in 1:nrow(info$pairwise)) {
 
-        message(paste0("BGGM: Predictive Check ", "(Contrast ", i ,")"))
+        message(paste0("BGGMmod: Predictive Check ", "(Contrast ", i ,")"))
 
         n1 <- info$dat_info$n[info$pairwise[i, 1]]
 
@@ -304,7 +304,7 @@ ggm_compare_ppc <- function(...,
 
         pp_check <- .Call(
           "_BGGM_ppc_helper_fast",
-          PACKAGE = "BGGM",
+          PACKAGE = "BGGMmod",
           Theta = post,
           n1 = n1,
           n2 = n2,
@@ -342,7 +342,7 @@ ggm_compare_ppc <- function(...,
 
       }
 
-      message("BGGM: Finished")
+      message("BGGMmod: Finished")
 
       # results jsd
       results_jsd <- do.call(cbind.data.frame, predictive_jsd)
@@ -383,7 +383,7 @@ ggm_compare_ppc <- function(...,
 
     for (i in 1:nrow(info$pairwise)) {
 
-      message(paste0("BGGM: Predictive Check ", "(Contrast ", i ,")"))
+      message(paste0("BGGMmod: Predictive Check ", "(Contrast ", i ,")"))
 
       n1 <- info$dat_info$n[info$pairwise[i, 1]]
 
@@ -391,7 +391,7 @@ ggm_compare_ppc <- function(...,
 
       pp_check <-  .Call(
           "_BGGM_ppc_helper_nodewise_fast",
-          PACKAGE = "BGGM",
+          PACKAGE = "BGGMmod",
           Theta = post,
           n1 = n1,
           n2 = n2,
@@ -402,7 +402,7 @@ ggm_compare_ppc <- function(...,
 
         }
 
-    message("BGGM: Finished")
+    message("BGGMmod: Finished")
 
     for (i in 1:nrow(info$pairwise)) {
 
@@ -539,7 +539,7 @@ ggm_compare_ppc <- function(...,
 
     }
 
-    class(returned_object) <-  c("BGGM",
+    class(returned_object) <-  c("BGGMmod",
                                  "estimate",
                                  "ggm_compare_ppc")
     return(returned_object)
@@ -551,7 +551,7 @@ ggm_compare_ppc <- function(...,
 print_ggm_compare_ppc <- function(x, ...){
 
 
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   if(x$test == "nodewise"){
     cat("Test: Nodewise Predictive Check \n")

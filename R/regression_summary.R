@@ -95,7 +95,7 @@ regression_summary <- function(object, cred = 0.95, ...){
                           resid_cor = cor_mean,
                           object = object)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "regression_summary")
   returned_object
 }
@@ -103,7 +103,7 @@ regression_summary <- function(object, cred = 0.95, ...){
 
 
 print_regression_summary <- function(x, ...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:",  x$object$type, "\n")
   cat("Formula:", paste(as.character(x$object$formula), collapse = " "), "\n")

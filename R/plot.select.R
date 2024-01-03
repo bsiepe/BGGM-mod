@@ -36,7 +36,7 @@
 #'
 #' @note
 #' A more extensive example of a custom plot is
-#' provided \href{https://donaldrwilliams.github.io/BGGM/articles/netplot.html}{here}
+#' provided \href{https://donaldrwilliams.github.io/BGGMmod/articles/netplot.html}{here}
 #'
 #' @examples
 #' \donttest{

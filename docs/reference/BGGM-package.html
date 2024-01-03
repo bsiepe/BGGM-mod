@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BGGM:  Bayesian Gaussian Graphical Models — BGGM-package • BGGM</title>
+<title>BGGMmod:  Bayesian Gaussian Graphical Models — BGGMmod-package • BGGMmod</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="BGGM:  Bayesian Gaussian Graphical Models — BGGM-package" />
-<meta property="og:description" content="The R package BGGM provides tools for making Bayesian inference in
+<meta property="og:title" content="BGGMmod:  Bayesian Gaussian Graphical Models — BGGMmod-package" />
+<meta property="og:description" content="The R package BGGMmod provides tools for making Bayesian inference in
 Gaussian graphical models (GGM). The methods are organized around two general approaches for
 Bayesian inference: (1) estimation (Williams 2018)
  and (2) hypothesis testing
@@ -55,8 +55,8 @@ Bayesian inference: (1) estimation (Williams 2018)
 . The key distinction is that the former focuses on either the
 posterior or posterior predictive distribution, whereas the latter focuses on model comparison
 with the Bayes factor.
-The methods in BGGM build upon existing algorithms that are well-known in the literature.
-The central contribution of BGGM is to extend those approaches:
+The methods in BGGMmod build upon existing algorithms that are well-known in the literature.
+The central contribution of BGGMmod is to extend those approaches:
 
 Bayesian estimation with the novel matrix-F prior distribution (Mulder and Pericchi 2018)
 .
@@ -103,7 +103,7 @@ Binary: The binary method builds directly upon in Talhouk et al. (2012)
  and
       Webb and Forster (2008)
  (to name a few).
-Ordinal: Ordinal data requires sampling thresholds. There are two approach included in BGGM: (1)
+Ordinal: Ordinal data requires sampling thresholds. There are two approach included in BGGMmod: (1)
 the customary approach described in in Albert and Chib (1993)
  (the default) and
 the 'Cowles' algorithm described in in Cowles (1996)
@@ -116,7 +116,7 @@ consisting entirely of ordinal data.
 
 
 Additional Features:
-The primary focus of BGGM is Gaussian graphical modeling (the inverse covariance matrix).
+The primary focus of BGGMmod is Gaussian graphical modeling (the inverse covariance matrix).
  The residue is a suite of useful methods not explicitly for GGMs:
 
 Bivariate correlations for binary (tetrachoric), ordinal (polychoric), mixed (rank based),
@@ -140,12 +140,12 @@ to page 2364, section 2.2, in  Webb and Forster (2008)
 .
 
 High Dimensional Data?
-BGGM was builit specificially for social-behvarioal scientists. Of course, the methods
+BGGMmod was builit specificially for social-behvarioal scientists. Of course, the methods
 can be used by all researchers. However, there is not support for high-dimensonal data
 (i.e., more variables than observations) that are common place in the genetics literature.
 These data are rare in the social-behavioral sciences. In the future, support for high-dimensional
-data may be added to BGGM." />
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg" />
+data may be added to BGGMmod." />
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@wdonald_1985" />
 <meta name="twitter:site" content="@wdonald_1985" />
@@ -179,7 +179,7 @@ data may be added to BGGM." />
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -201,7 +201,7 @@ data may be added to BGGM." />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -219,13 +219,13 @@ data may be added to BGGM." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>BGGM:  Bayesian Gaussian Graphical Models</h1>
-    <small class="dont-index">Source: <a href='https://github.com/donaldRwilliams/BGGM/blob/master/R/BGGM-package.R'><code>R/BGGM-package.R</code></a></small>
-    <div class="hidden name"><code>BGGM-package.Rd</code></div>
+    <h1>BGGMmod:  Bayesian Gaussian Graphical Models</h1>
+    <small class="dont-index">Source: <a href='https://github.com/donaldRwilliams/BGGMmod/blob/master/R/BGGMmod-package.R'><code>R/BGGMmod-package.R</code></a></small>
+    <div class="hidden name"><code>BGGMmod-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The <code>R</code> package <strong>BGGM</strong> provides tools for making Bayesian inference in
+    <p>The <code>R</code> package <strong>BGGMmod</strong> provides tools for making Bayesian inference in
 Gaussian graphical models (GGM). The methods are organized around two general approaches for
 Bayesian inference: (1) estimation (Williams 2018)
  and (2) hypothesis testing
@@ -233,8 +233,8 @@ Bayesian inference: (1) estimation (Williams 2018)
 . The key distinction is that the former focuses on either the
 posterior or posterior predictive distribution, whereas the latter focuses on model comparison
 with the Bayes factor.</p>
-<p>The methods in <strong>BGGM</strong> build upon existing algorithms that are well-known in the literature.
-The central contribution of <strong>BGGM</strong> is to extend those approaches:</p>
+<p>The methods in <strong>BGGMmod</strong> build upon existing algorithms that are well-known in the literature.
+The central contribution of <strong>BGGMmod</strong> is to extend those approaches:</p>
 <ol>
 <li><p>Bayesian estimation with the novel matrix-F prior distribution (Mulder and Pericchi 2018)
 .</p>
@@ -281,7 +281,7 @@ missing values <code><a href='bggm_missing.html'>bggm_missing</a></code>.</p>
  and
       Webb and Forster (2008)
  (to name a few).</p></li>
-<li><p>Ordinal: Ordinal data requires sampling thresholds. There are two approach included in <b>BGGM</b>: (1)
+<li><p>Ordinal: Ordinal data requires sampling thresholds. There are two approach included in <b>BGGMmod</b>: (1)
 the customary approach described in in Albert and Chib (1993)
  (the default) and
 the 'Cowles' algorithm described in in Cowles (1996)
@@ -294,7 +294,7 @@ consisting entirely of ordinal data.</p></li>
 </ul>
 
 <p><b>Additional Features</b>:</p>
-<p>The primary focus of <code>BGGM</code> is Gaussian graphical modeling (the inverse covariance matrix).
+<p>The primary focus of <code>BGGMmod</code> is Gaussian graphical modeling (the inverse covariance matrix).
  The residue is a suite of useful methods not explicitly for GGMs:</p>
 <p></p><ol>
 <li><p>Bivariate correlations for binary (tetrachoric), ordinal (polychoric), mixed (rank based),
@@ -318,11 +318,11 @@ to page 2364, section 2.2, in  Webb and Forster (2008)
 .</p>
 
 <p><strong>High Dimensional Data?</strong></p>
-<p><strong>BGGM</strong> was builit specificially for social-behvarioal scientists. Of course, the methods
+<p><strong>BGGMmod</strong> was builit specificially for social-behvarioal scientists. Of course, the methods
 can be used by all researchers. However, there is <em>not</em> support for high-dimensonal data
 (i.e., more variables than observations) that are common place in the genetics literature.
 These data are rare in the social-behavioral sciences. In the future, support for high-dimensional
-data may be added to <strong>BGGM</strong>.</p>
+data may be added to <strong>BGGMmod</strong>.</p>
     </div>
 
 

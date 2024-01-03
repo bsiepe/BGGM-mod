@@ -1,7 +1,7 @@
 #' @title Graph selection for \code{ggm_compare_explore} Objects
 #'
 #' @description Provides the selected graph (of differences) based on the Bayes factor
-#' \insertCite{williams2020comparing}{BGGM}.
+#' \insertCite{williams2020comparing}{BGGMmod}.
 #'
 #' @param object An object of class \code{ggm_compare_explore}.
 #'
@@ -11,7 +11,7 @@
 #'
 #' @return The returned object of class \code{select.ggm_compare_explore} contains
 #' a lot of information that is used for printing and plotting the results.
-#' For users of \strong{BGGM}, the following are the useful objects:
+#' For users of \strong{BGGMmod}, the following are the useful objects:
 #'
 #'
 #' \itemize{
@@ -113,7 +113,7 @@ select.ggm_compare_explore <- function(object,
                           pcor_mat_10 = pcor_mat,
                           object = object)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "explore",
                               "select",
                               "select.ggm_compare_bf")
@@ -126,7 +126,7 @@ print_select_ggm_compare_bf <- function(x,...){
 
   groups <- x$object$groups
   p <- x$p
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:",  x$object$type, "\n")
   # number of iterations

@@ -1,4 +1,4 @@
-Package: BGGM
+Package: BGGMmod
 Type: Package
 Title: Bayesian Gaussian Graphical Models
 Version: 2.1.0
@@ -49,4 +49,4 @@ LinkingTo: Rcpp,
            RcppDist, 
            RcppProgress
 RdMacros: Rdpack
-BugReports: https://github.com/donaldRwilliams/BGGM/issues
+BugReports: https://github.com/donaldRwilliams/BGGMmod/issues

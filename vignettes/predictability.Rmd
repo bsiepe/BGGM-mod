@@ -13,7 +13,7 @@ vignette: >
 ---
 
 # Background
-This vignette describes a new feature to **BGGM** (`2.0.0`) that allows for 
+This vignette describes a new feature to **BGGMmod** (`2.0.0`) that allows for 
 computing network predictability for binary and ordinal data. Currently 
 the available option is Bayesian $R^2$ [@gelman_r2_2019].
 
@@ -26,12 +26,12 @@ if (!requireNamespace("remotes")) {
 }   
 
 # install from github
-remotes::install_github("donaldRwilliams/BGGM")
-library(BGGM)
+remotes::install_github("donaldRwilliams/BGGMmod")
+library(BGGMmod)
 ```
 
 # Binary
-The first example looks at Binary data, consisting of 1190 observations and 6 variables. The data are called `women_math` and the variable descriptions are provided in **BGGM**.
+The first example looks at Binary data, consisting of 1190 observations and 6 variables. The data are called `women_math` and the variable descriptions are provided in **BGGMmod**.
 
 The model is estimated with
 ```{r, eval=FALSE}
@@ -49,7 +49,7 @@ r2 <- predictability(fit)
 # print
 r2
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Metric: Bayes R2
 #> Type: binary 
@@ -88,7 +88,7 @@ plot(r2,
 ![](../man/figures/binary_r2_ridge.png)
 
 # Ordinal
-In the following, the `ptsd` data is used (5-level Likert). The variable descriptions are provided in **BGGM**. This is based on the polychoric partial correlations, with $R^2$ computed from the corresponding correlations (due to the correspondence between the correlation matrix and multiple regression).
+In the following, the `ptsd` data is used (5-level Likert). The variable descriptions are provided in **BGGMmod**. This is based on the polychoric partial correlations, with $R^2$ computed from the corresponding correlations (due to the correspondence between the correlation matrix and multiple regression).
 
 ```{r, eval=FALSE}
 Y <- ptsd
@@ -106,7 +106,7 @@ r2 <- predictability(fit)
 # print 
 r2 
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Metric: Bayes R2
 #> Type: ordinal 
@@ -147,7 +147,7 @@ plot(r2)
 Note that the plot object is a `ggplot` which allows for further customization (e.g,. adding the variable names, a title, etc.).
 
 # Continuous
-It is quite common to compute predictability assuming that the data are Gaussian. In the context of Bayesian GGMs, this was introduced in [@Williams2019]. This can also be implemented in **BGGM**.
+It is quite common to compute predictability assuming that the data are Gaussian. In the context of Bayesian GGMs, this was introduced in [@Williams2019]. This can also be implemented in **BGGMmod**.
 
 ```{r, eval=FALSE}
 # fit model

@@ -1,10 +1,10 @@
 home:
-  title: BGGM
+  title: BGGMmod
   links:
-  - text: Ask a question about BGGM
+  - text: Ask a question about BGGMmod
     href: https://groups.google.com/forum/#!forum/bggm-users
 
-url: https://donaldrwilliams.github.io/BGGM/
+url: https://donaldrwilliams.github.io/BGGMmod/
 template:
   params:
     bootswatch: flatly
@@ -15,7 +15,7 @@ template:
       creator: "@wdonald_1985"
       card: summary
 navbar:
-  title: "BGGM"
+  title: "BGGMmod"
   left:
     - text: "Vignettes"
       href: articles/index.html
@@ -30,7 +30,7 @@ navbar:
 articles:
   - title: "Getting Started"
     desc: >
-      These vignettes provide an introduction to the various methods in **BGGM**.
+      These vignettes provide an introduction to the various methods in **BGGMmod**.
     contents:
       - test_sum
       - netplot

@@ -43,6 +43,6 @@ This was solved by updating both R and R-studio. More information can be found [
 If that does not work, then perhaps `Xcode` is missing. This can be installed at the "Mac App Store".
 
 ## GitHub Issues
-The following are links to issues on github for troubleshooting installation of **BGGM** on OSX. 
+The following are links to issues on github for troubleshooting installation of **BGGMmod** on OSX. 
 
-* [https://github.com/donaldRwilliams/BGGM/issues/26](https://github.com/donaldRwilliams/BGGM/issues/26)(closed)
+* [https://github.com/donaldRwilliams/BGGMmod/issues/26](https://github.com/donaldRwilliams/BGGMmod/issues/26)(closed)

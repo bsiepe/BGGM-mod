@@ -15,7 +15,7 @@
 #' @return An object of class \code{estimate} or \code{explore}.
 #' @export
 #'
-#' @note Currently, \strong{BGGM} is compatible with the package \code{\link[mice]{mice}} for handling
+#' @note Currently, \strong{BGGMmod} is compatible with the package \code{\link[mice]{mice}} for handling
 #'       the missing data. This is accomplished by fitting a model for each imputed dataset
 #'       (i.e., more than one to account for uncertainty in the imputation step) and then pooling
 #'       the estimates.

@@ -41,7 +41,7 @@
 #'  as data points!
 #'
 #'  The option \code{mixed_type} allows the user to determine  which variable should be treated as ranks
-#'  and the "emprical" distribution is used otherwise \insertCite{hoff2007extending}{BGGM}. This is
+#'  and the "emprical" distribution is used otherwise \insertCite{hoff2007extending}{BGGMmod}. This is
 #'  accomplished by specifying an indicator vector of length \emph{p}. A one indicates to use the ranks,
 #'  whereas a zero indicates to "ignore" that variable. By default all integer variables are treated as ranks.
 #'

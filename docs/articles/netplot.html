@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Network Plots • BGGM</title>
+<title>Network Plots • BGGMmod</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Network Plots">
-<meta property="og:description" content="BGGM">
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg">
+<meta property="og:description" content="BGGMmod">
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@wdonald_1985">
 <meta name="twitter:site" content="@wdonald_1985">
@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -62,7 +62,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -85,7 +85,7 @@
             
             <h4 class="date">5/20/2020</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGM/blob/master/vignettes/netplot.Rmd"><code>vignettes/netplot.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGMmod/blob/master/vignettes/netplot.Rmd"><code>vignettes/netplot.Rmd</code></a></small>
       <div class="hidden name"><code>netplot.Rmd</code></div>
 
     </div>
@@ -105,8 +105,8 @@
 }
 
 <span class="co"># install from github</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGM"</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGM</span>)
+<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGMmod"</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGMmod</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">cowplot</span>)</pre></body></html></div>
 </div>
 </div>
@@ -170,7 +170,7 @@
 <div id="layout" class="section level4">
 <h4 class="hasAnchor">
 <a href="#layout" class="anchor"></a>Layout</h4>
-<p>It is also possible to change the layout. This is done with the <strong>sna</strong> package, which is linked in the documentation for <code>plot.select</code> in <strong>BGGM</strong>. Here is an example using <code>layout = "random"</code></p>
+<p>It is also possible to change the layout. This is done with the <strong>sna</strong> package, which is linked in the documentation for <code>plot.select</code> in <strong>BGGMmod</strong>. Here is an example using <code>layout = "random"</code></p>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">E</span>,
      <span class="co"># enlarge edges</span>
      <span class="kw">edge_magnify</span> <span class="kw">=</span> <span class="fl">5</span>,
@@ -196,7 +196,7 @@
 <div id="bayesian-hypothesis-testing" class="section level1">
 <h1 class="hasAnchor">
 <a href="#bayesian-hypothesis-testing" class="anchor"></a>Bayesian Hypothesis Testing</h1>
-<p>The Bayesian hypothesis testing methods offer several advantages, for example, that evidence for the null hypothesis of conditional independence is formally evaluated. As a result, the <code>explore</code> method in <strong>BGGM</strong> provides plots for both the conditional dependence and independence structure, in addition to a plot for which the evidence was ambiguous.</p>
+<p>The Bayesian hypothesis testing methods offer several advantages, for example, that evidence for the null hypothesis of conditional independence is formally evaluated. As a result, the <code>explore</code> method in <strong>BGGMmod</strong> provides plots for both the conditional dependence and independence structure, in addition to a plot for which the evidence was ambiguous.</p>
 <p>To highlight this advantage, <code>ptsd</code> data is used that has a relatively small sample size.</p>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="co"># fit model</span>
 <span class="no">fit</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/explore.html">explore</a></span>(<span class="no">Y</span>)
@@ -226,7 +226,7 @@
 <div id="note" class="section level1">
 <h1 class="hasAnchor">
 <a href="#note" class="anchor"></a>Note</h1>
-<p><strong>BGGM</strong> provides a publication ready plot, but it is also limited compared to <strong>qgraph</strong> <span class="citation">(Epskamp et al. 2012)</span>. The one advantage of <strong>BGGM</strong> is that all plots are <code>ggplots</code> which then allows for combining them rather easily. An example is included in another vignette that shows how to combine several plots made with various methods in <strong>BGGM</strong></p>
+<p><strong>BGGMmod</strong> provides a publication ready plot, but it is also limited compared to <strong>qgraph</strong> <span class="citation">(Epskamp et al. 2012)</span>. The one advantage of <strong>BGGMmod</strong> is that all plots are <code>ggplots</code> which then allows for combining them rather easily. An example is included in another vignette that shows how to combine several plots made with various methods in <strong>BGGMmod</strong></p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">

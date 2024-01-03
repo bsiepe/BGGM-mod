@@ -41,7 +41,7 @@
 #' # assortment
 #' library(assortnet)
 #'
-#' Y <- BGGM::bfi[,1:10]
+#' Y <- BGGMmod::bfi[,1:10]
 #' membership <- c(rep("a", 5), rep("c", 5))
 #'
 #' # fit model
@@ -174,7 +174,7 @@ roll_your_own <- function(object,
 
   returned_object <- list(results = results, iter = iter)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "roll_your_own")
 
   return(returned_object)
@@ -182,7 +182,7 @@ roll_your_own <- function(object,
 
 
 print_roll_your_own <- function(x, cred = 0.95, ...) {
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Network Stats: Roll Your Own\n")
   cat("Posterior Samples:", x$iter, "\n")
@@ -248,7 +248,7 @@ print_roll_your_own <- function(x, cred = 0.95, ...) {
 #' # assortment
 #' library(assortnet)
 #'
-#' Y <- BGGM::bfi[,1:10]
+#' Y <- BGGMmod::bfi[,1:10]
 #' membership <- c(rep("a", 5), rep("c", 5))
 #'
 #' # fit model

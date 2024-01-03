@@ -11,7 +11,7 @@
 #'
 #' @param method Character string. Which method should be used ? Defaults to
 #' the "direct sampler" (i.e., \code{method = "direct"}) described in
-#' \insertCite{@page 122, section 2.4,  @lenkoski2013direct;textual}{BGGM}. The other
+#' \insertCite{@page 122, section 2.4,  @lenkoski2013direct;textual}{BGGMmod}. The other
 #' option is a Metropolis-Hastings algorithm (\code{MH}).
 #' See details.
 #'
@@ -85,7 +85,7 @@ constrained_posterior <- function(object,
 
   if(progress){
 
-    message(paste0("BGGM: Constrained Posterior"))
+    message(paste0("BGGMmod: Constrained Posterior"))
 
     }
 
@@ -134,7 +134,7 @@ constrained_posterior <- function(object,
     iter_comb <- iter * 20 + 500
 
     mh_object <- .Call("_BGGM_fast_g_matrix_F",
-                         PACKAGE = "BGGM",
+                         PACKAGE = "BGGMmod",
                          Y = Y,
                          adj = adj,
                          mu_samples = samps1$mean_post,
@@ -152,7 +152,7 @@ constrained_posterior <- function(object,
 
   if(isTRUE(progress)){
 
-    message("BGGM: Finished")
+    message("BGGMmod: Finished")
 
   }
 
@@ -177,7 +177,7 @@ constrained_posterior <- function(object,
     mh_object = mh_object
   )
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "constrained")
 
   return(returned_object)
@@ -185,7 +185,7 @@ constrained_posterior <- function(object,
 }
 
 print_constrained <- function(x, ...){
-  cat("BGGM: Bayesian Gaussian Graphical Models\n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models\n")
   cat("Constrained posterior\n")
   cat("---\n")
   cat("Estimates: \n\n")

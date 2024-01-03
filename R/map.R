@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' Y <- BGGM::bfi[, 1:5]
+#' Y <- BGGMmod::bfi[, 1:5]
 #'
 #' # map
 #' map <- map(Y)
@@ -34,7 +34,7 @@ map <- function(Y){
                           betas = betas,
                           dat = Y)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "estimate",
                               "map")
 

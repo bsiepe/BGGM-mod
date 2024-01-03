@@ -73,7 +73,7 @@ precision <- function(object,
   returned_object <- list(precision_mean = precision_mean,
                           precision = precision)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "precision")
 
   return(returned_object)
@@ -86,7 +86,7 @@ print_precision <- function(x,...) {
   p <- ncol(mat)
   colnames(mat) <- 1:p
   row.names(mat) <- 1:p
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Estimate:\n\n")
   print(round(mat, 3))

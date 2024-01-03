@@ -4,7 +4,7 @@
 #' \code{\link{estimate}}, \code{\link{explore}}, \code{\link{ggm_compare_estimate}},
 #' and \code{\link{ggm_compare_explore}} objects.
 #'
-#' @param object A model estimated with \strong{BGGM}. All classes are supported, assuming
+#' @param object A model estimated with \strong{BGGMmod}. All classes are supported, assuming
 #' there is matrix to be extracted.
 #'
 #' @param ... Currently ignored.

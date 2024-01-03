@@ -192,7 +192,7 @@ pcor_sum <- function(..., iter = NULL, relations){
 
 
   returned_object <-  partial_sum_i
-  class(returned_object) <- c("BGGM", "pcor_sum")
+  class(returned_object) <- c("BGGMmod", "pcor_sum")
   return(returned_object)
 }
 
@@ -200,7 +200,7 @@ pcor_sum <- function(..., iter = NULL, relations){
 print_pcor_sum <- function(x, cred = 0.95, row_names = TRUE){
 
 
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Network Stats: Posterior Sum\n")
   cat("Posterior Samples:", x$iter, "\n")

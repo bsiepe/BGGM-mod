@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Controlling for Variables • BGGM</title>
+<title>Controlling for Variables • BGGMmod</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Controlling for Variables">
-<meta property="og:description" content="BGGM">
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg">
+<meta property="og:description" content="BGGMmod">
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@wdonald_1985">
 <meta name="twitter:site" content="@wdonald_1985">
@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -62,7 +62,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -85,7 +85,7 @@
             
             <h4 class="date">5/25/2020</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGM/blob/master/vignettes/control.Rmd"><code>vignettes/control.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGMmod/blob/master/vignettes/control.Rmd"><code>vignettes/control.Rmd</code></a></small>
       <div class="hidden name"><code>control.Rmd</code></div>
 
     </div>
@@ -95,16 +95,16 @@
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
-<p>This vignette describes how to control for variables. This is a new feature to <strong>BGGM</strong> (version <code>2.0.0</code>).</p>
+<p>This vignette describes how to control for variables. This is a new feature to <strong>BGGMmod</strong> (version <code>2.0.0</code>).</p>
 </div>
 <div id="example-1-multivariate-regression" class="section level1">
 <h1 class="hasAnchor">
 <a href="#example-1-multivariate-regression" class="anchor"></a>Example 1: Multivariate Regression</h1>
-<p>When controlling for variables, a multivariate regression is fitted in <strong>BGGM</strong>. In fact, a GGM can be understood as a multivariate regression with intercepts only models for the predictors.</p>
+<p>When controlling for variables, a multivariate regression is fitted in <strong>BGGMmod</strong>. In fact, a GGM can be understood as a multivariate regression with intercepts only models for the predictors.</p>
 <div id="notes-about-implementation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#notes-about-implementation" class="anchor"></a>Notes about Implementation</h2>
-<p><strong>BGGM</strong> does not use the typical approach for multivariate regression in <code>R</code>. This avoids having to write out each outcome variable, of which there are typically many in a GGM. In <strong>BGGM</strong>, it is assumed that the data matrix includes only the variables to be included in the GGM and the control variables.</p>
+<p><strong>BGGMmod</strong> does not use the typical approach for multivariate regression in <code>R</code>. This avoids having to write out each outcome variable, of which there are typically many in a GGM. In <strong>BGGMmod</strong>, it is assumed that the data matrix includes only the variables to be included in the GGM and the control variables.</p>
 <div id="correct" class="section level3">
 <h3 class="hasAnchor">
 <a href="#correct" class="anchor"></a>Correct</h3>
@@ -166,7 +166,7 @@ summ_coef$reg_summary[[1]]
 <p>Note that all the other functions work just the same. For example, the relations controlling for education are summarized with</p>
 <pre><code>summary(fit)
 
-#&gt; BGGM: Bayesian Gaussian Graphical Models 
+#&gt; BGGMmod: Bayesian Gaussian Graphical Models 
 #&gt; --- 
 #&gt; Type: continuous 
 #&gt; Analytic: FALSE 
@@ -207,7 +207,7 @@ head(Y)
 #&gt; 61621  4  4  6  5  5      2        NA
 #&gt; 61622  2  3  3  4  5      1        NA
 #&gt; 61623  6  6  5  6  5      2         3</code></pre>
-<p>In this case, with <code><a href="../reference/estimate.html">estimate(Y, formula = as.factor(education))</a></code>, the GGM would also include <code>gender</code> (six variables instead of the desired 5). This is because all variables not included in <code>formula</code> are included in the GGM. This was adopted in <strong>BGGM</strong> to save the user from having to write out each outcome.</p>
+<p>In this case, with <code><a href="../reference/estimate.html">estimate(Y, formula = as.factor(education))</a></code>, the GGM would also include <code>gender</code> (six variables instead of the desired 5). This is because all variables not included in <code>formula</code> are included in the GGM. This was adopted in <strong>BGGMmod</strong> to save the user from having to write out each outcome.</p>
 <p>This differs from <code>lm</code>, where each outcome needs to be written out, for example <code>cbind(A1, A2, A3, A4, A4) ~ as.factor(education)</code>. This is quite cumbersome for a model that includes many nodes.</p>
 </div>
 </div>
@@ -215,7 +215,7 @@ head(Y)
 <div id="example-2-multivariate-probit" class="section level1">
 <h1 class="hasAnchor">
 <a href="#example-2-multivariate-probit" class="anchor"></a>Example 2: Multivariate Probit</h1>
-<p>The above data is ordinal. In this case, it is possible to fit a multivariate probit model. This is also the approach for binary data in <strong>BGGM</strong>. This is implemented with</p>
+<p>The above data is ordinal. In this case, it is possible to fit a multivariate probit model. This is also the approach for binary data in <strong>BGGMmod</strong>. This is implemented with</p>
 <pre><code>fit &lt;- estimate(Y, formula = ~ as.factor(education), 
                 type = "ordinal", iter = 1000)</code></pre>
 <p>Note that the multivariate probit models can also be summarized with <code>regression_summary</code>.</p>
@@ -237,7 +237,7 @@ fit &lt;- estimate(Y, type = "mixed", iter = 1000)
 # summary
 summary(fit)
 
-#&gt; BGGM: Bayesian Gaussian Graphical Models 
+#&gt; BGGMmod: Bayesian Gaussian Graphical Models 
 #&gt; --- 
 #&gt; Type: mixed 
 #&gt; Analytic: FALSE 
@@ -280,7 +280,7 @@ summary(fit)
 <div id="note" class="section level1">
 <h1 class="hasAnchor">
 <a href="#note" class="anchor"></a>Note</h1>
-<p>It is possible to control for variable with all methods in <strong>BGGM</strong>, including when comparing groups, Bayesian hypothesis testing, etc.</p>
+<p>It is possible to control for variable with all methods in <strong>BGGMmod</strong>, including when comparing groups, Bayesian hypothesis testing, etc.</p>
 </div>
   </div>
 

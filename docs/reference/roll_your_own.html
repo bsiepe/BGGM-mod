@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Compute Custom Network Statistics — roll_your_own • BGGM</title>
+<title>Compute Custom Network Statistics — roll_your_own • BGGMmod</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -50,7 +50,7 @@
 <meta property="og:description" content="This function allows for computing custom network statistics for
 weighted adjacency matrices (partial correlations). The statistics are computed for
 each of the sampled matrices, resulting in a distribution." />
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg" />
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@wdonald_1985" />
 <meta name="twitter:site" content="@wdonald_1985" />
@@ -84,7 +84,7 @@ each of the sampled matrices, resulting in a distribution." />
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -106,7 +106,7 @@ each of the sampled matrices, resulting in a distribution." />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -125,7 +125,7 @@ each of the sampled matrices, resulting in a distribution." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Compute Custom Network Statistics</h1>
-    <small class="dont-index">Source: <a href='https://github.com/donaldRwilliams/BGGM/blob/master/R/roll_your_own.R'><code>R/roll_your_own.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/donaldRwilliams/BGGMmod/blob/master/R/roll_your_own.R'><code>R/roll_your_own.R</code></a></small>
     <div class="hidden name"><code>roll_your_own.Rd</code></div>
     </div>
 
@@ -201,7 +201,7 @@ partial correlation matrices by the adjacency matrix.</p>
 <span class='co'># assortment</span>
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>assortnet</span>)
 
-<span class='no'>Y</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>BGGM</span><span class='kw ns'>::</span><span class='no'><a href='bfi.html'>bfi</a></span>[,<span class='fl'>1</span>:<span class='fl'>10</span>]
+<span class='no'>Y</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>BGGMmod</span><span class='kw ns'>::</span><span class='no'><a href='bfi.html'>bfi</a></span>[,<span class='fl'>1</span>:<span class='fl'>10</span>]
 <span class='no'>membership</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='st'>"a"</span>, <span class='fl'>5</span>), <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='st'>"c"</span>, <span class='fl'>5</span>))
 
 <span class='co'># fit model</span>
@@ -225,7 +225,7 @@ partial correlation matrices by the adjacency matrix.</p>
                           <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># print</span>
-<span class='no'>net_stat</span></div><div class='output co'>#&gt; BGGM: Bayesian Gaussian Graphical Models 
+<span class='no'>net_stat</span></div><div class='output co'>#&gt; BGGMmod: Bayesian Gaussian Graphical Models 
 #&gt; --- 
 #&gt; Network Stats: Roll Your Own
 #&gt; Posterior Samples: 250 
@@ -250,7 +250,7 @@ partial correlation matrices by the adjacency matrix.</p>
 <span class='no'>Y</span> <span class='kw'>&lt;-</span> <span class='no'>depression</span>
 
 <span class='co'># fit model</span>
-<span class='no'>fit</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='estimate.html'>estimate</a></span>(<span class='kw'>Y</span> <span class='kw'>=</span> <span class='no'>Y</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>250</span>)</div><div class='output co'>#&gt; <span class='message'>BGGM: Posterior Sampling </span></div><div class='output co'>#&gt; <span class='message'>BGGM: Finished</span></div><div class='input'>
+<span class='no'>fit</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='estimate.html'>estimate</a></span>(<span class='kw'>Y</span> <span class='kw'>=</span> <span class='no'>Y</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>250</span>)</div><div class='output co'>#&gt; <span class='message'>BGGMmod: Posterior Sampling </span></div><div class='output co'>#&gt; <span class='message'>BGGMmod: Finished</span></div><div class='input'>
 <span class='co'># define function</span>
 <span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>,<span class='no'>...</span>){
      <span class='fu'><a href='https://rdrr.io/pkg/networktools/man/expectedInf.html'>expectedInf</a></span>(<span class='no'>x</span>,<span class='no'>...</span>)$<span class='no'>step1</span>
@@ -272,7 +272,7 @@ partial correlation matrices by the adjacency matrix.</p>
 
 <span class='no'>fit</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='estimate.html'>estimate</a></span>(<span class='no'>Y</span>,
                 <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"mixed"</span>,
-                <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>250</span>)</div><div class='output co'>#&gt; <span class='message'>BGGM: Posterior Sampling </span></div><div class='output co'>#&gt; <span class='message'>BGGM: Finished</span></div><div class='input'>
+                <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>250</span>)</div><div class='output co'>#&gt; <span class='message'>BGGMmod: Posterior Sampling </span></div><div class='output co'>#&gt; <span class='message'>BGGMmod: Finished</span></div><div class='input'>
 <span class='co'># clusters</span>
 <span class='no'>communities</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/substr.html'>substring</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>Y</span>), <span class='fl'>1</span>, <span class='fl'>1</span>)
 

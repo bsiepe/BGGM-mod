@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Three Ways to Test the Same Hypothesis • BGGM</title>
+<title>Three Ways to Test the Same Hypothesis • BGGMmod</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Three Ways to Test the Same Hypothesis">
-<meta property="og:description" content="BGGM">
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg">
+<meta property="og:description" content="BGGMmod">
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@wdonald_1985">
 <meta name="twitter:site" content="@wdonald_1985">
@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -62,7 +62,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -85,7 +85,7 @@
             
             <h4 class="date">5/23/2020</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGM/blob/master/vignettes/hyp_3_ways.Rmd"><code>vignettes/hyp_3_ways.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGMmod/blob/master/vignettes/hyp_3_ways.Rmd"><code>vignettes/hyp_3_ways.Rmd</code></a></small>
       <div class="hidden name"><code>hyp_3_ways.Rmd</code></div>
 
     </div>
@@ -95,7 +95,7 @@
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
-<p>On a Facebook methods group, there was a question about testing hypotheses in networks. In the comments, it was suggested that <strong>BGGM</strong> could be used to test the hypothesis. And it turns out that <strong>BGGM</strong> really shines for testing expectations <span class="citation">(see for example Rodriguez et al. 2020)</span>.</p>
+<p>On a Facebook methods group, there was a question about testing hypotheses in networks. In the comments, it was suggested that <strong>BGGMmod</strong> could be used to test the hypothesis. And it turns out that <strong>BGGMmod</strong> really shines for testing expectations <span class="citation">(see for example Rodriguez et al. 2020)</span>.</p>
 <p>In this vignette, I demonstrate three ways to go about testing the same hypothesis, which is essentially testing for a difference in the <strong>sum</strong> of partial correlations between groups.</p>
 <div id="r-package" class="section level3">
 <h3 class="hasAnchor">
@@ -106,8 +106,8 @@
 }
 
 <span class="co"># install from github</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGM"</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGM</span>)</pre></body></html></div>
+<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGMmod"</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGMmod</span>)</pre></body></html></div>
 </div>
 <div id="data" class="section level3">
 <h3 class="hasAnchor">
@@ -126,7 +126,7 @@ Y_females &lt;- subset(Y, gender == 2, select = -c(education, gender))[,1:5]</co
 <div id="approach-1-posterior-difference" class="section level1">
 <h1 class="hasAnchor">
 <a href="#approach-1-posterior-difference" class="anchor"></a>Approach 1: Posterior Difference</h1>
-<p>The first approach is rather straightforward, with the caveat that the method needs to be implemented by the user. Note that I could certainly implement this in <strong>BGGM</strong>, assuming there is enough interest. Please make a feature request <a href="https://github.com/donaldRwilliams/BGGM/issues">here</a>.</p>
+<p>The first approach is rather straightforward, with the caveat that the method needs to be implemented by the user. Note that I could certainly implement this in <strong>BGGMmod</strong>, assuming there is enough interest. Please make a feature request <a href="https://github.com/donaldRwilliams/BGGMmod/issues">here</a>.</p>
 <div id="hypothesis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#hypothesis" class="anchor"></a>Hypothesis</h2>
@@ -136,7 +136,7 @@ Y_females &lt;- subset(Y, gender == 2, select = -c(education, gender))[,1:5]</co
 \mathcal{H}_0: (\rho^{male}_{A1--A2}\; + \; \rho^{male}_{A1--A3}) = (\rho^{female}_{A1--A2}\; + \; \rho^{female}_{A1--A3}) \\
 \mathcal{H}_1: (\rho^{male}_{A1--A2}\; + \; \rho^{male}_{A1--A3}) &gt; (\rho^{female}_{A1--A2}\; + \; \rho^{female}_{A1--A3})
 \end{align}
-\]</span> Note that the hypothesis is related to the sum of relations, which is readily tested in <strong>BGGM</strong>.</p>
+\]</span> Note that the hypothesis is related to the sum of relations, which is readily tested in <strong>BGGMmod</strong>.</p>
 </div>
 <div id="fit-models" class="section level2">
 <h2 class="hasAnchor">
@@ -208,7 +208,7 @@ Y_females &lt;- subset(Y, gender == 2, select = -c(education, gender))[,1:5]</co
 \mathcal{H}_0: (\rho^{male^{yrep}}_{A1--A2}\; + \; \rho^{male^{yrep}}_{A1--A3}) = (\rho^{female^{yrep}}_{A1--A2}\; + \; \rho^{female^{yrep}}_{A1--A3}) \\
 \mathcal{H}_1: (\rho^{male^{yrep}}_{A1--A2}\; + \; \rho^{male^{yrep}}_{A1--A3}) &gt; (\rho^{female^{yrep}}_{A1--A2}\; + \; \rho^{female^{yrep}}_{A1--A3})
 \end{align}
-\]</span> where the only difference is <span class="math inline">\(yrep\)</span>. See more details <a href="https://donaldrwilliams.github.io/BGGM/articles/ppc_custom.html">here</a>.</p>
+\]</span> where the only difference is <span class="math inline">\(yrep\)</span>. See more details <a href="https://donaldrwilliams.github.io/BGGMmod/articles/ppc_custom.html">here</a>.</p>
 <div id="define-function" class="section level2">
 <h2 class="hasAnchor">
 <a href="#define-function" class="anchor"></a>Define Function</h2>
@@ -241,7 +241,7 @@ Y_females &lt;- subset(Y, gender == 2, select = -c(education, gender))[,1:5]</co
   <span class="no">sum1</span> - <span class="no">sum2</span>
 
 }</pre></body></html></div>
-<p>Note that the function takes two data matrices and then returns a single value. Also, the default in <strong>BGGM</strong> does not require a custom function (only needs the data from each group).</p>
+<p>Note that the function takes two data matrices and then returns a single value. Also, the default in <strong>BGGMmod</strong> does not require a custom function (only needs the data from each group).</p>
 </div>
 <div id="predictive-check" class="section level2">
 <h2 class="hasAnchor">
@@ -259,7 +259,7 @@ Y_females &lt;- subset(Y, gender == 2, select = -c(education, gender))[,1:5]</co
 <span class="co"># print</span>
 <span class="no">ppc</span>
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Test: Global Predictive Check </span>
 <span class="co">#&gt; Posterior Samples: 250 </span>
@@ -305,7 +305,7 @@ Y_females &lt;- subset(Y, gender == 2, select = -c(education, gender))[,1:5]</co
 <p>The hypothesis is easily translated to <code>R</code> code</p>
 <div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="no">hyp</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"g1_A1--A2 + g1_A1--A3 &gt; g2_A1--A2 + g2_A1--A3; 
           g1_A1--A2 + g1_A1--A3 = g2_A1--A2 + g2_A1--A3"</span>)</pre></body></html></div>
-<p>Note the <code>g1</code> indicates the group and <code>;</code> separates the hypotheses. I again assume the data is Gaussian (although this can be changed to <code>type = "ordinal"</code> or <code>type = "mixed"</code>; see <a href="https://donaldrwilliams.github.io/BGGM/reference/ggm_compare_confirm.html">here</a>)</p>
+<p>Note the <code>g1</code> indicates the group and <code>;</code> separates the hypotheses. I again assume the data is Gaussian (although this can be changed to <code>type = "ordinal"</code> or <code>type = "mixed"</code>; see <a href="https://donaldrwilliams.github.io/BGGMmod/reference/ggm_compare_confirm.html">here</a>)</p>
 <div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="no">test</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/ggm_compare_confirm.html">ggm_compare_confirm</a></span>(<span class="no">Y_males</span>, <span class="no">Y_females</span>,
                             <span class="kw">hypothesis</span> <span class="kw">=</span> <span class="no">hyp</span>)
 
@@ -314,7 +314,7 @@ Y_females &lt;- subset(Y, gender == 2, select = -c(education, gender))[,1:5]</co
 <span class="no">test</span>
 
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; Type: continuous </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Posterior Samples: 25000 </span>
@@ -372,7 +372,7 @@ Y_females &lt;- subset(Y, gender == 2, select = -c(education, gender))[,1:5]</co
 <div id="conclusion" class="section level1">
 <h1 class="hasAnchor">
 <a href="#conclusion" class="anchor"></a>Conclusion</h1>
-<p>Three approaches for testing the same hypothesis were demonstrated in this vignette. This highlights that any hypothesis can be tested in <strong>BGGM</strong> and in several ways.</p>
+<p>Three approaches for testing the same hypothesis were demonstrated in this vignette. This highlights that any hypothesis can be tested in <strong>BGGMmod</strong> and in several ways.</p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">

@@ -14,9 +14,9 @@ vignette: >
 
 
 # Background
-This vignette describes a new feature to **BGGM** (`2.0.0`) that allows for 
+This vignette describes a new feature to **BGGMmod** (`2.0.0`) that allows for 
 computing custom network statistics (e.g., centrality). The new function is
-called `roll_your_own` and it was suggested by a user of **BGGM**  ([see feature request here](https://github.com/donaldRwilliams/BGGM/issues/12)).
+called `roll_your_own` and it was suggested by a user of **BGGMmod**  ([see feature request here](https://github.com/donaldRwilliams/BGGMmod/issues/12)).
 
 # Basic Idea
 The basic idea is to compute the chosen network statistic for each of the sampled partial 
@@ -35,7 +35,7 @@ if (!requireNamespace("remotes")) {
 }   
 
 # install from github
-remotes::install_github("donaldRwilliams/BGGM")
+remotes::install_github("donaldRwilliams/BGGMmod")
 ```
 
 
@@ -44,7 +44,7 @@ In all examples, a subset of `ptsd` data is used. The subset includes two of the
 symptoms [details for these data can be found in @armour2017network]. The data are ordinal (5-level Likert).
 ```{r, warning =FALSE, message=FALSE}
 # need these packages
-library(BGGM)
+library(BGGMmod)
 library(ggplot2)
 library(assortnet)
 library(networktools)
@@ -55,13 +55,13 @@ Y <- ptsd[,1:7]
 
 ### Fit Model
 For these data, the GGM is estimated with a semi-parametric copula [@hoff2007extending]. 
-In **BGGM**, this implemented with `type = mixed` which is kind of a misnomer because the data do not 
+In **BGGMmod**, this implemented with `type = mixed` which is kind of a misnomer because the data do not 
 have to be "mixed" (consisting of continuous and discrete variables). 
 Note that the model is fitted only once which highlights that only the posterior samples 
 are needed to compute any network statistic.
 
 ```{r, message=FALSE, warning=FALSE, eval=FALSE}
-library(BGGM)
+library(BGGMmod)
 
 # copula ggm
 fit <- estimate(Y, type = "mixed", iter = 1000)
@@ -94,7 +94,7 @@ net_stat <- roll_your_own(object = fit,
 # print
 net_stat
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Network Stats: Roll Your Own
 #> Posterior Samples: 250 
@@ -125,7 +125,7 @@ net_stat <- roll_your_own(object = fit,
 # print
 net_stat
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Network Stats: Roll Your Own
 #> Posterior Samples: 250 
@@ -172,7 +172,7 @@ net_stat <- roll_your_own(object = fit,
 # print
 net_stat
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Network Stats: Roll Your Own
 #> Posterior Samples: 250 
@@ -227,7 +227,7 @@ net_stat <- roll_your_own(object = fit,
 # print
 net_stat
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Network Stats: Roll Your Own
 #> Posterior Samples: 250 

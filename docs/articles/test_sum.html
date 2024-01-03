@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testing Sums • BGGM</title>
+<title>Testing Sums • BGGMmod</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Testing Sums">
-<meta property="og:description" content="BGGM">
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg">
+<meta property="og:description" content="BGGMmod">
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@wdonald_1985">
 <meta name="twitter:site" content="@wdonald_1985">
@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -62,7 +62,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -85,7 +85,7 @@
             
             <h4 class="date">5/25/2020</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGM/blob/master/vignettes/test_sum.Rmd"><code>vignettes/test_sum.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGMmod/blob/master/vignettes/test_sum.Rmd"><code>vignettes/test_sum.Rmd</code></a></small>
       <div class="hidden name"><code>test_sum.Rmd</code></div>
 
     </div>
@@ -95,7 +95,7 @@
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
-<p>This is a follow-up to the vignette <a href="https://donaldrwilliams.github.io/BGGM/articles/hyp_3_ways.html">“Three Ways to Test the Same Hypothesis”</a>. A new feature, <code>pcor_sum</code>, was added to <strong>BGGM</strong> that allows for testing partial correlation sums. This differs from the Bayes factor approach (“Approach #3”), in that only the posterior distribution is used to determine whether there is a difference in the sums.</p>
+<p>This is a follow-up to the vignette <a href="https://donaldrwilliams.github.io/BGGMmod/articles/hyp_3_ways.html">“Three Ways to Test the Same Hypothesis”</a>. A new feature, <code>pcor_sum</code>, was added to <strong>BGGMmod</strong> that allows for testing partial correlation sums. This differs from the Bayes factor approach (“Approach #3”), in that only the posterior distribution is used to determine whether there is a difference in the sums.</p>
 <div id="r-package" class="section level3">
 <h3 class="hasAnchor">
 <a href="#r-package" class="anchor"></a>R package</h3>
@@ -105,8 +105,8 @@
 }
 
 <span class="co"># install from github</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGM"</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGM</span>)</pre></body></html></div>
+<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGMmod"</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGMmod</span>)</pre></body></html></div>
 </div>
 </div>
 <div id="one-group" class="section level1">
@@ -159,7 +159,7 @@ sums
 # print
 test_sum
 
-# BGGM: Bayesian Gaussian Graphical Models 
+# BGGMmod: Bayesian Gaussian Graphical Models 
 # --- 
 # Network Stats: Posterior Sum
 # Posterior Samples: 1000 
@@ -192,7 +192,7 @@ test_sum
 <div id="two-groups" class="section level1">
 <h1 class="hasAnchor">
 <a href="#two-groups" class="anchor"></a>Two Groups</h1>
-<p>This next example is for two groups. The data are called <code>bfi</code> and they are in the <strong>BGGM</strong> package. I compare a sum of two relations for questions measuring agreeableness in males and females. The relations tested are as follows</p>
+<p>This next example is for two groups. The data are called <code>bfi</code> and they are in the <strong>BGGMmod</strong> package. I compare a sum of two relations for questions measuring agreeableness in males and females. The relations tested are as follows</p>
 <div id="sum-to-string-1" class="section level2">
 <h2 class="hasAnchor">
 <a href="#sum-to-string-1" class="anchor"></a>Sum to String</h2>
@@ -227,7 +227,7 @@ test_sum
 <span class="co"># print</span>
 <span class="no">test_sum</span>
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Network Stats: Posterior Sum</span>
 <span class="co">#&gt; Posterior Samples: 5000 </span>
@@ -261,7 +261,7 @@ test_sum
 <h1 class="hasAnchor">
 <a href="#notes" class="anchor"></a>Notes</h1>
 <p>By default, the print function for <code>pcor_sum</code> provides 95 % credible intervals. This can be changed by directly using the print function, for example <code><a href="https://rdrr.io/r/base/print.html">print(test_sum, cred = 0.99)</a></code>, provides 99 % credible intervals.</p>
-<p>Currently, this function only supports sums, due to this being of interest for the psychological network literature in particular. This can be extended to accommodate multiplication, subtraction, testing values other than zero, etc. Please make a feature request at either <a href="https://github.com/donaldRwilliams/BGGM/issues">github</a> or <a href="https://groups.google.com/forum/#!forum/bggm-users">BGGM-users group</a>.</p>
+<p>Currently, this function only supports sums, due to this being of interest for the psychological network literature in particular. This can be extended to accommodate multiplication, subtraction, testing values other than zero, etc. Please make a feature request at either <a href="https://github.com/donaldRwilliams/BGGMmod/issues">github</a> or <a href="https://groups.google.com/forum/#!forum/bggm-users">BGGMmod-users group</a>.</p>
 </div>
   </div>
 

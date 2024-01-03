@@ -27,7 +27,7 @@
 #'
 #' @details Technically, the prior odds is not for including an edge in the graph,
 #' but for (H1)/p(H0), where H1 captures the hypothesized edge size and H0 is the
-#' null model  \insertCite{@see Williams2019_bf}{BGGM}. Accordingly, setting an
+#' null model  \insertCite{@see Williams2019_bf}{BGGMmod}. Accordingly, setting an
 #' entry in \code{prior_ggm} to, say, 10, encodes a prior belief that H1 is 10 times
 #' more likely than H0. Further, setting an entry in \code{prior_ggm} or
 #' \code{prior_var} to 1 results in equal prior odds
@@ -203,13 +203,13 @@ prior_belief_var <- function(Y,
                             coef_mat = coef_mat)
   }
 
-  class(returned_object) <- c("BGGM", "prior_var")
+  class(returned_object) <- c("BGGMmod", "prior_var")
 
   return(returned_object)
 }
 
 print_prior_var <- function(x, ...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("Prior Belief Graphical VAR\n")
   cat("--- \n")
   cat("Date:", date(), "\n")

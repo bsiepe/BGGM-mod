@@ -3,10 +3,10 @@
 #' @name ggm_compare_explore
 #'
 #' @description Compare Gaussian graphical models with exploratory hypothesis testing using the matrix-F prior
-#' distribution \insertCite{Mulder2018}{BGGM}. A test for each partial correlation in the model for any number
+#' distribution \insertCite{Mulder2018}{BGGMmod}. A test for each partial correlation in the model for any number
 #' of groups. This provides evidence for the null hypothesis of no difference and the alternative hypothesis
 #' of difference. With more than two groups, the test is for \emph{all} groups simultaneously (i.e., the relation
-#' is the same or different in all groups). This method was introduced in \insertCite{williams2020comparing;textual}{BGGM}.
+#' is the same or different in all groups). This method was introduced in \insertCite{williams2020comparing;textual}{BGGMmod}.
 #' For confirmatory hypothesis testing see \code{confirm_groups}.
 #'
 #' @param ... At least two matrices (or data frame) of dimensions \emph{n} (observations) by  \emph{p} (variables).
@@ -37,7 +37,7 @@
 #'
 #'
 #' @return The returned object of class \code{ggm_compare_explore} contains a lot of information that
-#'         is used for printing and plotting the results. For users of \strong{BGGM}, the following
+#'         is used for printing and plotting the results. For users of \strong{BGGMmod}, the following
 #'         are the useful objects:
 #'
 #' \itemize{
@@ -98,8 +98,8 @@
 #' \strong{"Default" Prior}:
 #'
 #'  In Bayesian statistics, a default Bayes factor needs to have several properties. I refer
-#'  interested users to \insertCite{@section 2.2 in @dablander2020default;textual}{BGGM}. In
-#'  \insertCite{Williams2019_bf;textual}{BGGM}, some of these propteries were investigated, such
+#'  interested users to \insertCite{@section 2.2 in @dablander2020default;textual}{BGGMmod}. In
+#'  \insertCite{Williams2019_bf;textual}{BGGMmod}, some of these propteries were investigated, such
 #'  model selection consistency. That said, we would not consider this a "default" Bayes factor and
 #'  thus we encourage users to perform sensitivity analyses by varying the scale of the prior
 #'  distribution.
@@ -107,11 +107,11 @@
 #'  Furthermore, it is important to note there is no "correct" prior and, also, there is no need
 #'  to entertain the possibility of a "true" model. Rather, the Bayes factor can be interpreted as
 #'  which hypothesis best (relative to each other) predicts the observed data
-#'  \insertCite{@Section 3.2 in @Kass1995}{BGGM}.
+#'  \insertCite{@Section 3.2 in @Kass1995}{BGGMmod}.
 #'
 #' \strong{Interpretation of Conditional (In)dependence Models for Latent Data}:
 #'
-#' See \code{\link{BGGM-package}} for details about interpreting GGMs based on latent data
+#' See \code{\link{BGGMmod-package}} for details about interpreting GGMs based on latent data
 #' (i.e, all data types besides \code{"continuous"})
 #'
 #'
@@ -183,7 +183,7 @@ ggm_compare_explore <- function(...,
   samp <- lapply(1:groups, function(x) {
 
     # mixed
-    # message("BGGM: Posterior Sampling ", "(Group ",x ,")")
+    # message("BGGMmod: Posterior Sampling ", "(Group ",x ,")")
     Y <- dat_list[[x]]
 
 
@@ -302,7 +302,7 @@ ggm_compare_explore <- function(...,
 
   }
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "ggm_compare_explore",
                               "explore")
   returned_object
@@ -311,7 +311,7 @@ ggm_compare_explore <- function(...,
 
 print_summary_ggm_compare_bf <- function(x, ...){
   groups <- x$object$groups
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:",  x$object$type, "\n")
   cat("Formula:", paste(as.character(x$formula), collapse = " "), "\n")
@@ -342,7 +342,7 @@ print_summary_ggm_compare_bf <- function(x, ...){
 }
 
 print_ggm_compare_bf <- function(x, ...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:",  x$type, "\n")
   cat("Formula:", paste(as.character(x$formula), collapse = " "), "\n")
@@ -473,7 +473,7 @@ summary.ggm_compare_explore <- function(object,
   returned_object <- list(results = results,
                           object = object)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "ggm_compare_explore",
                               "summary.ggm_compare_explore",
                               "explore")

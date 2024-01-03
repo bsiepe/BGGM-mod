@@ -21,8 +21,8 @@
 #' @importFrom utils capture.output
 #' @note
 #'
-#' In order to allow users to enjoy the functionality of \bold{BGGM}, we had to make minor changes to the function \code{rmvord_naiv}
-#' from the \code{R} package \bold{orddata} \insertCite{orddata}{BGGM}. All rights to, and credit for, the function \code{rmvord_naiv}
+#' In order to allow users to enjoy the functionality of \bold{BGGMmod}, we had to make minor changes to the function \code{rmvord_naiv}
+#' from the \code{R} package \bold{orddata} \insertCite{orddata}{BGGMmod}. All rights to, and credit for, the function \code{rmvord_naiv}
 #' belong to the authors of that package.
 #'
 #' This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
@@ -46,7 +46,7 @@
 #' cors <- cov2cor( solve(inv))
 #'
 #' # example data
-#' Y <- BGGM::gen_ordinal(n = 500, p = 5,
+#' Y <- BGGMmod::gen_ordinal(n = 500, p = 5,
 #'                        levels = 2,
 #'                        cor_mat = cors,
 #'                        empirical = FALSE)

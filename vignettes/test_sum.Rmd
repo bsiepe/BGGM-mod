@@ -17,8 +17,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Introduction
-This is a follow-up to the vignette ["Three Ways to Test the Same Hypothesis"](https://donaldrwilliams.github.io/BGGM/articles/hyp_3_ways.html). A
-new feature, `pcor_sum`, was added to **BGGM** that allows for testing partial correlation sums. 
+This is a follow-up to the vignette ["Three Ways to Test the Same Hypothesis"](https://donaldrwilliams.github.io/BGGMmod/articles/hyp_3_ways.html). A
+new feature, `pcor_sum`, was added to **BGGMmod** that allows for testing partial correlation sums. 
 This differs from the Bayes factor approach ("Approach #3"), in that only the posterior 
 distribution is used to determine whether there is a difference in the sums. 
 
@@ -30,8 +30,8 @@ if (!requireNamespace("remotes")) {
 }   
 
 # install from github
-remotes::install_github("donaldRwilliams/BGGM")
-library(BGGM)
+remotes::install_github("donaldRwilliams/BGGMmod")
+library(BGGMmod)
 ```
 
 
@@ -95,7 +95,7 @@ test_sum <- pcor_sum(fit, relations = sums)
 # print
 test_sum
 
-# BGGM: Bayesian Gaussian Graphical Models 
+# BGGMmod: Bayesian Gaussian Graphical Models 
 # --- 
 # Network Stats: Posterior Sum
 # Posterior Samples: 1000 
@@ -130,7 +130,7 @@ plot(test_sum)$diff
 The histogram is not very smooth in this case because `iter = 1000`, but this of course can be changed.
 
 # Two Groups
-This next example is for two groups. The data are called `bfi` and they are in the **BGGM** package. I compare a sum of two relations for questions measuring agreeableness in males and females. The relations tested are as follows
+This next example is for two groups. The data are called `bfi` and they are in the **BGGMmod** package. I compare a sum of two relations for questions measuring agreeableness in males and females. The relations tested are as follows
 
 
 ## Sum to String
@@ -167,7 +167,7 @@ test_sum <- pcor_sum(fit_female, fit_male, relations = sums)
 # print
 test_sum
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Network Stats: Posterior Sum
 #> Posterior Samples: 5000 
@@ -206,4 +206,4 @@ directly using the print function, for example `print(test_sum, cred = 0.99)`, p
 Currently, this function only supports sums, due to this being of interest for the psychological network
 literature in particular. This can be extended to accommodate multiplication, subtraction,
 testing values other than zero, etc. Please make a feature request at either
-[github](https://github.com/donaldRwilliams/BGGM/issues) or [BGGM-users group](https://groups.google.com/forum/#!forum/bggm-users).
+[github](https://github.com/donaldRwilliams/BGGMmod/issues) or [BGGMmod-users group](https://groups.google.com/forum/#!forum/bggm-users).

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Example from https://joss.readthedocs.io/en/latest/submitting.html • BGGM</title>
+<title>Example from https://joss.readthedocs.io/en/latest/submitting.html • BGGMmod</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Example from https://joss.readthedocs.io/en/latest/submitting.html" />
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg" />
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@wdonald_1985" />
 <meta name="twitter:site" content="@wdonald_1985" />
@@ -81,7 +81,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">BGGM</a>
+        <a class="navbar-link" href="index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -103,7 +103,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -128,7 +128,7 @@
 <hr>
 <div id="example-from-httpsjossreadthedocsioenlatestsubmittinghtml" class="section level1">
 
-<p>title: ‘BGGM: Bayesian Gaussian Graphical Models in R’ tags:</p>
+<p>title: ‘BGGMmod: Bayesian Gaussian Graphical Models in R’ tags:</p>
 <ul>
 <li>Gaussian graphical models</li>
 <li>Bayesian</li>
@@ -146,8 +146,8 @@
 </div>
 <div id="bggm-bayesian-gaussian-graphical-models" class="section level1">
 <h1 class="hasAnchor">
-<a href="#bggm-bayesian-gaussian-graphical-models" class="anchor"></a>BGGM: Bayesian Gaussian Graphical Models</h1>
-<p>The <code>R</code> package <strong>BGGM</strong> provides tools for making Bayesian inference in Gaussian graphical models (GGM). The methods are organized around two general approaches for Bayesian inference: (1) estimation and (2) hypothesis testing. The key distinction is that the former focuses on either the posterior or posterior predictive distribution [@Gelman1996a; see section 5 in @rubin1984bayesianly] , whereas the latter focuses on model comparison with the Bayes factor [@Jeffreys1961; @Kass1995].</p>
+<a href="#bggm-bayesian-gaussian-graphical-models" class="anchor"></a>BGGMmod: Bayesian Gaussian Graphical Models</h1>
+<p>The <code>R</code> package <strong>BGGMmod</strong> provides tools for making Bayesian inference in Gaussian graphical models (GGM). The methods are organized around two general approaches for Bayesian inference: (1) estimation and (2) hypothesis testing. The key distinction is that the former focuses on either the posterior or posterior predictive distribution [@Gelman1996a; see section 5 in @rubin1984bayesianly] , whereas the latter focuses on model comparison with the Bayes factor [@Jeffreys1961; @Kass1995].</p>
 <div id="what-is-a-gaussian-graphical-model-" class="section level2">
 <h2 class="hasAnchor">
 <a href="#what-is-a-gaussian-graphical-model-" class="anchor"></a>What is a Gaussian Graphical Model ?</h2>
@@ -162,37 +162,37 @@
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p>The methods in <strong>BGGM</strong> build upon existing algorithms that are well-known in the literature. The central contribution of <strong>BGGM</strong> is to extend those approaches:</p>
+<p>The methods in <strong>BGGMmod</strong> build upon existing algorithms that are well-known in the literature. The central contribution of <strong>BGGMmod</strong> is to extend those approaches:</p>
 <ol>
 <li>
 <p>Bayesian estimation with the novel matrix-F prior distribution [@Mulder2018]</p>
 <ul>
 <li>
-<a href="https://github.com/donaldRwilliams/BGGM#bayesian-estimation">Estimation</a> [@Williams2019]</li>
+<a href="https://github.com/donaldRwilliams/BGGMmod#bayesian-estimation">Estimation</a> [@Williams2019]</li>
 </ul>
 </li>
 <li>
 <p>Bayesian hypothesis testing with the matrix-F prior distribution [@Williams2019_bf]</p>
 <ul>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#Exploratory">Exploratory hypothesis testing</a></p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#Confirmatory">Confirmatory hypothesis testing</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#Exploratory">Exploratory hypothesis testing</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#Confirmatory">Confirmatory hypothesis testing</a></p></li>
 </ul>
 </li>
 <li>
 <p>Comparing Gaussian graphical models [@Williams2019; @williams2020comparing]</p>
 <ul>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#partial-correlation-differences">Partial correlation differences</a></p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#posterior-predictive-check">Posterior predictive check</a></p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#exploratory-groups">Exploratory hypothesis testing</a></p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#confirmatory-groups">Confirmatory hypothesis testing</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#partial-correlation-differences">Partial correlation differences</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#posterior-predictive-check">Posterior predictive check</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#exploratory-groups">Exploratory hypothesis testing</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#confirmatory-groups">Confirmatory hypothesis testing</a></p></li>
 </ul>
 </li>
 <li>
 <p>Extending inference beyond the conditional (in)dependence structure [@Williams2019]</p>
 <ul>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#Predictability">Predictability</a>[e.g., @haslbeck2018well]</p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#partial-correlation-differences">Posterior uncertaintyintervals</a> for the partial correlations</p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#custom-network-statistics">Custom Network Statistics</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#Predictability">Predictability</a>[e.g., @haslbeck2018well]</p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#partial-correlation-differences">Posterior uncertaintyintervals</a> for the partial correlations</p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#custom-network-statistics">Custom Network Statistics</a></p></li>
 </ul>
 </li>
 </ol>
@@ -202,15 +202,15 @@
 <ul>
 <li><p><strong>Continuous</strong>: The continuous method was described in @Williams2019. Note that this is based on the customary <a href="https://en.wikipedia.org/wiki/Wishart_distribution">Wishartdistribution</a>.</p></li>
 <li><p><strong>Binary</strong>: The binary method builds directly upon @talhouk2012efficient that, in turn, built upon the approaches of @lawrence2008bayesian and @webb2008bayesian (to name a few).</p></li>
-<li><p><strong>Ordinal</strong>: The ordinal methods require sampling thresholds. There are two approach included in <strong>BGGM</strong>. The customary approach described in @albert1993bayesian (the default) and the ‘Cowles’ algorithm described in @cowles1996accelerating.</p></li>
+<li><p><strong>Ordinal</strong>: The ordinal methods require sampling thresholds. There are two approach included in <strong>BGGMmod</strong>. The customary approach described in @albert1993bayesian (the default) and the ‘Cowles’ algorithm described in @cowles1996accelerating.</p></li>
 <li><p><strong>Mixed</strong>: The mixed data (a combination of discrete and continuous) method was introduced in @hoff2007extending. This is a semi-parametric copula model (i.e., a copula GGM) based on the ranked likelihood. Note that this can be used for <em>only</em> ordinal data (not restricted to “mixed” data).</p></li>
 </ul>
-<p>The computationally intensive tasks are written in <code>c++</code> via the <code>R</code> package <strong>Rcpp</strong> [@eddelbuettel2011rcpp] and the <code>c++</code> library <strong>Armadillo</strong> [@sanderson2016armadillo]. The Bayes factors are computed with the <code>R</code> package <strong>BFpack</strong> [@mulder2019bfpack]. Furthermore, there are <a href="https://github.com/donaldRwilliams/BGGM#example-network-plot">plotting</a> functions for each method, control variables can be included in the model (e.g., <code>~ gender</code>), and there is support for missing values (see <code>bggm_missing</code>).</p>
+<p>The computationally intensive tasks are written in <code>c++</code> via the <code>R</code> package <strong>Rcpp</strong> [@eddelbuettel2011rcpp] and the <code>c++</code> library <strong>Armadillo</strong> [@sanderson2016armadillo]. The Bayes factors are computed with the <code>R</code> package <strong>BFpack</strong> [@mulder2019bfpack]. Furthermore, there are <a href="https://github.com/donaldRwilliams/BGGMmod#example-network-plot">plotting</a> functions for each method, control variables can be included in the model (e.g., <code>~ gender</code>), and there is support for missing values (see <code>bggm_missing</code>).</p>
 </div>
 <div id="comparison-to-other-software" class="section level2">
 <h2 class="hasAnchor">
 <a href="#comparison-to-other-software" class="anchor"></a>Comparison to Other Software</h2>
-<p><strong>BGGM</strong> is the only <code>R</code> package to implement all of these algorithms and methods. The <code>mixed</code> data approach is also implemented in the package <strong>sbgcop</strong> [base <code>R</code>, @hoff2007extending]. The <code>R</code> package <strong>BDgraph</strong> implements a Gaussian copula graphical model in <code>c++</code> [@mohammadi2015bdgraph], but not the binary or ordinal approaches. Furthermore, <strong>BGGM</strong> is the only package for confirmatory testing and comparing graphical models with the methods described in @williams2020comparing.</p>
+<p><strong>BGGMmod</strong> is the only <code>R</code> package to implement all of these algorithms and methods. The <code>mixed</code> data approach is also implemented in the package <strong>sbgcop</strong> [base <code>R</code>, @hoff2007extending]. The <code>R</code> package <strong>BDgraph</strong> implements a Gaussian copula graphical model in <code>c++</code> [@mohammadi2015bdgraph], but not the binary or ordinal approaches. Furthermore, <strong>BGGMmod</strong> is the only package for confirmatory testing and comparing graphical models with the methods described in @williams2020comparing.</p>
 </div>
 </div>
 <div id="acknowledgements" class="section level1">

@@ -106,7 +106,7 @@ select.var_estimate <- function(object,
     object = object
   )
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "select.var_estimate",
                               "var_estimate",
                               "select")
@@ -117,7 +117,7 @@ select.var_estimate <- function(object,
 print_select_var_estimate <- function(x, ...){
   object <- x
   p <- ncol(object$pcor_adj)
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Vector Autoregressive Model (VAR) \n")
   cat("--- \n")

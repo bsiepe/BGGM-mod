@@ -1,7 +1,7 @@
 #' Compute Regression Parameters for \code{estimate} Objects
 #'
 #'  There is a direct correspondence between the inverse covariance matrix and
-#'  multiple regression \insertCite{kwan2014regression,Stephens1998}{BGGM}. This readily allows
+#'  multiple regression \insertCite{kwan2014regression,Stephens1998}{BGGMmod}. This readily allows
 #'  for converting the GGM parameters to regression coefficients. All data types are supported.
 #'
 #'
@@ -114,7 +114,7 @@ coef.estimate <- function(object,
   object$post_samp <- 0
 
   returned_object <- list(betas = betas, object = object)
-  class(returned_object) <- c("BGGM", "coef")
+  class(returned_object) <- c("BGGMmod", "coef")
   returned_object
 }
 
@@ -123,7 +123,7 @@ coef.estimate <- function(object,
 #' Compute Regression Parameters for \code{explore} Objects
 #'
 #'  There is a direct correspondence between the inverse covariance matrix and
-#'  multiple regression \insertCite{kwan2014regression,Stephens1998}{BGGM}. This readily allows
+#'  multiple regression \insertCite{kwan2014regression,Stephens1998}{BGGMmod}. This readily allows
 #'  for converting the GGM parameters to regression coefficients. All data types are supported.
 #'
 #' @name coef.explore
@@ -236,7 +236,7 @@ coef.explore <- function(object,
   returned_object <- list(betas = betas,
                           object = object)
 
-  class(returned_object) <- c("BGGM", "coef")
+  class(returned_object) <- c("BGGMmod", "coef")
   returned_object
 }
 
@@ -249,7 +249,7 @@ print_coef <- function(x,...){
   # column names
   cn <- colnames(x$object$Y)
 
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:", x$object$type, "\n")
   cat("Formula:", paste(as.character(x$object$formula),
@@ -337,7 +337,7 @@ summary.coef <- function(object,
   returned_object <- list(summaries = res_i,
                           object = object)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "coef",
                               "summary.coef")
   returned_object
@@ -359,7 +359,7 @@ print_summary_coef <- function(x,...){
     cn <- 1:p
 
   }
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:", x$object$object$type, "\n")
   cat("Formula:", paste(as.character(x$object$object$formula),

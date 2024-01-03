@@ -1,7 +1,7 @@
 #' @title Graph selection for \code{explore} Objects
 #'
 #' @description Provides the selected graph based on the Bayes factor
-#' \insertCite{Williams2019_bf}{BGGM}.
+#' \insertCite{Williams2019_bf}{BGGMmod}.
 #'
 #' @name select.explore
 #'
@@ -19,7 +19,7 @@
 #' \insertAllCited{}
 #'
 #' @details Exhaustive provides the posterior hypothesis probabilities for
-#' a positive, negative, or null relation \insertCite{@see Table 3 in @Williams2019_bf}{BGGM}.
+#' a positive, negative, or null relation \insertCite{@see Table 3 in @Williams2019_bf}{BGGMmod}.
 #'
 #' @note Care must be taken with the options \code{alternative = "less"} and
 #'       \code{alternative = "greater"}. This is because the full parameter space is not included,
@@ -29,7 +29,7 @@
 #'       provide absolute evidence for the null hypothesis.
 #'
 #' @return The returned object of class \code{select.explore} contains a lot of information that
-#'         is used for printing and plotting the results. For users of \strong{BGGM}, the following
+#'         is used for printing and plotting the results. For users of \strong{BGGMmod}, the following
 #'         are the useful objects:
 #'
 #'
@@ -353,7 +353,7 @@ select.explore <- function(object,
           stop("alternative not supported. see documentation")
     }
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "select.explore",
                               "explore",
                               "select")
@@ -367,7 +367,7 @@ print_select_explore <- function(x,
                                  ...){
 
   p <- ncol(x$pcor_mat_zero)
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:", x$type, "\n")
   cat("Analytic:", x$analytic, "\n")
@@ -564,7 +564,7 @@ summary.select.explore <- function(object,
 
   returned_object <- list(summary = summ, object = object)
 
-  class(returned_object) <- c("BGGM", "summary.select.explore",
+  class(returned_object) <- c("BGGMmod", "summary.select.explore",
                               "explore", "select.explore",
                               "summary")
   returned_object
@@ -576,7 +576,7 @@ summary.select.explore <- function(object,
 
 print_summary_select_explore <- function(x,...){
 
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:", x$object$type, "\n")
   cat("Alternative:", x$object$alternative, "\n")

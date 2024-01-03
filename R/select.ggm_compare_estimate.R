@@ -2,7 +2,7 @@
 
 #' @description Provides the selected graph (of differences) based on credible intervals for
 #' the partial correlations that did not contain zero
-#' \insertCite{Williams2019}{BGGM}.
+#' \insertCite{Williams2019}{BGGMmod}.
 #'
 #' @name select.ggm_compare_estimate
 #'
@@ -14,7 +14,7 @@
 #' @param ... not currently used
 #'
 #' @return The returned object of class \code{select.ggm_compare_estimate} contains a lot of information that
-#'         is used for printing and plotting the results. For users of \strong{BGGM}, the following
+#'         is used for printing and plotting the results. For users of \strong{BGGMmod}, the following
 #'         are the useful objects:
 #'
 #'
@@ -133,7 +133,7 @@ select.ggm_compare_estimate <- function(object,
 
       }
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "select.ggm_compare_estimate",
                               "estimate", "select")
   return(returned_object)
@@ -146,7 +146,7 @@ print_select_ggm_compare_estimate <- function(x,...){
   object <- x
   comparisons <- length(object$pcor_adj)
   p <- ncol(object$pcor_adj[[1]])
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:", object$object$type, "\n")
   cat("Analytic:", object$object$analytic, "\n")

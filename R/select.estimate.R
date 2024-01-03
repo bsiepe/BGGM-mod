@@ -2,7 +2,7 @@
 #'
 #' @description Provides the selected graph based on credible intervals for
 #' the partial correlations that did not contain zero
-#' \insertCite{Williams2019}{BGGM}.
+#' \insertCite{Williams2019}{BGGMmod}.
 #'
 #' @name select.estimate
 #'
@@ -21,7 +21,7 @@
 #' \insertAllCited{}
 #'
 #' @return The returned object of class \code{select.estimate} contains a lot of information that
-#'         is used for printing and plotting the results. For users of \strong{BGGM}, the following
+#'         is used for printing and plotting the results. For users of \strong{BGGMmod}, the following
 #'         are the useful objects:
 #'
 #' \itemize{
@@ -135,7 +135,7 @@ select.estimate <- function(object,
     object = object
   )
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "select.estimate",
                               "estimate",
                               "select")
@@ -162,7 +162,7 @@ select <- function(object,...){
 print_select_estimate <- function(x, ...){
   object <- x
   p <- ncol(object$pcor_adj)
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:", object$object$type, "\n")
   cat("Analytic:", object$object$analytic, "\n")

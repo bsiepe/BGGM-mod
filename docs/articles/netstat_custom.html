@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Custom Network Statistics • BGGM</title>
+<title>Custom Network Statistics • BGGMmod</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Custom Network Statistics">
-<meta property="og:description" content="BGGM">
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg">
+<meta property="og:description" content="BGGMmod">
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@wdonald_1985">
 <meta name="twitter:site" content="@wdonald_1985">
@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -62,7 +62,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -85,7 +85,7 @@
             
             <h4 class="date">5/19/2020</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGM/blob/master/vignettes/netstat_custom.Rmd"><code>vignettes/netstat_custom.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGMmod/blob/master/vignettes/netstat_custom.Rmd"><code>vignettes/netstat_custom.Rmd</code></a></small>
       <div class="hidden name"><code>netstat_custom.Rmd</code></div>
 
     </div>
@@ -95,7 +95,7 @@
 <div id="background" class="section level1">
 <h1 class="hasAnchor">
 <a href="#background" class="anchor"></a>Background</h1>
-<p>This vignette describes a new feature to <strong>BGGM</strong> (<code>2.0.0</code>) that allows for computing custom network statistics (e.g., centrality). The new function is called <code>roll_your_own</code> and it was suggested by a user of <strong>BGGM</strong> (<a href="https://github.com/donaldRwilliams/BGGM/issues/12">see feature request here</a>).</p>
+<p>This vignette describes a new feature to <strong>BGGMmod</strong> (<code>2.0.0</code>) that allows for computing custom network statistics (e.g., centrality). The new function is called <code>roll_your_own</code> and it was suggested by a user of <strong>BGGMmod</strong> (<a href="https://github.com/donaldRwilliams/BGGMmod/issues/12">see feature request here</a>).</p>
 </div>
 <div id="basic-idea" class="section level1">
 <h1 class="hasAnchor">
@@ -110,14 +110,14 @@
 }
 
 <span class="co"># install from github</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGM"</span>)</pre></body></html></div>
+<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGMmod"</span>)</pre></body></html></div>
 </div>
 <div id="data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data" class="anchor"></a>Data</h3>
 <p>In all examples, a subset of <code>ptsd</code> data is used. The subset includes two of the “communities” of symptoms <span class="citation">(details for these data can be found in Armour et al. 2017)</span>. The data are ordinal (5-level Likert).</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="co"># need these packages</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGM</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGMmod</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">assortnet</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">networktools</span>)
@@ -128,8 +128,8 @@
 <div id="fit-model" class="section level3">
 <h3 class="hasAnchor">
 <a href="#fit-model" class="anchor"></a>Fit Model</h3>
-<p>For these data, the GGM is estimated with a semi-parametric copula <span class="citation">(Hoff 2007)</span>. In <strong>BGGM</strong>, this implemented with <code>type = mixed</code> which is kind of a misnomer because the data do not have to be “mixed” (consisting of continuous and discrete variables). Note that the model is fitted only once which highlights that only the posterior samples are needed to compute any network statistic.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGM</span>)
+<p>For these data, the GGM is estimated with a semi-parametric copula <span class="citation">(Hoff 2007)</span>. In <strong>BGGMmod</strong>, this implemented with <code>type = mixed</code> which is kind of a misnomer because the data do not have to be “mixed” (consisting of continuous and discrete variables). Note that the model is fitted only once which highlights that only the posterior samples are needed to compute any network statistic.</p>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGMmod</span>)
 
 <span class="co"># copula ggm</span>
 <span class="no">fit</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Y</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"mixed"</span>, <span class="kw">iter</span> <span class="kw">=</span> <span class="fl">1000</span>)</pre></body></html></div>
@@ -157,7 +157,7 @@
 <span class="co"># print</span>
 <span class="no">net_stat</span>
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Network Stats: Roll Your Own</span>
 <span class="co">#&gt; Posterior Samples: 250 </span>
@@ -182,7 +182,7 @@
 <span class="co"># print</span>
 <span class="no">net_stat</span>
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Network Stats: Roll Your Own</span>
 <span class="co">#&gt; Posterior Samples: 250 </span>
@@ -224,7 +224,7 @@
 <span class="co"># print</span>
 <span class="no">net_stat</span>
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Network Stats: Roll Your Own</span>
 <span class="co">#&gt; Posterior Samples: 250 </span>
@@ -270,7 +270,7 @@
 <span class="co"># print</span>
 <span class="no">net_stat</span>
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Network Stats: Roll Your Own</span>
 <span class="co">#&gt; Posterior Samples: 250 </span>

@@ -1,11 +1,11 @@
-# BGGM 2.0.1
-This version of BGGM included changes based on the JOSS reviews: see [here](https://github.com/openjournals/joss-reviews/issues/2111) for 
-the overview and [here](https://github.com/donaldRwilliams/BGGM/issues?q=is%3Aissue+is%3Aclosed) for specific issues.
+# BGGMmod 2.0.1
+This version of BGGMmod included changes based on the JOSS reviews: see [here](https://github.com/openjournals/joss-reviews/issues/2111) for 
+the overview and [here](https://github.com/donaldRwilliams/BGGMmod/issues?q=is%3Aissue+is%3Aclosed) for specific issues.
 
 
-# BGGM 2.0.0
+# BGGMmod 2.0.0
 
-**BGGM** was almost completely rewritten for version `2.0.0`. This was due to adding support 
+**BGGMmod** was almost completely rewritten for version `2.0.0`. This was due to adding support 
 for binary, ordinal, and mixed data, which required that the methods be written in `c ++`. 
 Unfortunately, as a result, lots of code from version `1.0.0` is broken.
 
@@ -42,6 +42,6 @@ correlation matrix
 * A progress bar was added to many functions
 
 
-# BGGM 1.0.0
+# BGGMmod 1.0.0
 
 Initial CRAN release

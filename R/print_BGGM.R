@@ -1,16 +1,16 @@
-#' @name print.BGGM
-#' @title  Print method for \code{BGGM} objects
+#' @name print.BGGMmod
+#' @title  Print method for \code{BGGMmod} objects
 #'
 #' @description Mainly used to avoid a plethora of different print
 #' functions that overcrowded the documentation in previous versions
-#' of \strong{BGGM}.
+#' of \strong{BGGMmod}.
 #'
-#' @param x An object of class \code{BGGM}
+#' @param x An object of class \code{BGGMmod}
 #' @param ... currently ignored
 #'
 #' @importFrom methods is
 #' @export
-print.BGGM <- function(x, ...) {
+print.BGGMmod <- function(x, ...) {
 
   if(is(x, "prior_var")){
     print_prior_var(x, ...)

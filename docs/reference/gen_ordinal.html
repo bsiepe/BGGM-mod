@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Generate Ordinal and Binary data — gen_ordinal • BGGM</title>
+<title>Generate Ordinal and Binary data — gen_ordinal • BGGMmod</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,7 @@
 
 <meta property="og:title" content="Generate Ordinal and Binary data — gen_ordinal" />
 <meta property="og:description" content="Generate Multivariate Ordinal and Binary data." />
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg" />
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@wdonald_1985" />
 <meta name="twitter:site" content="@wdonald_1985" />
@@ -82,7 +82,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -104,7 +104,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -123,7 +123,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Generate Ordinal and Binary data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/donaldRwilliams/BGGM/blob/master/R/gen_ordinal.R'><code>R/gen_ordinal.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/donaldRwilliams/BGGMmod/blob/master/R/gen_ordinal.R'><code>R/gen_ordinal.R</code></a></small>
     <div class="hidden name"><code>gen_ordinal.Rd</code></div>
     </div>
 
@@ -164,7 +164,7 @@ population covariance matrix.</p></td>
     <p>A <em>n</em> by <em>p</em> data matrix.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>In order to allow users to enjoy the functionality of <b>BGGM</b>, we had to make minor changes to the function <code>rmvord_naiv</code>
+    <p>In order to allow users to enjoy the functionality of <b>BGGMmod</b>, we had to make minor changes to the function <code>rmvord_naiv</code>
 from the <code>R</code> package <b>orddata</b> (Leisch et al. 2010)
 . All rights to, and credit for, the function <code>rmvord_naiv</code>
 belong to the authors of that package.</p>
@@ -194,7 +194,7 @@ R package version 0.1/r4, <a href='https://R-Forge.R-project.org/projects/orddat
 <span class='no'>cors</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov2cor</a></span>( <span class='fu'><a href='https://rdrr.io/r/base/solve.html'>solve</a></span>(<span class='no'>inv</span>))
 
 <span class='co'># example data</span>
-<span class='no'>Y</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>BGGM</span><span class='kw ns'>::</span><span class='fu'>gen_ordinal</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>5</span>,
+<span class='no'>Y</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>BGGMmod</span><span class='kw ns'>::</span><span class='fu'>gen_ordinal</span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>5</span>,
                        <span class='kw'>levels</span> <span class='kw'>=</span> <span class='fl'>2</span>,
                        <span class='kw'>cor_mat</span> <span class='kw'>=</span> <span class='no'>cors</span>,
                        <span class='kw'>empirical</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)

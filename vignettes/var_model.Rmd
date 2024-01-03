@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Introduction
-This vignette describes the implemention for a "graphical VAR" in `BGGM`. In `BGGM`, this is fitted as a multivariate regression. The  key innovation is a novel prior distribution for the residual covariance matrix. There are a variety of much cooler names than a *mere* "multivariate regression", including "VAR" (vector autoregressive models) and "TSCGM" (time series chain graphical model).
+This vignette describes the implemention for a "graphical VAR" in `BGGMmod`. In `BGGMmod`, this is fitted as a multivariate regression. The  key innovation is a novel prior distribution for the residual covariance matrix. There are a variety of much cooler names than a *mere* "multivariate regression", including "VAR" (vector autoregressive models) and "TSCGM" (time series chain graphical model).
 
 ## R package
 ```
@@ -27,8 +27,8 @@ if (!requireNamespace("remotes")) {
 }   
 
 # install from github
-remotes::install_github("donaldRwilliams/BGGM")
-library(BGGM)
+remotes::install_github("donaldRwilliams/BGGMmod")
+library(BGGMmod)
 
 # for comparsion
 library(vars)
@@ -41,7 +41,7 @@ library(cowplot)
 ```
 
 ## Data 
-I use data from the ifit (fit bit) study. The data were gathered over 100 consecutive days on a variety of variables, including the PANAS scale (positive and negative affect) and the number of steps each day. `BGGM` includes a subset of variables for two individuals.
+I use data from the ifit (fit bit) study. The data were gathered over 100 consecutive days on a variety of variables, including the PANAS scale (positive and negative affect) and the number of steps each day. `BGGMmod` includes a subset of variables for two individuals.
 
 ```r
 # data
@@ -59,7 +59,7 @@ head(Y, n = 3)
 
 
 # Estimation 
-The methods in **BGGM** are organized around Bayesian "estimation" and "hypothesis testing". 
+The methods in **BGGMmod** are organized around Bayesian "estimation" and "hypothesis testing". 
 This is to reach a broader audience, as former is more similar to classical 
 methods (those more familiar to researchers).
 
@@ -77,7 +77,7 @@ The results can then be printed
 # print 
 fit
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Vector Autoregressive Model (VAR) 
 #> --- 
@@ -114,7 +114,7 @@ fit
 ```
 
 Note that the coefficients are comparable, given each variable has been standardized (e.g., the predictors
-and the outcome are standardized). `BGGM` does not compute the partial directed correlation (PDC) by default (as in **graphicalVAR**). This is because the standardized effects can readily be tested with the Bayes factor, both across and within each model, whereas this does not seem straightforward for the PDC (which requires a transformation).
+and the outcome are standardized). `BGGMmod` does not compute the partial directed correlation (PDC) by default (as in **graphicalVAR**). This is because the standardized effects can readily be tested with the Bayes factor, both across and within each model, whereas this does not seem straightforward for the PDC (which requires a transformation).
 
 ### Compare to Classical
 Here are the estimates from the `vars` package
@@ -136,7 +136,7 @@ t(round(
 #> steps.l1             -0.157         0.183  -0.210  0.153 -0.093    0.207  0.041
 ```
 
-Recall that the "estimation" methods are similar to, in this case, ordinary least squares. The graphical structure in `BGGM` is determined with credible intervals, which will be quite similar to using confidence
+Recall that the "estimation" methods are similar to, in this case, ordinary least squares. The graphical structure in `BGGMmod` is determined with credible intervals, which will be quite similar to using confidence
 intervals. Hence for those researchers unfamiliar with Bayesian methods the "estimation" methods are perhaps
 a nice place to start.
 
@@ -150,7 +150,7 @@ print(
   )
 
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Vector Autoregressive Model (VAR) 
 #> --- 
@@ -211,7 +211,7 @@ The graphs are selected with
 ```r
 select(fit, cred = 0.95)
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Vector Autoregressive Model (VAR) 
 #> --- 
@@ -266,7 +266,7 @@ r2 <- predictability(fit)
 # print
 r2
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Metric: Bayes R2
 #> Type: continuous 

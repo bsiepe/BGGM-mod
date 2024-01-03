@@ -1,18 +1,18 @@
 
 <img src="readme_models/hex.jpg" width = 250 />
 
-# BGGM: Bayesian Gaussian Graphical Models
+# BGGMmod: Bayesian Gaussian Graphical Models
 
 !! NOTE: This package has been forked and modified for experimental purposes!!
 
 [![CRAN
-Version](http://www.r-pkg.org/badges/version/BGGM)](https://cran.r-project.org/package=BGGM)
-[![Downloads](https://cranlogs.r-pkg.org/badges/BGGM)](https://cran.r-project.org/package=BGGM)
+Version](http://www.r-pkg.org/badges/version/BGGMmod)](https://cran.r-project.org/package=BGGMmod)
+[![Downloads](https://cranlogs.r-pkg.org/badges/BGGMmod)](https://cran.r-project.org/package=BGGMmod)
 [![Build
-Status](https://travis-ci.com/donaldRwilliams/BGGM.svg?branch=master)](https://travis-ci.com/donaldRwilliams/BGGM)
+Status](https://travis-ci.com/donaldRwilliams/BGGMmod.svg?branch=master)](https://travis-ci.com/donaldRwilliams/BGGMmod)
 [![status](https://joss.theoj.org/papers/4ecb84c5b3b2a2b5da46be4e0700502f/status.svg)](https://joss.theoj.org/papers/4ecb84c5b3b2a2b5da46be4e0700502f)
 
-The `R` package **BGGM** provides tools for making Bayesian inference in
+The `R` package **BGGMmod** provides tools for making Bayesian inference in
 Gaussian graphical models (GGM). The methods are organized around two
 general approaches for Bayesian inference: (1) estimation and (2)
 hypothesis testing. The key distinction is that the former focuses on
@@ -39,7 +39,7 @@ psychology (Rodriguez et al. 2020).
 To install the latest release version (`2.0.0`) from CRAN use
 
 ``` r
-install.packages("BGGM")    
+install.packages("BGGMmod")    
 ```
 
 The current developmental version can be installed with
@@ -48,13 +48,13 @@ The current developmental version can be installed with
 if (!requireNamespace("remotes")) { 
   install.packages("remotes")   
 }   
-remotes::install_github("donaldRwilliams/BGGM")
+remotes::install_github("donaldRwilliams/BGGMmod")
 ```
 
 ## Overview
 
-The methods in **BGGM** build upon existing algorithms that are
-well-known in the literature. The central contribution of **BGGM** is to
+The methods in **BGGMmod** build upon existing algorithms that are
+well-known in the literature. The central contribution of **BGGMmod** is to
 extend those approaches:
 
 1.  Bayesian estimation with the novel matrix-F prior distribution
@@ -111,7 +111,7 @@ gender`), and there is support for missing values (see `bggm_missing`).
     Lawrence et al. (2008) and Webb and Forster (2008) (to name a few).
 
   - **Ordinal**: The ordinal methods require sampling thresholds. There
-    are two approach included in **BGGM**. The customary approach
+    are two approach included in **BGGMmod**. The customary approach
     described in Albert and Chib (1993) (the default) and the ‘Cowles’
     algorithm described in Cowles (1996).
 
@@ -124,7 +124,7 @@ gender`), and there is support for missing values (see `bggm_missing`).
 ## Illustrative Examples
 
 The following includes brief examples for *some* of the methods in
-**BGGM**.
+**BGGMmod**.
 
 ### Bayesian Estimation
 
@@ -133,7 +133,7 @@ The following includes brief examples for *some* of the methods in
 An ordinal GGM is estimated with
 
 ``` r
-library(BGGM)
+library(BGGMmod)
 library(ggplot2)
 
 # data
@@ -151,7 +151,7 @@ summarized with
 ``` r
 summary(fit)
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Type: ordinal 
 #> Analytic: FALSE 
@@ -268,7 +268,7 @@ null relation; (2) a positive relation; and (3) a negative relation.
 ``` r
 summary(E)
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Type: ordinal 
 #> Alternative: exhaustive 
@@ -301,7 +301,7 @@ hypothesis.
 
 #### Confirmatory
 
-A central contribution of **BGGM** is confirmatory hypothesis testing of
+A central contribution of **BGGMmod** is confirmatory hypothesis testing of
 (in)equality constraints (Hoijtink 2011). By this we are referring to
 testing expectations, as opposed to feeding the data to, say,
 `estimate`, and seeing what happens to emerge.
@@ -337,7 +337,7 @@ The object `fit` is then printed
 ``` r
 fit
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> Type: ordinal 
 #> --- 
 #> Posterior Samples: 250 
@@ -386,8 +386,8 @@ plot(fit) +
 
 ![](readme_models/confirm_hyp.png)
 
-This demonstrates that all the `plot()` functions in **BGGM** return
-`ggplot` objects that can be further customized. Note that **BGGM** is
+This demonstrates that all the `plot()` functions in **BGGMmod** return
+`ggplot` objects that can be further customized. Note that **BGGMmod** is
 not focused on making publication ready plots. Typically the bare
 minimum is provided that can then be honed in.
 
@@ -460,7 +460,7 @@ Then print the summary output with
 ``` r
 fit
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Test: Global Predictive Check 
 #> Posterior Samples: 500 
@@ -503,7 +503,7 @@ observed KL divergence for the networks. This again shows that the
 “distance” between the networks is much more than expected, assuming
 that the groups were actually the same.
 
-This next example is a new feature in **BGGM** (`2.0.0`), that allows
+This next example is a new feature in **BGGMmod** (`2.0.0`), that allows
 for comparing GGMs any way the user wants. All that is required is to
 (1) decide on a test-statistic and (2) write a custom function.
 
@@ -561,7 +561,7 @@ fit <- ggm_compare_ppc(Ymales, Yfemales,
 # print
 fit
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Test: Global Predictive Check 
 #> Posterior Samples: 250 
@@ -617,7 +617,7 @@ relations for which there was evidence for the null hypothesis.
 
 #### Confirmatory (groups)
 
-A central contribution of **BGGM** is confirmatory hypothesis testing of
+A central contribution of **BGGMmod** is confirmatory hypothesis testing of
 (in)equality constraints (Hoijtink 2011), in this case for comparing
 groups. By this we are referring to testing expectations, as opposed to
 feeding the data to, say, `estimate`, and seeing what happens to emerge.
@@ -645,7 +645,7 @@ fit <- ggm_compare_confirm(Yfemales, Ymales,
 # print
 fit
 
-#> BGGM: Bayesian Gaussian Graphical Models
+#> BGGMmod: Bayesian Gaussian Graphical Models
 #> Type: continuous
 #> ---
 #> Posterior Samples: 500
@@ -691,7 +691,7 @@ substantive applications.
 #### Predictability
 
 In this example, predictability is computed for each node in the network
-(see here for rationale Haslbeck and Waldorp 2018). Currently **BGGM**
+(see here for rationale Haslbeck and Waldorp 2018). Currently **BGGMmod**
 computes Bayesian variance explained for all data types (Gelman et al.
 2019).
 
@@ -719,7 +719,7 @@ See [Partial Correlation Differences](#partial-correlation-differences)
 
 #### Custom Network Statistics
 
-A new feature to **BGGM** allows for computing user defined network
+A new feature to **BGGMmod** allows for computing user defined network
 statistics, given a partial correlation or weighted adjacency matrix.
 
 Here is an example for bridge centrality (Jones, Ma, and McNally 2019).
@@ -763,7 +763,7 @@ The function `f` is provided to `FUN` and `communities` is passed to
 # print
 net_stat
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Network Stats: Roll Your Own
 #> Posterior Samples: 100 
@@ -857,7 +857,7 @@ package **sna** (Butts 2019).
 
 ## Additional Features
 
-The primary focus of **BGGM** is Gaussian graphical modeling (the
+The primary focus of **BGGMmod** is Gaussian graphical modeling (the
 inverse covariance matrix). The residue is a suite of useful methods not
 explicitly for GGMs. For example,
 
@@ -911,15 +911,15 @@ mv_probit <- estimate(Y, formula = ~ gender + as.factor(education),
                       type = "ordinal")
 ```
 
-Note that **BGGM** does not use the customary `model.matrix`
+Note that **BGGMmod** does not use the customary `model.matrix`
 formulation. This is for good reason, as each variable in the GGM does
-not need to be written out. Here we effectively “tricked” **BGGM** to
+not need to be written out. Here we effectively “tricked” **BGGMmod** to
 fit a multivariate probit model (each variable included in `formula` is
 removed from `Y`).
 
 ``` r
 regression_summary(mv_probit)
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Type: ordinal 
 #> Formula: ~ gender + as.factor(education) 
@@ -970,27 +970,27 @@ page 2364, section 2.2, in Webb and Forster 2008).
 
 ## High Dimensional Data?
 
-**BGGM** was built specifically for social-behavioral scientists. Of
+**BGGMmod** was built specifically for social-behavioral scientists. Of
 course, the methods can be used by all researchers. However, there is
 currently *not* support for high-dimensional data (i.e., more variables
 than observations) that are common place in, say, the genetics
 literature. These data are rare in the social-behavioral sciences. In
-the future, support for high-dimensional data may be added to **BGGM**.
+the future, support for high-dimensional data may be added to **BGGMmod**.
 
 ## Bug Reports, Feature Requests, and Contributing
 
 Bug reports and feature requests can be made by opening an issue on
-[Github](https://github.com/donaldRwilliams/BGGM/issues). To contribute
-towards the development of **BGGM**, you can start a branch with a pull
+[Github](https://github.com/donaldRwilliams/BGGMmod/issues). To contribute
+towards the development of **BGGMmod**, you can start a branch with a pull
 request and we can discuss the proposed changes there.
 
 ## Comparison to Other Software
 
-**BGGM** is the only `R` package to implement all of these algorithms
+**BGGMmod** is the only `R` package to implement all of these algorithms
 and methods. The `mixed` data approach is also implemented in the
 package **sbgcop** (base `R`, Hoff 2007). The `R` package **BDgraph**
 implements a Gaussian copula graphical model in `c++` (Mohammadi and Wit
-2015), but not the binary or ordinal approaches. Furthermore, **BGGM**
+2015), but not the binary or ordinal approaches. Furthermore, **BGGMmod**
 is the only package for confirmatory testing and comparing graphical
 models with the methods described in Williams et al. (2020).
 

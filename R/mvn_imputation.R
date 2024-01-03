@@ -35,7 +35,7 @@
 #'}
 #'
 #' @details
-#' Missing values are imputed with the approach described in \insertCite{hoff2009first;textual}{BGGM}.
+#' Missing values are imputed with the approach described in \insertCite{hoff2009first;textual}{BGGMmod}.
 #' The basic idea is to impute the missing values with the respective posterior pedictive distribution,
 #' given the observed data, as the model is being estimated. Note that the default is \code{TRUE},
 #' but this ignored when there are no missing values. If set to \code{FALSE}, and there are missing
@@ -119,7 +119,7 @@ impute_data <- function(Y,
   missing_location <- unlist(sapply(1:p, function(x) paste0(which(Y_miss[,x] ==1), "--", x)))
 
   if(isTRUE(progress)){
-    message(paste0("BGGM: Imputing"))
+    message(paste0("BGGMmod: Imputing"))
   }
 
   if(type == "continuous"){
@@ -167,17 +167,17 @@ impute_data <- function(Y,
   }
 
   if(isTRUE(progress)){
-    message("BGGM: Finished")
+    message("BGGMmod: Finished")
   }
 
   returned_object <- fit
-  class(returned_object) <- c("BGGM", "mvn_imputation")
+  class(returned_object) <- c("BGGMmod", "mvn_imputation")
   returned_object
 }
 
 
 print_mvn_impute <- function(x, ...) {
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Multivariate Normal Imputation\n")
   cat("--- \n")

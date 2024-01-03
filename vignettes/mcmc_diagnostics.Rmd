@@ -14,7 +14,7 @@ vignette: >
 
 
 # Introduction
-The algorithms in **BGGM** are based on Gibbs samplers. In the context of 
+The algorithms in **BGGMmod** are based on Gibbs samplers. In the context of 
 covariance matrix estimation, as opposed, to, say, hierarchical models, 
 this allows for efficiently sampling the posterior distribution. Furthermore, in all samplers 
 the empirical covariance matrix is used as the starting value which reduces 
@@ -28,11 +28,11 @@ if (!requireNamespace("remotes")) {
 }   
 
 # install from github
-remotes::install_github("donaldRwilliams/BGGM")
-library(BGGM)
+remotes::install_github("donaldRwilliams/BGGMmod")
+library(BGGMmod)
 ```
 ```{r, echo=FALSE, message=FALSE}
-library(BGGM)
+library(BGGMmod)
 ```
 
 # ACF plot
@@ -115,7 +115,7 @@ convergence(fit, param = "B1--B2", type = "acf")
 ```
 
 or perhaps just running the model for more iterations (e.g., increasing `iter` in `estimate`). The above is quite convoluted but note convergence should not typically be an issue. And it might come in handy to know that the samples can be replaced and the other functions
-in **BGGM** will still work with the object `fit`.
+in **BGGMmod** will still work with the object `fit`.
 
 
 # Trace plot

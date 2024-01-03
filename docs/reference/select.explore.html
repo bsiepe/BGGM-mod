@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Graph selection for <code>explore</code> Objects — select.explore • BGGM</title>
+<title>Graph selection for <code>explore</code> Objects — select.explore • BGGMmod</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -50,7 +50,7 @@
 <meta property="og:description" content="Provides the selected graph based on the Bayes factor
 (Williams and Mulder 2019)
 ." />
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg" />
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@wdonald_1985" />
 <meta name="twitter:site" content="@wdonald_1985" />
@@ -84,7 +84,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -106,7 +106,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -125,7 +125,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Graph selection for <code>explore</code> Objects</h1>
-    <small class="dont-index">Source: <a href='https://github.com/donaldRwilliams/BGGM/blob/master/R/select.explore.R'><code>R/select.explore.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/donaldRwilliams/BGGMmod/blob/master/R/select.explore.R'><code>R/select.explore.R</code></a></small>
     <div class="hidden name"><code>select.explore.Rd</code></div>
     </div>
 
@@ -164,7 +164,7 @@ or "exhuastive". See note for futher details.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>The returned object of class <code>select.explore</code> contains a lot of information that
-        is used for printing and plotting the results. For users of <strong>BGGM</strong>, the following
+        is used for printing and plotting the results. For users of <strong>BGGMmod</strong>, the following
         are the useful objects:</p>
 
 <p><code>alternative = "two.sided"</code></p>
@@ -231,7 +231,7 @@ doi: <a href='https://doi.org/10.31234/osf.io/ypxd8'>10.31234/osf.io/ypxd8</a>
 <span class='no'>Y</span> <span class='kw'>&lt;-</span> <span class='no'>bfi</span>[,<span class='fl'>1</span>:<span class='fl'>10</span>]
 
 <span class='co'># fit model</span>
-<span class='no'>fit</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='explore.html'>explore</a></span>(<span class='no'>Y</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in .Call("_BGGM_Theta_continuous", PACKAGE = "BGGM", Y = Y, iter = iter +     50, delta = delta, epsilon = eps, prior_only = 0, explore = 1,     start = start, progress = progress): Incorrect number of arguments (8), expecting 10 for '_BGGM_Theta_continuous'</span></div><div class='input'>
+<span class='no'>fit</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='explore.html'>explore</a></span>(<span class='no'>Y</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in .Call("_BGGM_Theta_continuous", PACKAGE = "BGGMmod", Y = Y, iter = iter +     50, delta = delta, epsilon = eps, prior_only = 0, explore = 1,     start = start, progress = progress): Incorrect number of arguments (8), expecting 10 for '_BGGM_Theta_continuous'</span></div><div class='input'>
 <span class='co'># edge set</span>
 <span class='no'>E</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='select.html'>select</a></span>(<span class='no'>fit</span>,
             <span class='kw'>alternative</span> <span class='kw'>=</span> <span class='st'>"exhaustive"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in select(fit, alternative = "exhaustive"): object 'fit' not found</span></div><div class='input'>

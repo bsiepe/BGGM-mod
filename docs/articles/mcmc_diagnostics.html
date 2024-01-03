@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MCMC Diagnostics • BGGM</title>
+<title>MCMC Diagnostics • BGGMmod</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="MCMC Diagnostics">
-<meta property="og:description" content="BGGM">
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg">
+<meta property="og:description" content="BGGMmod">
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@wdonald_1985">
 <meta name="twitter:site" content="@wdonald_1985">
@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -62,7 +62,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -85,7 +85,7 @@
             
             <h4 class="date">5/20/2020</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGM/blob/master/vignettes/mcmc_diagnostics.Rmd"><code>vignettes/mcmc_diagnostics.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGMmod/blob/master/vignettes/mcmc_diagnostics.Rmd"><code>vignettes/mcmc_diagnostics.Rmd</code></a></small>
       <div class="hidden name"><code>mcmc_diagnostics.Rmd</code></div>
 
     </div>
@@ -95,7 +95,7 @@
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
-<p>The algorithms in <strong>BGGM</strong> are based on Gibbs samplers. In the context of covariance matrix estimation, as opposed, to, say, hierarchical models, this allows for efficiently sampling the posterior distribution. Furthermore, in all samplers the empirical covariance matrix is used as the starting value which reduces the length of the burn-in (or warm-up). Still yet it is important to monitor convergence. See <a href="http://sbfnk.github.io/mfiidd/mcmc_diagnostics.html">here</a> for an introduction to MCMC diagnostics.</p>
+<p>The algorithms in <strong>BGGMmod</strong> are based on Gibbs samplers. In the context of covariance matrix estimation, as opposed, to, say, hierarchical models, this allows for efficiently sampling the posterior distribution. Furthermore, in all samplers the empirical covariance matrix is used as the starting value which reduces the length of the burn-in (or warm-up). Still yet it is important to monitor convergence. See <a href="http://sbfnk.github.io/mfiidd/mcmc_diagnostics.html">here</a> for an introduction to MCMC diagnostics.</p>
 <div id="r-packages" class="section level3">
 <h3 class="hasAnchor">
 <a href="#r-packages" class="anchor"></a>R packages</h3>
@@ -105,8 +105,8 @@
 }
 
 <span class="co"># install from github</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGM"</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGM</span>)</pre></body></html></div>
+<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGMmod"</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGMmod</span>)</pre></body></html></div>
 </div>
 </div>
 <div id="acf-plot" class="section level1">
@@ -163,7 +163,7 @@
 
 <span class="co"># check thinned</span>
 <span class="fu"><a href="../reference/convergence.html">convergence</a></span>(<span class="no">fit</span>, <span class="kw">param</span> <span class="kw">=</span> <span class="st">"B1--B2"</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"acf"</span>)</pre></body></html></div>
-<p>or perhaps just running the model for more iterations (e.g., increasing <code>iter</code> in <code>estimate</code>). The above is quite convoluted but note convergence should not typically be an issue. And it might come in handy to know that the samples can be replaced and the other functions in <strong>BGGM</strong> will still work with the object <code>fit</code>.</p>
+<p>or perhaps just running the model for more iterations (e.g., increasing <code>iter</code> in <code>estimate</code>). The above is quite convoluted but note convergence should not typically be an issue. And it might come in handy to know that the samples can be replaced and the other functions in <strong>BGGMmod</strong> will still work with the object <code>fit</code>.</p>
 </div>
 <div id="trace-plot" class="section level1">
 <h1 class="hasAnchor">

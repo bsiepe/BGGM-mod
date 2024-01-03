@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BGGM • BGGM</title>
+<title>BGGMmod • BGGMmod</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="BGGM">
+<script src="pkgdown.js"></script><meta property="og:title" content="BGGMmod">
 <meta property="og:description" content="Fit Bayesian Gaussian graphical models. The methods are separated into 
     two Bayesian approaches for inference: hypothesis testing and estimation. There are 
     extensions for confirmatory hypothesis testing, comparing Gaussian graphical models, 
@@ -26,7 +26,7 @@
     Williams (2019) &lt;doi:10.31234/osf.io/x8dpr&gt;, 
     Williams and Mulder (2019) &lt;doi:10.31234/osf.io/ypxd8&gt;,
     Williams, Rast, Pericchi, and Mulder (2019) &lt;doi:10.31234/osf.io/yt386&gt;.">
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg">
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@wdonald_1985">
 <meta name="twitter:site" content="@wdonald_1985">
@@ -47,7 +47,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">BGGM</a>
+        <a class="navbar-link" href="index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -69,7 +69,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -92,27 +92,27 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The <code>R</code> package <strong>BGGM</strong> provides tools for making Bayesian inference in Gaussian graphical models (GGM, Williams and Mulder 2020). The methods are organized around two general approaches for Bayesian inference: (1) estimation and (2) hypothesis testing. The key distinction is that the former focuses on either the posterior or posterior predictive distribution (Gelman, Meng, and Stern 1996; see section 5 in Rubin 1984), whereas the latter focuses on model comparison with the Bayes factor (Jeffreys 1961; Kass and Raftery 1995).</p>
+<p>The <code>R</code> package <strong>BGGMmod</strong> provides tools for making Bayesian inference in Gaussian graphical models (GGM, Williams and Mulder 2020). The methods are organized around two general approaches for Bayesian inference: (1) estimation and (2) hypothesis testing. The key distinction is that the former focuses on either the posterior or posterior predictive distribution (Gelman, Meng, and Stern 1996; see section 5 in Rubin 1984), whereas the latter focuses on model comparison with the Bayes factor (Jeffreys 1961; Kass and Raftery 1995).</p>
 <div id="-installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#-installation" class="anchor"></a><i class="fas fa-cog"></i> Installation</h2>
 <p>To install the latest release version (<code>2.0.0</code>) from CRAN use</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"BGGM"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"BGGMmod"</span>)</pre></div>
 <p>The current developmental version can be installed with</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="kw">if</span> (!<span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span>(<span class="st">"remotes"</span>)) {
   <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"remotes"</span>)
 }
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGM"</span>)</pre></div>
+<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGMmod"</span>)</pre></div>
 <div id="-dealing-with-errors" class="section level3">
 <h3 class="hasAnchor">
 <a href="#-dealing-with-errors" class="anchor"></a><i class="fas fa-skull-crossbones"></i> Dealing with Errors</h3>
-<p>There are automatic checks for <a href="https://travis-ci.org/github/donaldRwilliams/BGGM/branches"><strong>BGGM</strong></a>. However, that only checks for Linux and <strong>BGGM</strong> is built on Windows. The most common installation errors occur on OSX. An evolving guide to address these issues is provided in the <a href="https://donaldrwilliams.github.io/BGGM/articles/installation.html">Troubleshoot Section</a>.</p>
+<p>There are automatic checks for <a href="https://travis-ci.org/github/donaldRwilliams/BGGMmod/branches"><strong>BGGMmod</strong></a>. However, that only checks for Linux and <strong>BGGMmod</strong> is built on Windows. The most common installation errors occur on OSX. An evolving guide to address these issues is provided in the <a href="https://donaldrwilliams.github.io/BGGMmod/articles/installation.html">Troubleshoot Section</a>.</p>
 </div>
 </div>
 <div id="-overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#-overview" class="anchor"></a><i class="fas fa-clipboard-list"></i> Overview</h2>
-<p>The methods in <strong>BGGM</strong> build upon existing algorithms that are well-known in the literature. The central contribution of <strong>BGGM</strong> is to extend those approaches:</p>
+<p>The methods in <strong>BGGMmod</strong> build upon existing algorithms that are well-known in the literature. The central contribution of <strong>BGGMmod</strong> is to extend those approaches:</p>
 <ol>
 <li>
 <p>Bayesian estimation with the novel matrix-F prior distribution (Mulder and Pericchi 2018)</p>
@@ -123,25 +123,25 @@
 <li>
 <p>Bayesian hypothesis testing with the matrix-F prior distribution (Williams and Mulder 2019)</p>
 <ul>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#Exploratory">Exploratory hypothesis testing</a></p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#confirmatory">Confirmatory hypothesis testing</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#Exploratory">Exploratory hypothesis testing</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#confirmatory">Confirmatory hypothesis testing</a></p></li>
 </ul>
 </li>
 <li>
 <p>Comparing Gaussian graphical models (Williams 2018; Williams et al. 2020)</p>
 <ul>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#partial-correlation-differences">Partial correlation differences</a></p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#posterior-predictive-check">Posterior predictive check</a></p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#exploratory-groups">Exploratory hypothesis testing</a></p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#confirmatory-groups">Confirmatory hypothesis testing</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#partial-correlation-differences">Partial correlation differences</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#posterior-predictive-check">Posterior predictive check</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#exploratory-groups">Exploratory hypothesis testing</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#confirmatory-groups">Confirmatory hypothesis testing</a></p></li>
 </ul>
 </li>
 <li>
 <p>Extending inference beyond the conditional (in)dependence structure (Williams 2018)</p>
 <ul>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#predictability">Predictability</a></p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#posterior-uncertainty">Posterior uncertainty intervals</a> for the partial correlations</p></li>
-<li><p><a href="https://github.com/donaldRwilliams/BGGM#custom-network-statistics">Custom Network Statistics</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#predictability">Predictability</a></p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#posterior-uncertainty">Posterior uncertainty intervals</a> for the partial correlations</p></li>
+<li><p><a href="https://github.com/donaldRwilliams/BGGMmod#custom-network-statistics">Custom Network Statistics</a></p></li>
 </ul>
 </li>
 </ol>
@@ -153,25 +153,25 @@
 <ul>
 <li><p><strong>Continuous</strong>: The continuous method was described in Williams (2018). Note that this is based on the customary <a href="https://en.wikipedia.org/wiki/Wishart_distribution">Wishart distribution</a>.</p></li>
 <li><p><strong>Binary</strong>: The binary method builds directly upon Talhouk, Doucet, and Murphy (2012) that, in turn, built upon the approaches of Lawrence et al. (2008) and Webb and Forster (2008) (to name a few).</p></li>
-<li><p><strong>Ordinal</strong>: The ordinal methods require sampling thresholds. There are two approach included in <strong>BGGM</strong>. The customary approach described in Albert and Chib (1993) (the default) and the ‘Cowles’ algorithm described in Cowles (1996).</p></li>
+<li><p><strong>Ordinal</strong>: The ordinal methods require sampling thresholds. There are two approach included in <strong>BGGMmod</strong>. The customary approach described in Albert and Chib (1993) (the default) and the ‘Cowles’ algorithm described in Cowles (1996).</p></li>
 <li><p><strong>Mixed</strong>: The mixed data (a combination of discrete and continuous) method was introduced in Hoff (2007). This is a semi-parametric copula model (i.e., a copula GGM) based on the ranked likelihood. Note that this can be used for <em>only</em> ordinal data (not restricted to “mixed” data).</p></li>
 </ul>
 </div>
 <div id="-illustrative-examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#-illustrative-examples" class="anchor"></a><i class="fas fa-folder-open"></i> Illustrative Examples</h2>
-<p>There are several examples in the <a href="https://donaldrwilliams.github.io/BGGM/articles/">Vignettes</a> section.</p>
+<p>There are several examples in the <a href="https://donaldrwilliams.github.io/BGGMmod/articles/">Vignettes</a> section.</p>
 </div>
 <div id="-basic-usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#-basic-usage" class="anchor"></a><i class="fas fa-play-circle"></i> Basic Usage</h2>
-<p>It is common to have some combination of continuous and discrete (e.g., ordinal, binary, etc.) variables. <strong>BGGM</strong> (as of version <code>2.0.0</code>) can readily be used for these kinds of data. In this example, a model is fitted for the <code>gss</code> data in <strong>BGGM</strong>.</p>
+<p>It is common to have some combination of continuous and discrete (e.g., ordinal, binary, etc.) variables. <strong>BGGMmod</strong> (as of version <code>2.0.0</code>) can readily be used for these kinds of data. In this example, a model is fitted for the <code>gss</code> data in <strong>BGGMmod</strong>.</p>
 <div id="visualize" class="section level3">
 <h3 class="hasAnchor">
 <a href="#visualize" class="anchor"></a>Visualize</h3>
 <p>The data are first visualized with the <strong>psych</strong> package, which readily shows the data are “mixed”.</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="co"># dev version</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGM</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGMmod</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">psych</span>)
 
 <span class="co"># data</span>
@@ -194,7 +194,7 @@
 <p>The estimated relations are summarized with</p>
 <div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="no">fit</span>)
 
-<span class="co">#&gt; BGGM: Bayesian Gaussian Graphical Models </span>
+<span class="co">#&gt; BGGMmod: Bayesian Gaussian Graphical Models </span>
 <span class="co">#&gt; --- </span>
 <span class="co">#&gt; Type: mixed </span>
 <span class="co">#&gt; Analytic: FALSE </span>
@@ -300,7 +300,7 @@
 <p>Williams, Donald R, and Joris Mulder. 2019. “Bayesian Hypothesis Testing for Gaussian Graphical Models: Conditional Independence and Order Constraints.” <em>PsyArXiv</em>. <a href="https://doi.org/10.31234/osf.io/ypxd8" class="uri">https://doi.org/10.31234/osf.io/ypxd8</a>.</p>
 </div>
 <div id="ref-williams2020bggm">
-<p>———. 2020. “BGGM: Bayesian Gaussian Graphical Models in R.” <em>PsyArXiv</em>.</p>
+<p>———. 2020. “BGGMmod: Bayesian Gaussian Graphical Models in R.” <em>PsyArXiv</em>.</p>
 </div>
 <div id="ref-williams2020comparing">
 <p>Williams, Donald R, Philippe Rast, Luis R Pericchi, and Joris Mulder.</p>
@@ -317,13 +317,13 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=BGGM">https://​cloud.r-project.org/​package=BGGM</a>
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=BGGMmod">https://​cloud.r-project.org/​package=BGGMmod</a>
 </li>
-<li>Browse source code at <br><a href="https://github.com/donaldRwilliams/BGGM/">https://​github.com/​donaldRwilliams/​BGGM/​</a>
+<li>Browse source code at <br><a href="https://github.com/donaldRwilliams/BGGMmod/">https://​github.com/​donaldRwilliams/​BGGMmod/​</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/donaldRwilliams/BGGM/issues">https://​github.com/​donaldRwilliams/​BGGM/​issues</a>
+<li>Report a bug at <br><a href="https://github.com/donaldRwilliams/BGGMmod/issues">https://​github.com/​donaldRwilliams/​BGGMmod/​issues</a>
 </li>
-<li>Ask a question about BGGM at <br><a href="https://groups.google.com/forum/#!forum/bggm-users">https://​groups.google.com/​forum/​#!forum/​bggm-users</a>
+<li>Ask a question about BGGMmod at <br><a href="https://groups.google.com/forum/#!forum/bggm-users">https://​groups.google.com/​forum/​#!forum/​bggm-users</a>
 </li>
 </ul>
 </div>
@@ -336,7 +336,7 @@
 <div class="citation">
 <h2>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html">Citing BGGM</a></li>
+<li><a href="authors.html">Citing BGGMmod</a></li>
 </ul>
 </div>
 <div class="developers">
@@ -350,9 +350,9 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=BGGM"><img src="http://www.r-pkg.org/badges/version/BGGM" alt="CRAN Version"></a></li>
-<li><a href="https://cran.r-project.org/package=BGGM"><img src="https://cranlogs.r-pkg.org/badges/BGGM" alt="Downloads"></a></li>
-<li><a href="https://travis-ci.org/donaldRwilliams/BGGM"><img src="https://travis-ci.org/donaldRwilliams/BGGM.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://cran.r-project.org/package=BGGMmod"><img src="http://www.r-pkg.org/badges/version/BGGMmod" alt="CRAN Version"></a></li>
+<li><a href="https://cran.r-project.org/package=BGGMmod"><img src="https://cranlogs.r-pkg.org/badges/BGGMmod" alt="Downloads"></a></li>
+<li><a href="https://travis-ci.org/donaldRwilliams/BGGMmod"><img src="https://travis-ci.org/donaldRwilliams/BGGMmod.svg?branch=master" alt="Build Status"></a></li>
 </ul>
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Custom Network Comparisons • BGGM</title>
+<title>Custom Network Comparisons • BGGMmod</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Custom Network Comparisons">
-<meta property="og:description" content="BGGM">
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg">
+<meta property="og:description" content="BGGMmod">
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@wdonald_1985">
 <meta name="twitter:site" content="@wdonald_1985">
@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -62,7 +62,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -85,7 +85,7 @@
             
             <h4 class="date">5/19/2020</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGM/blob/master/vignettes/ppc_custom.Rmd"><code>vignettes/ppc_custom.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/donaldRwilliams/BGGMmod/blob/master/vignettes/ppc_custom.Rmd"><code>vignettes/ppc_custom.Rmd</code></a></small>
       <div class="hidden name"><code>ppc_custom.Rmd</code></div>
 
     </div>
@@ -96,7 +96,7 @@
 <h1 class="hasAnchor">
 <a href="#background" class="anchor"></a>Background</h1>
 <p>It is quite common to have partial correlation networks (GGMs) for various subgroups, say, males and females, a control and treatment group, or perhaps several educational levels. In this case, it is important to not only determine whether the groups are different, but actually compare the groups in a way that answers a specific question of interest.</p>
-<p>To date, most <code>R</code> packages provide a few ways to compare groups, including <strong>BGGM</strong> (version <code>1.0.0</code>). In version <code>2.0.0</code>, however, <strong>BGGM</strong> includes a new feature for the function <code>ggm_compare_ppc</code> that enables users to <strong>compare networks in any way they want</strong>.</p>
+<p>To date, most <code>R</code> packages provide a few ways to compare groups, including <strong>BGGMmod</strong> (version <code>1.0.0</code>). In version <code>2.0.0</code>, however, <strong>BGGMmod</strong> includes a new feature for the function <code>ggm_compare_ppc</code> that enables users to <strong>compare networks in any way they want</strong>.</p>
 </div>
 <div id="basic-idea" class="section level1">
 <h1 class="hasAnchor">
@@ -118,7 +118,7 @@
 </ul>
 </li>
 </ol>
-<p>In <strong>BGGM</strong>, the default is to compare the groups with respect to (symmetric) Kullback-Leibler divergence (i.e., “distance” between multivariate normal distributions) and the sum of squared error (for the partial correlation matrix). This was shown to be quite powerful in <span class="citation">Williams et al. (2020)</span>, while also having a low false positive rate.</p>
+<p>In <strong>BGGMmod</strong>, the default is to compare the groups with respect to (symmetric) Kullback-Leibler divergence (i.e., “distance” between multivariate normal distributions) and the sum of squared error (for the partial correlation matrix). This was shown to be quite powerful in <span class="citation">Williams et al. (2020)</span>, while also having a low false positive rate.</p>
 <p>In the following, the focus is on defining custom functions and using them with <code>ggm_compare_ppc</code>. In all examples, post-traumatic stress disorder networks are compared <span class="citation">(Fried et al. 2018)</span>.</p>
 <div id="r-packages" class="section level3">
 <h3 class="hasAnchor">
@@ -129,14 +129,14 @@
 }
 
 <span class="co"># install from github</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGM"</span>)</pre></body></html></div>
+<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"donaldRwilliams/BGGMmod"</span>)</pre></body></html></div>
 </div>
 <div id="data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data" class="anchor"></a>Data</h3>
 <p>Only the correlation matrices are available. Hence, multivariate normal data is generated with that <em>exact</em> correlation structure via the <code>R</code> package <strong>MASS</strong>.</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="co"># need these packages</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGM</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">BGGMmod</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">assortnet</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">networktools</span>)
@@ -203,14 +203,14 @@
 <h3 class="hasAnchor">
 <a href="#step-3-predictive-check" class="anchor"></a>Step 3: Predictive Check</h3>
 <p>With the function, <code>f</code>, and the observed scores, <code>obs</code>, in hand, what is left is the predictive check</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">ppc</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/ggm_compare_ppc.html">ggm_compare_ppc</a></span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>,
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">ppc</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/ggm_compare_ppc.html">ggm_compare_ppc</a></span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>,
                        <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">f</span>,
                        <span class="kw">custom_obs</span> <span class="kw">=</span> <span class="no">obs</span>,
                        <span class="kw">iter</span> <span class="kw">=</span> <span class="fl">1000</span>,
                        <span class="kw">loss</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
 <p>Note that <code>loss = FALSE</code> controls how the p-value is computed. It is an indicator of whether the test-statistic is a “loss” (a bad thing). In this case, a large correlation is a good thing so it is set to <code>FALSE</code>. The results can then be printed</p>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">ppc</span></pre></body></html></div>
-<pre><code>## BGGM: Bayesian Gaussian Graphical Models 
+<pre><code>## BGGMmod: Bayesian Gaussian Graphical Models 
 ## --- 
 ## Test: Global Predictive Check 
 ## Posterior Samples: 1000 
@@ -220,7 +220,7 @@
 ## Relations: 120 
 ## --- 
 ## Call: 
-## BGGM::ggm_compare_ppc(Yg1, Yg2, iter = 1000, FUN = f, custom_obs = obs, 
+## BGGMmod::ggm_compare_ppc(Yg1, Yg2, iter = 1000, FUN = f, custom_obs = obs, 
 ##     loss = FALSE)
 ## --- 
 ## Custom: 
@@ -251,12 +251,12 @@
   <span class="no">indices</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lower.tri.html">upper.tri</a></span>( <span class="fu"><a href="https://rdrr.io/r/base/diag.html">diag</a></span>(<span class="no">p</span>))
 
   <span class="co"># fit models</span>
-  <span class="no">fit1</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg1</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
-  <span class="no">fit2</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg2</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+  <span class="no">fit1</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg1</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+  <span class="no">fit2</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg2</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
 
   <span class="co"># select graphs</span>
-  <span class="no">sel1</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/select.html">select</a></span>(<span class="no">fit1</span>)
-  <span class="no">sel2</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/select.html">select</a></span>(<span class="no">fit2</span>)
+  <span class="no">sel1</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/select.html">select</a></span>(<span class="no">fit1</span>)
+  <span class="no">sel2</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/select.html">select</a></span>(<span class="no">fit2</span>)
 
   <span class="co"># hamming distance</span>
   <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>((<span class="no">sel1</span>$<span class="no">adj</span>[<span class="no">indices</span>] - <span class="no">sel2</span>$<span class="no">adj</span>[<span class="no">indices</span>]) ^ <span class="fl">2</span>)
@@ -276,13 +276,13 @@
 <h3 class="hasAnchor">
 <a href="#step-3-predictive-check-1" class="anchor"></a>Step 3: Predictive Check</h3>
 <p>With the function, <code>f</code>, and the observed scores, <code>obs</code>, in hand, what is left is the predictive check</p>
-<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="no">ppc</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/ggm_compare_ppc.html">ggm_compare_ppc</a></span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>,
+<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="no">ppc</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/ggm_compare_ppc.html">ggm_compare_ppc</a></span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>,
                        <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">f</span>,
                        <span class="kw">custom_obs</span> <span class="kw">=</span> <span class="no">obs</span>,
                        <span class="kw">iter</span> <span class="kw">=</span> <span class="fl">1000</span>)</pre></body></html></div>
 <p>The results can then be printed</p>
 <div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="no">ppc</span></pre></body></html></div>
-<pre><code>## BGGM: Bayesian Gaussian Graphical Models 
+<pre><code>## BGGMmod: Bayesian Gaussian Graphical Models 
 ## --- 
 ## Test: Global Predictive Check 
 ## Posterior Samples: 1000 
@@ -292,7 +292,7 @@
 ## Relations: 120 
 ## --- 
 ## Call: 
-## BGGM::ggm_compare_ppc(Yg1, Yg2, iter = 1000, FUN = f, custom_obs = obs)
+## BGGMmod::ggm_compare_ppc(Yg1, Yg2, iter = 1000, FUN = f, custom_obs = obs)
 ## --- 
 ## Custom: 
 ##  
@@ -321,11 +321,11 @@
   <span class="no">indices</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lower.tri.html">upper.tri</a></span>( <span class="fu"><a href="https://rdrr.io/r/base/diag.html">diag</a></span>(<span class="no">p</span>))
 
   <span class="co"># fit models</span>
-  <span class="no">fit1</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg1</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
-  <span class="no">fit2</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg2</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+  <span class="no">fit1</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg1</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+  <span class="no">fit2</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg2</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
 
-  <span class="no">pcor1</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit1</span>)
-  <span class="no">pcor2</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit2</span>)
+  <span class="no">pcor1</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit1</span>)
+  <span class="no">pcor2</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit2</span>)
 
   <span class="co"># CDM for partial correlations</span>
   <span class="co"># note: numerator is the trace; denominator is the Frobenius norm</span>
@@ -346,13 +346,13 @@
 <h3 class="hasAnchor">
 <a href="#step-3-predictive-check-2" class="anchor"></a>Step 3: Predictive Check</h3>
 <p>With the function, <code>f</code>, and the observed scores, <code>obs</code>, in hand, what is left is the predictive check</p>
-<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="no">ppc</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/ggm_compare_ppc.html">ggm_compare_ppc</a></span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>,
+<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="no">ppc</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/ggm_compare_ppc.html">ggm_compare_ppc</a></span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>,
                        <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">f</span>,
                        <span class="kw">custom_obs</span> <span class="kw">=</span> <span class="no">obs</span>,
                        <span class="kw">iter</span> <span class="kw">=</span> <span class="fl">1000</span>)</pre></body></html></div>
 <p>The results can then be printed</p>
 <div class="sourceCode" id="cb22"><html><body><pre class="r"><span class="no">ppc</span></pre></body></html></div>
-<pre><code>## BGGM: Bayesian Gaussian Graphical Models 
+<pre><code>## BGGMmod: Bayesian Gaussian Graphical Models 
 ## --- 
 ## Test: Global Predictive Check 
 ## Posterior Samples: 1000 
@@ -362,7 +362,7 @@
 ## Relations: 120 
 ## --- 
 ## Call: 
-## BGGM::ggm_compare_ppc(Yg1, Yg2, iter = 1000, FUN = f, custom_obs = obs)
+## BGGMmod::ggm_compare_ppc(Yg1, Yg2, iter = 1000, FUN = f, custom_obs = obs)
 ## --- 
 ## Custom: 
 ##  
@@ -395,11 +395,11 @@
 
 <span class="no">f</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>){
 
-  <span class="no">fit1</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg1</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
-  <span class="no">fit2</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg2</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+  <span class="no">fit1</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg1</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+  <span class="no">fit2</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg2</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
 
-  <span class="no">pcor1</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit1</span>)
-  <span class="no">pcor2</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit2</span>)
+  <span class="no">pcor1</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit1</span>)
+  <span class="no">pcor2</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit2</span>)
 
   <span class="no">assort1</span> <span class="kw">&lt;-</span> <span class="kw pkg">assortnet</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/assortnet/man/assortment.discrete.html">assortment.discrete</a></span>(<span class="no">pcor1</span>, <span class="kw">types</span> <span class="kw">=</span> <span class="no">comms</span>,
                                          <span class="kw">weighted</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
@@ -425,13 +425,13 @@
 <h3 class="hasAnchor">
 <a href="#step-3-predictive-check-3" class="anchor"></a>Step 3: Predictive Check</h3>
 <p>With the function, <code>f</code>, and the observed score, <code>obs</code>, in hand, the next step is the predictive check</p>
-<div class="sourceCode" id="cb28"><html><body><pre class="r"><span class="no">ppc</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/ggm_compare_ppc.html">ggm_compare_ppc</a></span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>,
+<div class="sourceCode" id="cb28"><html><body><pre class="r"><span class="no">ppc</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/ggm_compare_ppc.html">ggm_compare_ppc</a></span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>,
                        <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">f</span>,
                        <span class="kw">custom_obs</span> <span class="kw">=</span> <span class="no">obs</span>,
                        <span class="kw">iter</span> <span class="kw">=</span> <span class="fl">1000</span>)</pre></body></html></div>
 <p>The results can then be printed</p>
 <div class="sourceCode" id="cb29"><html><body><pre class="r"><span class="no">ppc</span></pre></body></html></div>
-<pre><code>## BGGM: Bayesian Gaussian Graphical Models 
+<pre><code>## BGGMmod: Bayesian Gaussian Graphical Models 
 ## --- 
 ## Test: Global Predictive Check 
 ## Posterior Samples: 1000 
@@ -441,7 +441,7 @@
 ## Relations: 120 
 ## --- 
 ## Call: 
-## BGGM::ggm_compare_ppc(Yg1, Yg2, iter = 1000, FUN = f, custom_obs = obs)
+## BGGMmod::ggm_compare_ppc(Yg1, Yg2, iter = 1000, FUN = f, custom_obs = obs)
 ## --- 
 ## Custom: 
 ##  
@@ -465,11 +465,11 @@
 <a href="#step-1-define-custom-function-4" class="anchor"></a>Step 1: Define Custom Function</h3>
 <div class="sourceCode" id="cb34"><html><body><pre class="r"><span class="no">f</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>){
 
-  <span class="no">fit1</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg1</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
-  <span class="no">fit2</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg2</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+  <span class="no">fit1</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg1</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+  <span class="no">fit2</span> <span class="kw">&lt;-</span>  <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/estimate.html">estimate</a></span>(<span class="no">Yg2</span>, <span class="kw">analytic</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
 
-  <span class="no">pcor1</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit1</span>)
-  <span class="no">pcor2</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit2</span>)
+  <span class="no">pcor1</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit1</span>)
+  <span class="no">pcor2</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">::</span><span class="fu"><a href="../reference/pcor_mat.html">pcor_mat</a></span>(<span class="no">fit2</span>)
 
   <span class="no">ei1</span> <span class="kw">&lt;-</span> <span class="kw pkg">networktools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/networktools/man/expectedInf.html">expectedInf</a></span>(<span class="no">pcor1</span>)$<span class="no">step1</span>
 
@@ -491,13 +491,13 @@
 <h3 class="hasAnchor">
 <a href="#step-3-predictive-check-4" class="anchor"></a>Step 3: Predictive Check</h3>
 <p>With the function, <code>f</code>, and the observed scores, <code>obs</code>, in hand, what is left is the predictive check</p>
-<div class="sourceCode" id="cb37"><html><body><pre class="r"><span class="no">ppc</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGM</span><span class="kw ns">:::</span><span class="fu"><a href="../reference/ggm_compare_ppc.html">ggm_compare_ppc</a></span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>,
+<div class="sourceCode" id="cb37"><html><body><pre class="r"><span class="no">ppc</span> <span class="kw">&lt;-</span> <span class="kw pkg">BGGMmod</span><span class="kw ns">:::</span><span class="fu"><a href="../reference/ggm_compare_ppc.html">ggm_compare_ppc</a></span>(<span class="no">Yg1</span>, <span class="no">Yg2</span>,
                        <span class="kw">FUN</span> <span class="kw">=</span> <span class="no">f</span>,
                        <span class="kw">custom_obs</span> <span class="kw">=</span> <span class="no">obs</span>,
                        <span class="kw">iter</span> <span class="kw">=</span> <span class="fl">1000</span>)</pre></body></html></div>
 <p>The results can then be printed</p>
 <div class="sourceCode" id="cb38"><html><body><pre class="r"><span class="no">ppc</span></pre></body></html></div>
-<pre><code>## BGGM: Bayesian Gaussian Graphical Models 
+<pre><code>## BGGMmod: Bayesian Gaussian Graphical Models 
 ## --- 
 ## Test: Global Predictive Check 
 ## Posterior Samples: 1000 
@@ -507,7 +507,7 @@
 ## Relations: 120 
 ## --- 
 ## Call: 
-## BGGM:::ggm_compare_ppc(Yg1, Yg2, iter = 1000, FUN = f, custom_obs = obs)
+## BGGMmod:::ggm_compare_ppc(Yg1, Yg2, iter = 1000, FUN = f, custom_obs = obs)
 ## --- 
 ## Custom: 
 ##  
@@ -527,7 +527,7 @@
 <h1 class="hasAnchor">
 <a href="#two-notes-of-caution" class="anchor"></a>Two Notes of Caution</h1>
 <ol style="list-style-type: decimal">
-<li><p>Note that only the default in <strong>BGGM</strong> have been shown to have nominal error rates. However, there is a proof that suggests the error rate cannot be larger than <span class="math inline">\(2\alpha\)</span> <span class="citation">(Meng and others 1994)</span>, and, further, a predictive check is typically below <span class="math inline">\(\alpha\)</span> <span class="citation">(i.e., a tendency to be conservative, Gelman and others 2013)</span>.</p></li>
+<li><p>Note that only the default in <strong>BGGMmod</strong> have been shown to have nominal error rates. However, there is a proof that suggests the error rate cannot be larger than <span class="math inline">\(2\alpha\)</span> <span class="citation">(Meng and others 1994)</span>, and, further, a predictive check is typically below <span class="math inline">\(\alpha\)</span> <span class="citation">(i.e., a tendency to be conservative, Gelman and others 2013)</span>.</p></li>
 <li><p>Failing to reject the null model does not indicate the groups are the same! To test for equality see <code>ggm_compare_explore</code> and <code>ggm_compare_confirm</code>.</p></li>
 </ol>
 </div>

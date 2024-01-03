@@ -1,6 +1,6 @@
 #' Data: Post-Traumatic Stress Disorder
 #'
-#' A dataset containing items that measure Post-traumatic stress disorder symptoms \insertCite{armour2017network}{BGGM}.
+#' A dataset containing items that measure Post-traumatic stress disorder symptoms \insertCite{armour2017network}{BGGMmod}.
 #' There are 20 variables (\emph{p}) and  221 observations (\emph{n}).
 #'
 #' \itemize{
@@ -45,7 +45,7 @@ NULL
 #' Data: Post-Traumatic Stress Disorder (Sample # 1)
 #'
 #' A correlation matrix that includes 16 variables. The correlation matrix was estimated from 526
-#' individuals \insertCite{fried2018replicability}{BGGM}.
+#' individuals \insertCite{fried2018replicability}{BGGMmod}.
 #'
 #' \itemize{
 #'   \item Intrusive Thoughts
@@ -91,7 +91,7 @@ NULL
 #' Data: Post-Traumatic Stress Disorder (Sample # 2)
 #'
 #' A correlation matrix that includes 16 variables. The correlation matrix
-#' was estimated from 365 individuals \insertCite{fried2018replicability}{BGGM}.
+#' was estimated from 365 individuals \insertCite{fried2018replicability}{BGGMmod}.
 #'
 #' \itemize{
 #'   \item Intrusive Thoughts
@@ -134,7 +134,7 @@ NULL
 #'  Data: Post-Traumatic Stress Disorder  (Sample # 3)
 #'
 #' A correlation matrix that includes 16 variables. The correlation matrix
-#' was estimated from 926 individuals \insertCite{fried2018replicability}{BGGM}.
+#' was estimated from 926 individuals \insertCite{fried2018replicability}{BGGMmod}.
 #'
 #' \itemize{
 #'
@@ -180,7 +180,7 @@ NULL
 #' Data: Post-Traumatic Stress Disorder  (Sample # 4)
 #'
 #' A correlation matrix that includes 16 variables. The correlation matrix
-#' was estimated from 965 individuals \insertCite{fried2018replicability}{BGGM}.
+#' was estimated from 965 individuals \insertCite{fried2018replicability}{BGGMmod}.
 #'
 #' \itemize{
 #'   \item Intrusive Thoughts
@@ -225,7 +225,7 @@ NULL
 #' Data: 25 Personality items representing 5 factors
 #'
 #' This dataset and the corresponding documentation was taken from the \strong{psych} package. We refer users to that
-#' package for further details \insertCite{psych}{BGGM}.
+#' package for further details \insertCite{psych}{BGGMmod}.
 #'
 #' \itemize{
 #'   \item \code{A1} Am indifferent to the feelings of others. (q_146)
@@ -813,9 +813,9 @@ NULL
 #' @usage data("women_math")
 #'
 #' @format A data frame containing 1190 observations (n = 1190) and 6 variables (p = 6) measured on the binary scale
-#'         \insertCite{fowlkes1988evaluating}{BGGM}. These data have been analyzed in \insertCite{tarantola2004mcmc;textual}{BGGM}
-#'         and in \insertCite{madigan1994model}{BGGM}. The variable descriptions were copied from  (section 5.2 )
-#'         \insertCite{@section 5.2, @talhouk2012efficient}{BGGM}
+#'         \insertCite{fowlkes1988evaluating}{BGGMmod}. These data have been analyzed in \insertCite{tarantola2004mcmc;textual}{BGGMmod}
+#'         and in \insertCite{madigan1994model}{BGGMmod}. The variable descriptions were copied from  (section 5.2 )
+#'         \insertCite{@section 5.2, @talhouk2012efficient}{BGGMmod}
 #'
 #' @examples
 #' data("women_math")
@@ -849,8 +849,8 @@ NULL
 #' @usage data("gss")
 #'
 #' @format A data frame containing 1190 observations (n = 1190) and 6 variables (p = 6) measured on the binary scale
-#'         \insertCite{fowlkes1988evaluating}{BGGM}. The variable descriptions were copied from
-#'         \insertCite{@section 4, @hoff2007extending;textual}{BGGM}
+#'         \insertCite{fowlkes1988evaluating}{BGGMmod}. The variable descriptions were copied from
+#'         \insertCite{@section 4, @hoff2007extending;textual}{BGGMmod}
 #'
 #' @examples
 #' data("gss")
@@ -887,7 +887,7 @@ NULL
 #' @usage data("ifit")
 #'
 #' @format A data frame containing 197 observations and 8 variables. The data have been used in
-#' \insertCite{o2020use}{BGGM} and  \insertCite{williams2019bayesian}{BGGM}
+#' \insertCite{o2020use}{BGGMmod} and  \insertCite{williams2019bayesian}{BGGMmod}
 #'
 #' @examples
 #' data("ifit")

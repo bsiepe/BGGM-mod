@@ -260,7 +260,7 @@ print_post_pred <- function(x,...){
 }
 
 print_map <- function(x,...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Method: Maximum A Posteriori \n")
   cat("--- \n")

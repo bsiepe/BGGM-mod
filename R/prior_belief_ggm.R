@@ -18,7 +18,7 @@
 #'
 #' @details Technically, the prior odds is not for including an edge in the graph,
 #' but for (H1)/p(H0), where H1 captures the hypothesized edge size and H0 is the
-#' null model  \insertCite{@see Williams2019_bf}{BGGM}. Accordingly, setting an
+#' null model  \insertCite{@see Williams2019_bf}{BGGMmod}. Accordingly, setting an
 #' entry in \code{prior_ggm} to, say, 10, encodes a prior belief that H1 is 10 times
 #' more likely than H0. Further, setting an entry in \code{prior_ggm} to 1 results
 #' in equal prior odds (the default in \code{\link{select.explore}}).
@@ -56,14 +56,14 @@
 #'                               progress = FALSE)
 #'
 #' # check scores
-#' BGGM:::performance(Estimate = prior_est$adj,
+#' BGGMmod:::performance(Estimate = prior_est$adj,
 #'                    True = main$adj)
 #'
-#' # default in BGGM
+#' # default in BGGMmod
 #' default_est <- select(explore(y, progress = FALSE))
 #'
 #' # check scores
-#' BGGM:::performance(Estimate = default_est$Adj_10,
+#' BGGMmod:::performance(Estimate = default_est$Adj_10,
 #'                    True = main$adj)
 #'
 #' }
@@ -102,13 +102,13 @@ prior_belief_ggm <- function(Y,
   returned_object <- list(adj = adj,
                           post_prob = post_prob)
 
-  class(returned_object) <- c("BGGM", "prior_ggm")
+  class(returned_object) <- c("BGGMmod", "prior_ggm")
 
   return(returned_object)
 }
 
 print_prior_ggm <- function(x, ...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("Prior Belief Gaussian Graphical Model\n")
   cat("--- \n")
   cat("Date:", date(), "\n")

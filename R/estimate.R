@@ -1,7 +1,7 @@
 #' @title GGM: Estimation
 #'
 #' @description Estimate the conditional (in)dependence with either an analytic solution or efficiently
-#' sampling from the posterior distribution. These methods were introduced in \insertCite{Williams2019;textual}{BGGM}.
+#' sampling from the posterior distribution. These methods were introduced in \insertCite{Williams2019;textual}{BGGMmod}.
 #' The graph is selected with \code{\link{select.estimate}} and then plotted with \code{\link{plot.select}}.
 #'
 #' @name estimate
@@ -40,7 +40,7 @@
 #'
 #'
 #' @return The returned object of class \code{estimate} contains a lot of information that
-#'         is used for printing and plotting the results. For users of \strong{BGGM}, the following
+#'         is used for printing and plotting the results. For users of \strong{BGGMmod}, the following
 #'         are the useful objects:
 #'
 #' \itemize{
@@ -56,7 +56,7 @@
 #'
 #' The default is to draw samples from the posterior distribution (\code{analytic = FALSE}). The samples are
 #' required for computing edge differences (see \code{\link{ggm_compare_estimate}}), Bayesian R2 introduced in
-#' \insertCite{gelman_r2_2019;textual}{BGGM} (see \code{\link{predictability}}), etc. If the goal is
+#' \insertCite{gelman_r2_2019;textual}{BGGMmod} (see \code{\link{predictability}}), etc. If the goal is
 #' to *only* determine the non-zero effects, this can be accomplished by setting \code{analytic = TRUE}.
 #' This is particularly useful when a fast solution is needed (see the examples in \code{\link{ggm_compare_ppc}})
 #'
@@ -77,7 +77,7 @@
 #'  as data points!
 #'
 #'  The option \code{mixed_type} allows the user to determine  which variable should be treated as ranks
-#'  and the "emprical" distribution is used otherwise \insertCite{hoff2007extending}{BGGM}. This is
+#'  and the "emprical" distribution is used otherwise \insertCite{hoff2007extending}{BGGMmod}. This is
 #'  accomplished by specifying an indicator vector of length \emph{p}. A one indicates to use the ranks,
 #'  whereas a zero indicates to "ignore" that variable. By default all integer variables are treated as ranks.
 #'
@@ -102,7 +102,7 @@
 #'
 #' \strong{Imputing Missing Values}:
 #'
-#' Missing values are imputed with the approach described in \insertCite{hoff2009first;textual}{BGGM}.
+#' Missing values are imputed with the approach described in \insertCite{hoff2009first;textual}{BGGMmod}.
 #' The basic idea is to impute the missing values with the respective posterior pedictive distribution,
 #' given the observed data, as the model is being estimated. Note that the default is \code{TRUE},
 #' but this ignored when there are no missing values. If set to \code{FALSE}, and there are missing
@@ -113,7 +113,7 @@
 #'
 #' \strong{Posterior Uncertainty}:
 #'
-#' A key feature of \bold{BGGM} is that there is a posterior distribution for each partial correlation.
+#' A key feature of \bold{BGGMmod} is that there is a posterior distribution for each partial correlation.
 #' This readily allows for visiualizing uncertainty in the estimates. This feature works
 #' with all data types and is accomplished by plotting the summary of the \code{estimate} object
 #' (i.e., \code{plot(summary(fit))}). Several examples are provided below.
@@ -122,7 +122,7 @@
 #'
 #' \strong{Interpretation of Conditional (In)dependence Models for Latent Data}:
 #'
-#' See \code{\link{BGGM-package}} for details about interpreting GGMs based on latent data
+#' See \code{\link{BGGMmod-package}} for details about interpreting GGMs based on latent data
 #' (i.e, all data types besides \code{"continuous"})
 #'
 #' @examples
@@ -236,7 +236,7 @@ estimate  <- function(Y,
 
     if(isTRUE(progress)){
 
-      message(paste0("BGGM: Posterior Sampling ", ...))
+      message(paste0("BGGMmod: Posterior Sampling ", ...))
 
       }
     # continuous
@@ -284,7 +284,7 @@ estimate  <- function(Y,
         # posterior sample
         post_samp <- .Call(
           '_BGGM_Theta_continuous',
-          PACKAGE = 'BGGM',
+          PACKAGE = 'BGGMmod',
           Y = Y,
           iter = iter + 50,
           delta = delta,
@@ -531,7 +531,7 @@ estimate  <- function(Y,
 
     if(isTRUE(progress)){
 
-      message("BGGM: Finished")
+      message("BGGMmod: Finished")
 
       }
 
@@ -598,7 +598,7 @@ estimate  <- function(Y,
 
   returned_object <- results
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "estimate",
                               "default")
   return(returned_object)
@@ -716,7 +716,7 @@ summary.estimate <- function(object,
                           object = object)
 
 
-class(returned_object) <- c("BGGM", "estimate",
+class(returned_object) <- c("BGGMmod", "estimate",
                             "summary_estimate",
                             "summary.estimate")
 returned_object
@@ -724,7 +724,7 @@ returned_object
 
 
 print_summary_estimate <- function(x, ...) {
-    cat("BGGM: Bayesian Gaussian Graphical Models \n")
+    cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
     cat("--- \n")
     cat("Type:",  x$object$type, "\n")
     cat("Analytic:", x$object$analytic, "\n")
@@ -748,7 +748,7 @@ print_summary_estimate <- function(x, ...) {
 
 
 print_estimate <- function(x, ...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:",  x$type, "\n")
   cat("Analytic:", x$analytic, "\n")

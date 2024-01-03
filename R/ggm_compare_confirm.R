@@ -4,7 +4,7 @@
 #' and/or ineqaulity contraints on the partial correlations of interest. Here the focus is \emph{not}
 #' on determining the graph (see \code{\link{explore}}) but testing specific hypotheses related to
 #' the conditional (in)dependence structure. These methods were introduced in
-#' \insertCite{Williams2019_bf;textual}{BGGM} and in \insertCite{williams2020comparing;textual}{BGGM}
+#' \insertCite{Williams2019_bf;textual}{BGGMmod} and in \insertCite{williams2020comparing;textual}{BGGMmod}
 #'
 #' @name ggm_compare_confirm
 #'
@@ -39,7 +39,7 @@
 #' \insertAllCited{}
 #'
 #' @return The returned object of class \code{confirm} contains a lot of information that
-#'         is used for printing and plotting the results. For users of \strong{BGGM}, the following
+#'         is used for printing and plotting the results. For users of \strong{BGGMmod}, the following
 #'         are the useful objects:
 #'
 #' \itemize{
@@ -47,7 +47,7 @@
 #' \item \code{out_hyp_prob} Posterior hypothesis probabilities.
 #'
 #' \item \code{info} An object of class \code{BF} from the R package \strong{BFpack}
-#'                   \insertCite{mulder2019bfpack}{BGGM}
+#'                   \insertCite{mulder2019bfpack}{BGGMmod}
 #'
 #' }
 #'
@@ -131,7 +131,7 @@
 #' \strong{Mixed Type}:
 #'
 #'  The term "mixed" is somewhat of a misnomer, because the method can be used for data including \emph{only}
-#'  continuous or \emph{only} discrete variables \insertCite{hoff2007extending}{BGGM}. This is based on the
+#'  continuous or \emph{only} discrete variables \insertCite{hoff2007extending}{BGGMmod}. This is based on the
 #'  ranked likelihood which requires sampling the ranks for each variable (i.e., the data is not merely
 #'  transformed to ranks). This is computationally expensive when there are many levels. For example,
 #'  with continuous data, there are as many ranks as data points!
@@ -163,7 +163,7 @@
 #'
 #' \strong{Imputing Missing Values}:
 #'
-#' Missing values are imputed with the approach described in \insertCite{hoff2009first;textual}{BGGM}.
+#' Missing values are imputed with the approach described in \insertCite{hoff2009first;textual}{BGGMmod}.
 #' The basic idea is to impute the missing values with the respective posterior pedictive distribution,
 #' given the observed data, as the model is being estimated. Note that the default is \code{TRUE},
 #' but this ignored when there are no missing values. If set to \code{FALSE}, and there are missing
@@ -174,8 +174,8 @@
 #' \strong{"Default" Prior}:
 #'
 #'  In Bayesian statistics, a default Bayes factor needs to have several properties. I refer
-#'  interested users to \insertCite{@section 2.2 in @dablander2020default;textual}{BGGM}. In
-#'  \insertCite{Williams2019_bf;textual}{BGGM}, some of these propteries were investigated (e.g.,
+#'  interested users to \insertCite{@section 2.2 in @dablander2020default;textual}{BGGMmod}. In
+#'  \insertCite{Williams2019_bf;textual}{BGGMmod}, some of these propteries were investigated (e.g.,
 #'  model selection consistency). That said, we would not consider this a "default" or "automatic"
 #'  Bayes factor and thus we encourage users to perform sensitivity analyses by varying the scale of
 #'  the prior distribution (\code{prior_sd}).
@@ -183,11 +183,11 @@
 #'  Furthermore, it is important to note there is no "correct" prior and, also, there is no need
 #'  to entertain the possibility of a "true" model. Rather, the Bayes factor can be interpreted as
 #'  which hypothesis best (relative to each other) predicts the observed data
-#'  \insertCite{@Section 3.2 in @Kass1995}{BGGM}.
+#'  \insertCite{@Section 3.2 in @Kass1995}{BGGMmod}.
 #'
 #' \strong{Interpretation of Conditional (In)dependence Models for Latent Data}:
 #'
-#'  See \code{\link{BGGM-package}} for details about interpreting GGMs based on latent data
+#'  See \code{\link{BGGMmod-package}} for details about interpreting GGMs based on latent data
 #' (i.e, all data types besides \code{"continuous"})
 #'
 #'
@@ -378,7 +378,7 @@ ggm_compare_confirm <- function(...,
 
         if(isTRUE(progress)){
 
-          message("BGGM: Posterior Sampling ", "(Group ",x ,")")
+          message("BGGMmod: Posterior Sampling ", "(Group ",x ,")")
 
         }
 
@@ -415,7 +415,7 @@ ggm_compare_confirm <- function(...,
 
         .Call(
           '_BGGM_Theta_continuous',
-          PACKAGE = 'BGGM',
+          PACKAGE = 'BGGMmod',
           Y = Y,
           iter = iter + 50,
           delta = delta,
@@ -437,7 +437,7 @@ ggm_compare_confirm <- function(...,
 
         if(isTRUE(progress)){
 
-          message("BGGM: Posterior Sampling ", "(Group ", x ,")")
+          message("BGGMmod: Posterior Sampling ", "(Group ", x ,")")
 
         }
 
@@ -482,7 +482,7 @@ ggm_compare_confirm <- function(...,
 
         if(isTRUE(progress)){
 
-          message("BGGM: Posterior Sampling ", "(Group ",x ,")")
+          message("BGGMmod: Posterior Sampling ", "(Group ",x ,")")
 
         }
 
@@ -520,7 +520,7 @@ ggm_compare_confirm <- function(...,
 
         if(isTRUE(progress)){
 
-          message("BGGM: Posterior Sampling ", "(Group ",x ,")")
+          message("BGGMmod: Posterior Sampling ", "(Group ",x ,")")
 
         }
         control_info <- remove_predictors_helper(list(as.data.frame(dat_list[[x]])),
@@ -564,7 +564,7 @@ ggm_compare_confirm <- function(...,
 
         if(isTRUE(progress)){
 
-          message("BGGM: Posterior Sampling ", "(Group ",x ,")")
+          message("BGGMmod: Posterior Sampling ", "(Group ",x ,")")
 
         }
 
@@ -605,7 +605,7 @@ ggm_compare_confirm <- function(...,
 
           if(isTRUE(progress)){
 
-            message("BGGM: Posterior Sampling ", "(Group ",x ,")")
+            message("BGGMmod: Posterior Sampling ", "(Group ",x ,")")
 
           }
 
@@ -655,7 +655,7 @@ ggm_compare_confirm <- function(...,
 
         if(isTRUE(progress)){
 
-          message("BGGM: Posterior Sampling ", "(Group ",x ,")")
+          message("BGGMmod: Posterior Sampling ", "(Group ",x ,")")
 
         }
 
@@ -709,7 +709,7 @@ ggm_compare_confirm <- function(...,
 
         if(isTRUE(progress)){
 
-          message("BGGM: Posterior Sampling ", "(Group ",x ,")")
+          message("BGGMmod: Posterior Sampling ", "(Group ",x ,")")
 
         }
 
@@ -767,13 +767,13 @@ ggm_compare_confirm <- function(...,
 
       if(isTRUE(progress)){
 
-        message("BGGM: Prior Sampling ", "(Group ",x ,")")
+        message("BGGMmod: Prior Sampling ", "(Group ",x ,")")
 
       }
 
       .Call(
         '_BGGM_sample_prior',
-        PACKAGE = 'BGGM',
+        PACKAGE = 'BGGMmod',
         Y = Yprior,
         iter = 25000,
         delta = delta,
@@ -797,7 +797,7 @@ ggm_compare_confirm <- function(...,
 
       if(isTRUE(progress)){
 
-        message("BGGM: Prior Sampling ", "(Group ", x ,")")
+        message("BGGMmod: Prior Sampling ", "(Group ", x ,")")
 
       }
 
@@ -806,7 +806,7 @@ ggm_compare_confirm <- function(...,
 
       .Call(
         '_BGGM_sample_prior',
-        PACKAGE = 'BGGM',
+        PACKAGE = 'BGGMmod',
         Y = Yprior,
         iter = 25000,
         delta = delta,
@@ -911,7 +911,7 @@ ggm_compare_confirm <- function(...,
 
   if(isTRUE(progress)){
 
-    message("BGGM: Finished")
+    message("BGGMmod: Finished")
 
   }
 
@@ -937,7 +937,7 @@ ggm_compare_confirm <- function(...,
   # removed per CRAN (8/12/21)
   #.Random.seed <<- old
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                             "confirm",
                             "ggm_compare_confirm")
   returned_object
@@ -949,7 +949,7 @@ ggm_compare_confirm <- function(...,
 print_ggm_confirm <- function(x, ...){
   groups <- x$groups
   info <- x$info_dat
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
 
   cat("Type:",  x$type ,  "\n")
 

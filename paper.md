@@ -1,6 +1,6 @@
 ---
 # Example from https://joss.readthedocs.io/en/latest/submitting.html
-title: 'BGGM: Bayesian Gaussian Graphical Models in R'
+title: 'BGGMmod: Bayesian Gaussian Graphical Models in R'
 tags:
 - Gaussian graphical models
 - Bayesian
@@ -23,8 +23,8 @@ year: 2020
 bibliography: inst/REFERENCES.bib
 ---
 
-# BGGM: Bayesian Gaussian Graphical Models
-The `R` package **BGGM** provides tools for making Bayesian inference in 
+# BGGMmod: Bayesian Gaussian Graphical Models
+The `R` package **BGGMmod** provides tools for making Bayesian inference in 
 Gaussian graphical models (GGM). The methods are organized around two general 
 approaches for Bayesian inference: (1) estimation and (2) hypothesis 
 testing. The key distinction is that the former focuses on either 
@@ -43,37 +43,37 @@ The Gaussian graphical model is used across the sciences, including
 [@zerenner2014gaussian], genetics [@chu2009graphical], and psychology [@rodriguez2020formalizing]. 
 
 # Overview
-The methods in **BGGM** build upon existing algorithms that are well-known in the literature.
-The central contribution of **BGGM** is to extend those approaches:
+The methods in **BGGMmod** build upon existing algorithms that are well-known in the literature.
+The central contribution of **BGGMmod** is to extend those approaches:
 
 1.  Bayesian estimation with the novel matrix-F prior distribution [@Mulder2018]
   
-    + [Estimation](https://github.com/donaldRwilliams/BGGM#bayesian-estimation) [@Williams2019]
+    + [Estimation](https://github.com/donaldRwilliams/BGGMmod#bayesian-estimation) [@Williams2019]
 
 2. Bayesian hypothesis testing with the matrix-F prior distribution [@Williams2019_bf]
 
-    + [Exploratory hypothesis testing](https://github.com/donaldRwilliams/BGGM#Exploratory)
+    + [Exploratory hypothesis testing](https://github.com/donaldRwilliams/BGGMmod#Exploratory)
   
-    + [Confirmatory hypothesis testing](https://github.com/donaldRwilliams/BGGM#Confirmatory)
+    + [Confirmatory hypothesis testing](https://github.com/donaldRwilliams/BGGMmod#Confirmatory)
     
 3. Comparing Gaussian graphical models [@Williams2019; @williams2020comparing]
     
-    + [Partial correlation differences](https://github.com/donaldRwilliams/BGGM#partial-correlation-differences) 
+    + [Partial correlation differences](https://github.com/donaldRwilliams/BGGMmod#partial-correlation-differences) 
     
-    + [Posterior predictive check](https://github.com/donaldRwilliams/BGGM#posterior-predictive-check)
+    + [Posterior predictive check](https://github.com/donaldRwilliams/BGGMmod#posterior-predictive-check)
     
-    + [Exploratory hypothesis testing](https://github.com/donaldRwilliams/BGGM#exploratory-groups) 
+    + [Exploratory hypothesis testing](https://github.com/donaldRwilliams/BGGMmod#exploratory-groups) 
     
-    + [Confirmatory hypothesis testing](https://github.com/donaldRwilliams/BGGM#confirmatory-groups)
+    + [Confirmatory hypothesis testing](https://github.com/donaldRwilliams/BGGMmod#confirmatory-groups)
 
 4. Extending inference beyond the conditional (in)dependence structure [@Williams2019]
 
-    +  [Predictability](https://github.com/donaldRwilliams/BGGM#Predictability)[e.g., @haslbeck2018well]
+    +  [Predictability](https://github.com/donaldRwilliams/BGGMmod#Predictability)[e.g., @haslbeck2018well]
     
-    +  [Posterior uncertaintyintervals](https://github.com/donaldRwilliams/BGGM#partial-correlation-differences) for the 
+    +  [Posterior uncertaintyintervals](https://github.com/donaldRwilliams/BGGMmod#partial-correlation-differences) for the 
        partial correlations
        
-    +  [Custom Network Statistics](https://github.com/donaldRwilliams/BGGM#custom-network-statistics)
+    +  [Custom Network Statistics](https://github.com/donaldRwilliams/BGGMmod#custom-network-statistics)
     
     
 ## Supported Data Types
@@ -86,7 +86,7 @@ The central contribution of **BGGM** is to extend those approaches:
   @webb2008bayesian (to name a few).
   
 * **Ordinal**: The ordinal methods require sampling thresholds. There are two approach 
-   included in **BGGM**. The customary approach described in @albert1993bayesian 
+   included in **BGGMmod**. The customary approach described in @albert1993bayesian 
    (the default) and the 'Cowles' algorithm described in @cowles1996accelerating.
    
 * **Mixed**: The mixed data (a combination of discrete and continuous) method was introduced
@@ -94,13 +94,13 @@ The central contribution of **BGGM** is to extend those approaches:
  (i.e., a copula GGM) based on the ranked likelihood. Note that this can be used for 
  *only* ordinal data (not restricted to "mixed" data).
 
-The computationally intensive tasks are written in `c++` via the `R` package **Rcpp** [@eddelbuettel2011rcpp] and the `c++` library **Armadillo** [@sanderson2016armadillo]. The Bayes factors are computed with the `R` package **BFpack** [@mulder2019bfpack]. Furthermore, there are [plotting](https://github.com/donaldRwilliams/BGGM#example-network-plot) functions
+The computationally intensive tasks are written in `c++` via the `R` package **Rcpp** [@eddelbuettel2011rcpp] and the `c++` library **Armadillo** [@sanderson2016armadillo]. The Bayes factors are computed with the `R` package **BFpack** [@mulder2019bfpack]. Furthermore, there are [plotting](https://github.com/donaldRwilliams/BGGMmod#example-network-plot) functions
 for each method, control variables can be included in the model (e.g., `~ gender`), 
 and there is support for missing values (see `bggm_missing`).
 
 ## Comparison to Other Software
-**BGGM** is the only `R` package to implement all of these algorithms and methods. The `mixed` data approach 
-is also implemented in the package **sbgcop** [base `R`, @hoff2007extending]. The `R` package **BDgraph** implements a Gaussian copula graphical model in `c++` [@mohammadi2015bdgraph], but not the binary or ordinal approaches. Furthermore, **BGGM** is the only package for confirmatory testing and comparing graphical models with the methods described in @williams2020comparing.
+**BGGMmod** is the only `R` package to implement all of these algorithms and methods. The `mixed` data approach 
+is also implemented in the package **sbgcop** [base `R`, @hoff2007extending]. The `R` package **BDgraph** implements a Gaussian copula graphical model in `c++` [@mohammadi2015bdgraph], but not the binary or ordinal approaches. Furthermore, **BGGMmod** is the only package for confirmatory testing and comparing graphical models with the methods described in @williams2020comparing.
 
 # Acknowledgements
 DRW was supported by a National Science Foundation Graduate Research Fellowship

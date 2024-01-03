@@ -3,7 +3,7 @@ note <- sprintf("R package version %s", meta$Version)
 
 
 bibentry(bibtype = "Article",
-         title = "BGGM: Bayesian Gaussian Graphical Models in R",
+         title = "BGGMmod: Bayesian Gaussian Graphical Models in R",
          author = c(person(c("Donald", "R."), "Williams"),
                     person("Joris", "Mulder")),
          year = "2019",

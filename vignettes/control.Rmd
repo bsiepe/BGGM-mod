@@ -13,14 +13,14 @@ vignette: >
 ---
 
 # Introduction
-This vignette describes how to control for variables. This is a new feature to **BGGM** (version `2.0.0`).
+This vignette describes how to control for variables. This is a new feature to **BGGMmod** (version `2.0.0`).
 
 # Example 1: Multivariate Regression
-When controlling for variables, a multivariate regression is fitted in **BGGM**. In fact, a GGM can be understood as a multivariate regression with intercepts only models for the predictors.
+When controlling for variables, a multivariate regression is fitted in **BGGMmod**. In fact, a GGM can be understood as a multivariate regression with intercepts only models for the predictors.
 
 ## Notes about Implementation
-**BGGM** does not use the typical approach for multivariate regression in `R`. This avoids having to 
-write out each outcome variable, of which there are typically many in a GGM. In **BGGM**, it is assumed
+**BGGMmod** does not use the typical approach for multivariate regression in `R`. This avoids having to 
+write out each outcome variable, of which there are typically many in a GGM. In **BGGMmod**, it is assumed
 that the data matrix includes only the variables to be included in the GGM and the control variables.
 
 ### Correct 
@@ -101,7 +101,7 @@ are summarized with
 ```
 summary(fit)
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Type: continuous 
 #> Analytic: FALSE 
@@ -149,12 +149,12 @@ head(Y)
 
 
 In this case, with `estimate(Y, formula = as.factor(education))`, the GGM would also include `gender`
-(six variables instead of the desired 5). This is because all variables not included in `formula` are included in the GGM. This was adopted in **BGGM** to save the user from having to write out each outcome.  
+(six variables instead of the desired 5). This is because all variables not included in `formula` are included in the GGM. This was adopted in **BGGMmod** to save the user from having to write out each outcome.  
 
 This differs from `lm`, where each outcome needs to be written out, for example `cbind(A1, A2, A3, A4, A4) ~ as.factor(education)`. This is quite cumbersome for a model that includes many nodes.
 
 # Example 2: Multivariate Probit
-The above data is ordinal. In this case, it is possible to fit a multivariate probit model. This is also the approach for binary data in **BGGM**. This is implemented with 
+The above data is ordinal. In this case, it is possible to fit a multivariate probit model. This is also the approach for binary data in **BGGMmod**. This is implemented with 
 
 ```
 fit <- estimate(Y, formula = ~ as.factor(education), 
@@ -180,7 +180,7 @@ fit <- estimate(Y, type = "mixed", iter = 1000)
 # summary
 summary(fit)
 
-#> BGGM: Bayesian Gaussian Graphical Models 
+#> BGGMmod: Bayesian Gaussian Graphical Models 
 #> --- 
 #> Type: mixed 
 #> Analytic: FALSE 
@@ -223,4 +223,4 @@ select(fit)
 
 
 # Note
-It is possible to control for variable with all methods in **BGGM**, including when comparing groups, Bayesian hypothesis testing, etc.
+It is possible to control for variable with all methods in **BGGMmod**, including when comparing groups, Bayesian hypothesis testing, etc.

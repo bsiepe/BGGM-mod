@@ -28,7 +28,7 @@ plot_prior <- function(prior_sd = 0.2, iter = 5000){
 
   # sample prior
   prior_samp <- .Call('_BGGM_sample_prior',
-                      PACKAGE = 'BGGM',
+                      PACKAGE = 'BGGMmod',
                       Y = Y_dummy,
                       iter = iter,
                       delta = delta,

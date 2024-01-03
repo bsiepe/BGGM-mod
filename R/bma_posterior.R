@@ -70,7 +70,7 @@ bma_posterior <- function(object,
   returned_object <- list(bma_mean = bma_mean,
                           samples = samples)
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "bma_posterior")
 
   return(returned_object)
@@ -78,7 +78,7 @@ bma_posterior <- function(object,
 }
 
 print_bma <- function(x,...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Bayesian Model Averaged Graph:\n\n")
   print(round(x$bma_mean, 3))

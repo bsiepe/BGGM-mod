@@ -33,7 +33,7 @@
 #' # note: iter = 250 for demonstrative purposes
 #'
 #' # data
-#' Y <- BGGM::ptsd
+#' Y <- BGGMmod::ptsd
 #'
 #' #########################
 #' ###### continuous #######
@@ -113,7 +113,7 @@ pcor_to_cor <- function(object, iter = NULL){
   # call c ++ for speed
   returned_object <- .Call(
     "_BGGM_pcor_to_cor_internal",
-    PACKAGE = "BGGM",
+    PACKAGE = "BGGMmod",
     x = object,
     p = p
   )

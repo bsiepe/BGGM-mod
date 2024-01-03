@@ -5,7 +5,7 @@
 #' @description Compare partial correlations that are estimated from any number of groups. This method works for
 #' continuous, binary, ordinal, and mixed data (a combination of categorical and continuous variables).
 #' The approach (i.e., a difference between posterior distributions) was
-#' described in  \insertCite{Williams2019;textual}{BGGM}.
+#' described in  \insertCite{Williams2019;textual}{BGGMmod}.
 #'
 #' @param ... Matrices (or data frames) of dimensions \emph{n} (observations) by  \emph{p} (variables).
 #' Requires at least two.
@@ -103,7 +103,7 @@
 #'
 #' \strong{Imputing Missing Values}:
 #'
-#' Missing values are imputed with the approach described in \insertCite{hoff2009first;textual}{BGGM}.
+#' Missing values are imputed with the approach described in \insertCite{hoff2009first;textual}{BGGMmod}.
 #' The basic idea is to impute the missing values with the respective posterior pedictive distribution,
 #' given the observed data, as the model is being estimated. Note that the default is \code{TRUE},
 #' but this ignored when there are no missing values. If set to \code{FALSE}, and there are missing
@@ -114,7 +114,7 @@
 #'
 #' \strong{Mixed Data}:
 #'
-#' The mixed data approach was introduced  \insertCite{@in @hoff2007extending;textual}{BGGM}
+#' The mixed data approach was introduced  \insertCite{@in @hoff2007extending;textual}{BGGMmod}
 #' (our paper describing an extension to Bayesian hypothesis testing if forthcoming).
 #' This is a semi-paramateric copula model based on the ranked likelihood. This is computationally
 #' expensive when treating continuous data as ranks. The current default is to treat only integer data as ranks.
@@ -130,7 +130,7 @@
 #'
 #' \strong{Interpretation of Conditional (In)dependence Models for Latent Data}:
 #'
-#' See \code{\link{BGGM-package}} for details about interpreting GGMs based on latent data
+#' See \code{\link{BGGMmod-package}} for details about interpreting GGMs based on latent data
 #' (i.e, all data types besides \code{"continuous"})
 #'
 #'
@@ -138,10 +138,10 @@
 #' \strong{Additional GGM Compare Methods}
 #'
 #' Bayesian hypothesis testing is implemented in \code{\link{ggm_compare_explore}} and
-#' \code{\link{ggm_compare_confirm}} \insertCite{Williams2019_bf}{BGGM}. The latter allows for confirmatory
+#' \code{\link{ggm_compare_confirm}} \insertCite{Williams2019_bf}{BGGMmod}. The latter allows for confirmatory
 #' hypothesis testing.  An approach based on a posterior predictive check is implemented in \code{\link{ggm_compare_ppc}}
-#' \insertCite{williams2020comparing}{BGGM}. This provides  a 'global' test for comparing the entire GGM and a 'nodewise'
-#' test for comparing each variable in the network \insertCite{Williams2019;textual}{BGGM}.
+#' \insertCite{williams2020comparing}{BGGMmod}. This provides  a 'global' test for comparing the entire GGM and a 'nodewise'
+#' test for comparing each variable in the network \insertCite{Williams2019;textual}{BGGMmod}.
 #'
 #' @examples
 #' \donttest{
@@ -347,7 +347,7 @@ ggm_compare_estimate <- function(...,
       )
     }
 
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "ggm_compare_estimate",
                               "estimate")
   returned_object
@@ -497,7 +497,7 @@ summary.ggm_compare_estimate <- function(object,
 
   returned_object <- list(dat_results = dat_results,
                           object = object)
-  class(returned_object) <- c("BGGM",
+  class(returned_object) <- c("BGGMmod",
                               "summary", "summary.ggm_compare_estimate",
                               "ggm_compare_estimate",
                               "estimate")
@@ -506,7 +506,7 @@ summary.ggm_compare_estimate <- function(object,
 
 # print ggm compare
 print_ggm_compare <- function(x, ...){
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:",  x$type, "\n")
   cat("Analytic:", x$analytic, "\n")
@@ -533,7 +533,7 @@ print_ggm_compare <- function(x, ...){
 # print summary
 print_summary_ggm_estimate_compare <- function(x,...){
 
-  cat("BGGM: Bayesian Gaussian Graphical Models \n")
+  cat("BGGMmod: Bayesian Gaussian Graphical Models \n")
   cat("--- \n")
   cat("Type:",  x$object$type, "\n")
   cat("Analytic:", x$object$analytic, "\n")

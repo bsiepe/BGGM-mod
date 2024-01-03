@@ -23,12 +23,12 @@ if (!requireNamespace("remotes")) {
 }   
 
 # install from github
-remotes::install_github("donaldRwilliams/BGGM")
-library(BGGM)
+remotes::install_github("donaldRwilliams/BGGMmod")
+library(BGGMmod)
 library(cowplot)
 ```
 ```{r, echo=FALSE, message=FALSE}
-library(BGGM)
+library(BGGMmod)
 ```
 
 # Estimate
@@ -108,7 +108,7 @@ can be made to the plot. There is lots of support for making nice plots readily 
 online.
 
 #### Layout
-It is also possible to change the layout. This is done with the **sna** package, which is linked in the documentation for `plot.select` in **BGGM**. Here is an example using `layout = "random"`
+It is also possible to change the layout. This is done with the **sna** package, which is linked in the documentation for `plot.select` in **BGGMmod**. Here is an example using `layout = "random"`
 ```{r, eval=FALSE}
 plot(E, 
      # enlarge edges
@@ -133,7 +133,7 @@ plot(E,
 # Bayesian Hypothesis Testing
 The Bayesian hypothesis testing methods offer several advantages, for example, that 
 evidence for the null hypothesis of conditional independence is formally evaluated. 
-As a result, the `explore` method in **BGGM** provides plots for both the conditional 
+As a result, the `explore` method in **BGGMmod** provides plots for both the conditional 
 dependence and independence structure, in addition to a plot for which the evidence was 
 ambiguous.
 
@@ -176,10 +176,10 @@ the ambiguous network makes clear there is large uncertainty as to what or what 
 
 
 # Note
-**BGGM** provides a publication ready plot, but it is also limited compared to **qgraph** 
-[@epskamp2012qgraph]. The one advantage of **BGGM**  is that all plots are `ggplots` 
+**BGGMmod** provides a publication ready plot, but it is also limited compared to **qgraph** 
+[@epskamp2012qgraph]. The one advantage of **BGGMmod**  is that all plots are `ggplots` 
 which then allows for combining them rather easily. An example is included in another 
-vignette that shows how to combine several plots made with various methods in **BGGM**
+vignette that shows how to combine several plots made with various methods in **BGGMmod**
 
 
 # References

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GGM: Confirmatory Hypothesis Testing — confirm • BGGM</title>
+<title>GGM: Confirmatory Hypothesis Testing — confirm • BGGMmod</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -53,7 +53,7 @@ on determining the graph (see explore) but testing specific hypotheses related t
 the conditional (in)dependence structure. These methods were introduced in
 Williams and Mulder (2019)
 ." />
-<meta property="og:image" content="https://donaldrwilliams.github.io/BGGM/reference/figures/hex.jpg" />
+<meta property="og:image" content="https://donaldrwilliams.github.io/BGGMmod/reference/figures/hex.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@wdonald_1985" />
 <meta name="twitter:site" content="@wdonald_1985" />
@@ -87,7 +87,7 @@ Williams and Mulder (2019)
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">BGGM</a>
+        <a class="navbar-link" href="../index.html">BGGMmod</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
@@ -109,7 +109,7 @@ Williams and Mulder (2019)
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/donaldRwilliams/BGGM/">
+  <a href="https://github.com/donaldRwilliams/BGGMmod/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -128,7 +128,7 @@ Williams and Mulder (2019)
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>GGM: Confirmatory Hypothesis Testing</h1>
-    <small class="dont-index">Source: <a href='https://github.com/donaldRwilliams/BGGM/blob/master/R/confirm.R'><code>R/confirm.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/donaldRwilliams/BGGMmod/blob/master/R/confirm.R'><code>R/confirm.R</code></a></small>
     <div class="hidden name"><code>confirm.Rd</code></div>
     </div>
 
@@ -213,7 +213,7 @@ be imputed during model fitting (defaults to <code>TRUE</code>) ?</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>The returned object of class <code>confirm</code> contains a lot of information that
-        is used for printing and plotting the results. For users of <strong>BGGM</strong>, the following
+        is used for printing and plotting the results. For users of <strong>BGGMmod</strong>, the following
         are the useful objects:</p>
 <ul>
 <li><p><code>out_hyp_prob</code> Posterior hypothesis probabilities.</p></li>
@@ -317,7 +317,7 @@ should be included in the GGM. An example is provided below.</p>
  (Section 3.2 in Kass and Raftery 1995)
 .</p>
 <p><strong>Interpretation of Conditional (In)dependence Models for Latent Data</strong>:</p>
-<p>See <code><a href='BGGM-package.html'>BGGM-package</a></code> for details about interpreting GGMs based on latent data
+<p>See <code><a href='BGGMmod-package.html'>BGGMmod-package</a></code> for details about interpreting GGMs based on latent data
 (i.e, all data types besides <code>"continuous"</code>)</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -345,7 +345,7 @@ doi: <a href='https://doi.org/10.31234/osf.io/ypxd8'>10.31234/osf.io/ypxd8</a>
 <span class='co'># (peeked at partials beforehand)</span>
 
 <span class='co'># data</span>
-<span class='no'>Y</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>BGGM</span><span class='kw ns'>::</span><span class='no'><a href='bfi.html'>bfi</a></span>[,<span class='fl'>1</span>:<span class='fl'>10</span>]
+<span class='no'>Y</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>BGGMmod</span><span class='kw ns'>::</span><span class='no'><a href='bfi.html'>bfi</a></span>[,<span class='fl'>1</span>:<span class='fl'>10</span>]
 
 <span class='no'>hypothesis</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A1--A2 &lt; A1--A3 &lt; A1--A4 = A1--A5"</span>)
 
@@ -357,7 +357,7 @@ doi: <a href='https://doi.org/10.31234/osf.io/ypxd8'>10.31234/osf.io/ypxd8</a>
                        <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># print (probabilty of nearly 1 !)</span>
-<span class='no'>test_cheat</span></div><div class='output co'>#&gt; BGGM: Bayesian Gaussian Graphical Models 
+<span class='no'>test_cheat</span></div><div class='output co'>#&gt; BGGMmod: Bayesian Gaussian Graphical Models 
 #&gt; Type: continuous 
 #&gt; --- 
 #&gt; Posterior Samples: 250 
