@@ -3,6 +3,8 @@
 
 # BGGM: Bayesian Gaussian Graphical Models
 
+!! NOTE: This package has been forked and modified for experimental purposes!!
+
 [![CRAN
 Version](http://www.r-pkg.org/badges/version/BGGM)](https://cran.r-project.org/package=BGGM)
 [![Downloads](https://cranlogs.r-pkg.org/badges/BGGM)](https://cran.r-project.org/package=BGGM)
